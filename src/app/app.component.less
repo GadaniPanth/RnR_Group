@@ -4,6 +4,13 @@
 @bg-white: #ffffff;
 @bg-transparent: transparent;
 
+.navbar {
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    background-color: @bg-white;
+}
+
 .navbar ul{
     width: 100%;
     list-style: none;
@@ -11,6 +18,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 80px;
+}
+
+.navbar li {
+    width: 150px;
 }
 
 .navbar ul li:first-of-type a{

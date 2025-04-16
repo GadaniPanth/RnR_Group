@@ -1,0 +1,229 @@
+@text-browen: #9A6C3A;
+@text-black: #1E1E1E;
+@bg-brown: #9A6C3A;
+@sec-bg-pink: #FBF4EA;
+
+.section_1{
+    color: white;
+}
+
+.section_1_bottom_div {
+    bottom: 8%;
+    z-index: 9;
+    text-align: center;
+    width: 100%;
+
+    & * {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+.section_1_bottom_div .sofitel_logo {
+
+}
+
+.section_1_bottom_div .head {
+    text-transform: uppercase;
+
+    & h1{
+        letter-spacing: 8px;
+    }
+}
+
+.section_1_bottom_div .svg_text_flex {
+    gap: 65px;
+}
+
+.section_1_bottom_div .svg_text {
+    display: flex;
+    gap: 16px;
+
+    & .svg{
+        width: 48px;
+    }
+}
+
+.section_2 .features_div>div {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px 0;
+}
+
+.section_2 .features_div .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: @text-browen;
+}
+
+.section_2_content {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr .95fr;
+    padding: 30px;
+    gap: 55px;
+    margin: 0 auto;
+}
+
+.section_2_content .section_2_text .head{
+    padding-right: 230px;
+    line-height: 125px;
+    *{
+        color: @text-black;
+    }
+}
+
+.section_2_content .section_2_text .head span{
+    display: block;
+    text-align: right;
+}
+
+.section_2_img{
+    justify-self: right;
+}
+.section_2_img img{
+    // border-radius: 8px;
+    max-width: 724px;
+    margin-top: 140px;
+}
+.section_2_text .p_text{
+    margin-top: 30px;
+    *{
+        color: @text-black;
+     }
+}
+
+.section_2_text .btn_div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 50px;
+}
+
+.section_2_text .btn_div .btn{
+    transition: all .8s ease;
+    border: solid 1px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    .svg {
+        width: 24px;
+    }
+}
+
+.section_2_text .btn_div .btn:first-of-type{
+    color: white;
+    border-color: @bg-brown;
+    background-color: @bg-brown;
+    padding: 8px 20px;
+
+    &:hover{
+        color: @bg-brown;
+        // border-color: @bg-brown;            
+        background-color: white;            
+    }
+}
+
+.section_2_text .btn_div .btn:last-of-type{
+    color: @bg-brown;
+    border-color: @bg-brown;
+    background-color: white;
+    padding: 10px 20px;
+    
+    &:hover{
+        color: white;            
+        // border-color: white;
+        background-color: @bg-brown;
+    }
+}
+
+.section_3_head{
+    h1{
+        letter-spacing: 5px;
+        color: @text-black;
+    }
+    
+    h1:first-of-type{
+        margin-left: -70px;
+    }
+    
+    h1:last-of-type{
+        margin-right: -130px;
+        text-align: right;
+    }
+}
+
+.section_3_content {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    padding: 30px;
+    gap: 45px;
+    margin: 0 auto;
+
+    .section_3_img{
+        img{
+            max-width: 1104px;
+        }
+        .btn{
+            display: flex;
+            gap: 8px;
+            background-color: #1E1E1E7A;
+            width: fit-content;
+            position: absolute;
+            border-radius: 8px;
+            padding: 14px 28px;
+            bottom: 35px;
+            right: 70px;
+            color: white;
+            cursor: pointer;
+            align-items: center;
+    
+            .text p{
+                color: white;
+            }
+        }
+    }    
+
+    .section3_text {
+        margin-top: 100px;
+
+        .text_bottom {
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+            gap: 2px;
+        } 
+
+        p{
+            color: @text-black;
+            font-weight: 400;
+        }
+        h1{
+            color: @text-browen;
+        }
+        .list{
+            margin-top: -8px;
+        }
+        ul{
+            list-style: none;
+        }
+        hr{
+            background-color: @bg-brown;
+            color: @bg-brown;
+            width: 40px;
+            height: 1px;
+            border: none;
+            margin: 3.5px 0;
+        }
+    }
+}

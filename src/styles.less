@@ -1,10 +1,18 @@
 @import url('https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css');
 // @import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+@text-blue:#213B74;
+@text-white: #ffffff;
+@text-black: #1E1E1E;
+@bg-orange: #EC614A;
+@bg-white: #ffffff;
+@bg-transparent: transparent;
+@sec-bg-pink: #FBF4EA;
+@sec-bg-brown: #9A6C3A;
 
 @font-face {
     font-family: 'bigilla';
     src: url('assets/fonts/bigilla/Bigilla.otf');
-    font-weight: normal;
+    font-weight: 700;
 }
 
 @font-face {
@@ -19,8 +27,18 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'chronicle';
+    src: url('./assets/fonts/chronicle_display/Chronicle_Display_Black.otf');
+    font-weight: normal;
+}
+
 .general_sans {
     font-family: 'general_sans';
+}
+
+.chronicle {
+    font-family: 'chronicle';
 }
 
 .bigilla_bold {
@@ -29,6 +47,10 @@
 
 .bigilla {
     font-family: "bigilla";
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .rehvassa_wrapper img {
@@ -57,17 +79,60 @@
 .rehvassa_wrapper p {
     margin-bottom: 0;
     /* font-family: "Rubik-Regular"; */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .rehvassa_wrapper .relative {
     position: relative;
 }
 
+.rehvassa_wrapper .absolute {
+    position: absolute;
+}
+
+.rehvassa_wrapper .sticky {
+    position: sticky;
+}
+
+.rehvassa_wrapper .d_flex {
+    display: flex;
+}
+
 .rehvassa_wrapper .font_16 {
     font-size: 16px;
 }
 
+.rehvassa_wrapper .font_24 {
+    font-size: 24px;
+}
+
+.rehvassa_wrapper .font_48 {
+    font-size: 48px;
+}
+
+.rehvassa_wrapper .font_120 {
+    font-size: 120px;
+}
+.rehvassa_wrapper .font_160 {
+    font-size: 160px;
+}
+
+.rehvassa_wrapper .font_200 {
+    font-size: 200px;
+}
+
+.rehvassa_wrapper .sec_bg_pink{
+    background-color: @sec-bg-pink;
+}
+.rehvassa_wrapper .ovxhidden{
+    overflow-x: hidden;
+}
+.rehvassa_wrapper .ovhidden{
+    overflow: hidden;
+}
+.rehvassa_wrapper .radius8{
+    border-radius: 16px;
+}
 .rehvassa_wrapper {}
 
 body,html,*{
@@ -75,3 +140,4 @@ body,html,*{
     margin: 0;
     box-sizing: border-box;
 }
+
