@@ -1,10 +1,10 @@
 <div class="rehvassa_wrapper">
   <div class="navbar sticky">
     <ul>
-      <li class="menu"><a href="">
-          <h2 class="font_16 general_sans menu_text">menu</h2>
-          <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
-        </a></li>
+      <li class="menu">
+        <h2 class="font_16 general_sans menu_text" (click)="!isMenuOpen">menu</h2>
+        <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
+      </li>
       <li class="rnr_logo">
         <img src="assets/images/home_page/Group 503 1.svg" alt="">
       </li>
@@ -20,10 +20,23 @@
         </span>
       </li>
     </ul>
+    <div *ngIf="isMenuOpen" class="slider">
+      <ul>
+        <li class="menu">
+          <h2 class="font_16 general_sans menu_btn" (click)="!isMenuOpen"><i class="ri-menu-close-line"></i></h2>
+        </li>
+        <li class="rnr_logo">
+          <img src="assets/images/home_page/Group 503 1.svg" alt="">
+        </li>
+      </ul>
+      <ul>
+
+      </ul>
+    </div>
   </div>
   <router-outlet></router-outlet>
 
-  <footer>
+  <!-- <footer>
     <div class="footer-container">
       <div class="footer-grid">
         <div class="inner-flex flex-gap-medium">
@@ -113,5 +126,5 @@
         <p class=" font-18">Powerd By : REECOSYS</p>
       </div>
     </div>
-  </footer>
+  </footer> -->
 </div>

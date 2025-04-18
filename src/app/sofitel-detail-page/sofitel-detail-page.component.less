@@ -243,7 +243,7 @@
 }
 .section_4_content {
   grid-template-columns: 0.8fr 1fr;
-  //   gap: 55px;
+  gap: 55px;
 
   * {
     color: white;
@@ -303,6 +303,164 @@
           color: #ffffffb9;
         }
       }
+    }
+  }
+}
+
+.sec-5-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding-right: 5.3rem;
+}
+
+.accordion {
+  .accordion-item {
+    //   border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.9s ease;
+
+    .accordion-header {
+      background: transparent;
+      padding: 15px 20px;
+      height: 60px;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    .accordion-body {
+      overflow: hidden;
+      transition: max-height 0.9s ease;
+      padding: 0 20px;
+
+      li {
+        margin: 15px 0;
+        color: white;
+        width: fit-content;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 20px !important;
+  height: 20px;
+  transition: transform 0.8s ease;
+}
+
+.section_9_grid {
+  .bottom_div {
+    *,
+    .accordion-body {
+      color: black;
+    }
+
+    .accordion-header {
+      border-color: black;
+    }
+
+    img {
+      filter: invert(1);
+    }
+  }
+}
+
+.sofitel_wrapper .section_5 {
+  padding: 120px 0;
+  .head h1 > span {
+    margin-left: -0.7ch;
+
+    span {
+      display: block;
+      margin-left: 93px;
+    }
+  }
+
+  // .head {
+  //   z-index: 1;
+  // }
+
+  .font_120 {
+    font-family: bigilla_bold;
+    line-height: 120px;
+    margin-left: 58px;
+  }
+  .font_360 {
+    color: #fbf4ea80;
+    position: absolute;
+    top: -224px;
+    left: -100px;
+    text-wrap: nowrap;
+    z-index: -1;
+  }
+
+  .swiper-button-container {
+    position: absolute;
+    bottom: -40px;
+    right: 180px;
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+  }
+
+  .custom-swiper-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid #9a6c3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 20;
+
+    &:hover {
+      background-color: #f6efe8;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .custom-swiper-button-next::after,
+  .custom-swiper-button-prev::after {
+    display: none;
+  }
+
+  .custom-swiper-button-prev svg {
+    rotate: 180deg;
+  }
+
+  .swiper-container {
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    // gap: 24px;
+  }
+
+  .swiper-slide {
+    width: 60% !important;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1.5625;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
     }
   }
 }
@@ -673,7 +831,7 @@
     border: none;
     padding: 16px 60px;
     border: solid 1px @sec-bg-pink;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.8s ease;
   }
@@ -746,6 +904,19 @@
       .font_120 {
         font-size: 80px;
       }
+    }
+  }
+
+  .sofitel_wrapper .section_5 {
+    .font_120 {
+      font-size: 92px;
+      line-height: 82px;
+    }
+
+    .font_360 {
+      top: -160px;
+      left: -46px;
+      font-size: 220px;
     }
   }
 
@@ -897,6 +1068,19 @@
     }
   }
 
+  .sofitel_wrapper .section_5 {
+    .font_120 {
+      font-size: 72px;
+      line-height: 70px;
+    }
+
+    // .font_360 {
+    //   top: -160px;
+    //   left: 46px;
+    //   font-size: 220px;
+    // }
+  }
+
   .section_6_grid {
     .head {
       .font_120 {
@@ -966,6 +1150,16 @@
   }
 }
 
+@media only screen and (max-width: 1152px) {
+  .accordion span {
+    font-size: 13px;
+  }
+
+  .accordion .accordion-item .accordion-header {
+    padding: 0 !important;
+    height: 40px;
+  }
+}
 @media only screen and (max-width: 1000px) {
   .sofitel_wrapper .grid_95 {
     width: 98%;
@@ -1072,6 +1266,34 @@
           }
         }
       }
+    }
+  }
+
+  .sofitel_wrapper .section_5 {
+    padding: 60px 0;
+    .font_120 {
+      font-size: 53px;
+      line-height: 50px;
+    }
+
+    // .font_360 {
+    //   font-size: 150px;
+    //   top: -105px;
+    // }
+
+    .font_360 {
+      top: -102px;
+      // left: 46px;
+      font-size: 150px;
+    }
+
+    .custom-swiper-button {
+      width: 36px;
+      height: 36px;
+    }
+
+    .swiper-button-container {
+      bottom: -20px;
     }
   }
 
@@ -1388,6 +1610,44 @@
     }
   }
 
+  .sofitel_wrapper .section_5 {
+    position: relative;
+
+    .font_120 {
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    .font_360 {
+      top: -40px;
+      left: -12px;
+    }
+
+    .head {
+      position: unset;
+    }
+
+    .swiper-container {
+      margin-top: 5%;
+      margin-left: 3.5%;
+    }
+
+    .swiper-slide {
+      width: 97% !important;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1.5625;
+    }
+
+    .swiper-button-container {
+      bottom: 0;
+      left: 50%;
+      right: unset;
+      transform: translateX(-50%);
+    }
+    margin-bottom: 50px;
+  }
+
   .sofitel_wrapper .section_6_grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -1555,6 +1815,35 @@
     }
   }
 
+  .sofitel_wrapper .section_5 {
+    .font_120 {
+      margin-left: 20px;
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    .font_360 {
+      font-size: 109px;
+      top: -12px;
+      left: -5px;
+    }
+
+    .head {
+      h1 > span span {
+        margin-left: 45px;
+      }
+    }
+
+    .swiper-slide {
+      aspect-ratio: 1 / 1;
+
+      img {
+        aspect-ratio: 1/ 1;
+        object-fit: cover;
+      }
+    }
+  }
+
   .sofitel_wrapper {
     .section_6_grid {
       .head {
@@ -1629,6 +1918,11 @@
   .section_1_bottom_div {
     bottom: 10px;
     top: unset;
+
+    & * {
+      color: black;
+    }
+
     .sofitel_logo {
       img {
         max-width: 100px;
@@ -1682,6 +1976,17 @@
 
   .section_4 .section_4_content .font_18 {
     font-size: 11px;
+  }
+
+  .sofitel_wrapper .section_5 {
+    .font_120 {
+      font-size: 37px;
+      line-height: 38px;
+    }
+
+    .font_360 {
+      font-size: 105px;
+    }
   }
 
   .sofitel_wrapper {

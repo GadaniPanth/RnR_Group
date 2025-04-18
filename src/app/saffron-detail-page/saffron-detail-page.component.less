@@ -1,0 +1,897 @@
+@import url("./saffron.component.less");
+
+@sec-bg-gray: #f5f4f4;
+@sec-bg-black: #24262b;
+@bg-orange: #ec614a;
+@bg-transparent: #00000052;
+@text-white: #ffffff;
+@text-orange: #ec614a;
+
+.saffron_wrapper:not(.section_wrapper) {
+  background-color: @sec-bg-black;
+  .grid_95 {
+    width: 95%;
+    display: grid;
+    padding: 30px;
+    margin: 0 auto;
+  }
+
+  .font_18 {
+    font-size: 18px;
+  }
+
+  .font_32 {
+    font-size: 32px;
+  }
+
+  .font_20 {
+    font-size: 20px;
+  }
+
+  .font_40 {
+    font-size: 40px;
+  }
+
+  .font_64 {
+    font-weight: 100;
+    font-size: 64px;
+  }
+
+  .font_140 {
+    font-size: 140px;
+  }
+
+  .section_1 {
+    .section_1_text {
+      position: absolute;
+      bottom: 118px;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      & *:not(.font_40) {
+        width: fit-content;
+        margin: 0 auto;
+      }
+      .head {
+        margin-bottom: 30vw;
+        color: @text-white;
+        .font_40 {
+          text-align: left;
+        }
+
+        span {
+          display: block;
+        }
+      }
+      .svg_text_flex {
+        gap: 65px;
+        color: @text-white;
+      }
+      .svg_text {
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+
+        & .svg {
+          width: 50px;
+        }
+      }
+
+      .btn_div {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 24px;
+
+        .btn {
+          transition: all 0.8s ease;
+          border: solid 1px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+          width: 223px;
+          padding: 16px 20px;
+
+          * {
+            margin: 0;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .svg {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            width: fit-content;
+          }
+          .svg svg {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .btn:first-of-type {
+          color: @text-white;
+          border-color: @bg-orange;
+          background-color: @bg-orange;
+
+          &:hover {
+            color: @text-orange;
+            // border-color: @bg-brown;
+            background-color: transparent;
+          }
+        }
+
+        .btn:last-of-type {
+          color: @text-white;
+          border-color: @text-white;
+          background-color: @bg-transparent;
+
+          &:hover {
+            color: @text-orange;
+            // border-color: white;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .section_2 {
+    margin-top: -5px;
+    .saffron_logo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+    }
+
+    .section_2_text {
+      text-align: center;
+      width: 100%;
+      padding: 11.5% 23.9%;
+      color: @text-white;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 80px;
+
+      .btn {
+        display: flex;
+        width: fit-content;
+        border-radius: 12px;
+        align-items: center;
+        padding: 16px 40px;
+        gap: 14px;
+        cursor: pointer;
+        border: solid 1px white;
+        transition: all 0.8s ease;
+        z-index: 1;
+
+        &:hover {
+          background-color: white;
+          color: #24262b;
+        }
+      }
+    }
+  }
+
+  .section_3 {
+    .bg_container {
+      aspect-ratio: 16/8;
+      max-height: 960px;
+      min-width: 600px;
+      overflow: hidden;
+    }
+    .section_3_bg {
+      width: 50%;
+      // min-width: 960px;
+      margin: 0 auto;
+      overflow: hidden;
+      img {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .section_3_content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 6% 23.9%;
+    }
+    .saffron_logo {
+      position: absolute;
+      width: fit-content;
+      margin: 0 auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .section_8 {
+    .section_8_text {
+      color: @text-white;
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+      padding-right: 56.5%;
+    }
+  }
+
+  .section_10_container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 188px 0;
+    z-index: 1;
+
+    .inquire_card {
+      z-index: 1;
+      aspect-ratio: 10/1;
+      border-radius: 8px;
+      padding: 40px 30px;
+      max-width: 1051px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .saffron_logo {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+    }
+
+    .card_head {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card_head h1 {
+      color: white;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .inquire_form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form_group {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #a4a4a4;
+      border-radius: 12px;
+    }
+
+    .form_group label {
+      color: #fff;
+      // font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      padding: 10px 12px;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      // font-size: 14px;
+      background-color: transparent;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #fff;
+      opacity: 0.7;
+    }
+
+    .flex_div {
+      display: flex;
+      gap: 15px;
+
+      .form_group {
+        width: 100%;
+      }
+    }
+
+    .phone_input {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 10px;
+      position: relative;
+    }
+
+    .phone_input .flag {
+      display: flex;
+      align-items: bottom;
+      gap: 10px;
+      // font-size: 14px;
+      color: #fff;
+    }
+
+    .phone_input .svg img {
+      width: 24px;
+    }
+
+    .phone_field {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .phone_field input {
+      width: 100%;
+      padding: 10px 0;
+      border: none;
+      background: transparent;
+      color: #fff;
+      // font-size: 14px;
+    }
+
+    .phone_field label {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      // font-size: 14px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
+      top: 4px;
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    textarea {
+      resize: none;
+      // height: 80px;
+    }
+
+    .submit_btn {
+      margin: 0 auto;
+      background-color: @bg-orange;
+      color: @text-white;
+      border: none;
+      padding: 16px 60px;
+      border: solid 1px @bg-orange;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.8s ease;
+    }
+
+    .submit_btn:hover {
+      background-color: @sec-bg-black;
+      color: @bg-orange;
+    }
+
+    .input_wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .input_wrapper input,
+    .input_wrapper textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+
+    .input_wrapper label {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      // font-size: 14px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      top: 4px;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .back_marque {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      transform: translateY(-50%);
+
+      ul {
+        display: flex;
+        text-wrap: nowrap;
+        align-items: center;
+        list-style: none;
+        gap: 32px;
+      }
+      ul:nth-of-type(odd) {
+        opacity: 11%;
+        li h1 {
+          color: #24262b;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .font_16 {
+      font-size: 13px;
+    }
+    .font_18 {
+      font-size: 15px;
+    }
+    .font_20 {
+      font-size: 15px;
+    }
+    .font_32 {
+      font-size: 19.2px;
+    }
+    .font_40 {
+      font-size: 24px;
+    }
+    .font_64 {
+      font-size: 50px;
+    }
+    .font_140 {
+      font-size: 85px;
+    }
+
+    .section_1 {
+      .section_1_text {
+        .svg_text .svg {
+          width: 42px;
+        }
+
+        .btn_div {
+          gap: 26px;
+          .btn {
+            width: 196px;
+            .svg {
+              width: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .font_20 {
+      font-size: 13px;
+    }
+
+    .font_40 {
+      font-size: 21px;
+    }
+
+    .font_64 {
+      font-size: 38px;
+    }
+
+    .font_140 {
+      font-size: 75px;
+    }
+
+    .section_1 {
+      .section_1_text {
+        .svg_text {
+          gap: 7px;
+          .svg {
+            width: 32px;
+          }
+        }
+
+        .btn_div {
+          .btn {
+            width: 178px;
+            padding: 16px 11px;
+          }
+
+          .btn:last-of-type {
+            padding: 15px 11px;
+          }
+        }
+      }
+    }
+
+    .section_3 {
+      .section_3_content {
+        padding: 4% 18.9%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .font_16 {
+      font-size: 10px;
+    }
+
+    .font_20 {
+      font-size: 11px;
+    }
+
+    .font_64 {
+      font-size: 30px;
+    }
+
+    .section_1 {
+      .section_1_text {
+        bottom: 52px;
+
+        .svg_text_flex {
+          gap: 29px;
+        }
+        .svg_text .svg {
+          width: 21px;
+        }
+
+        .btn_div {
+          .btn,
+          .btn:last-of-type {
+            width: 149px;
+            padding: 11px 4px;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      .section_2_text {
+        padding: 6.5% 17.9%;
+      }
+    }
+
+    .section_3 {
+      .saffron_logo {
+        width: 8%;
+      }
+    }
+
+    .section_10_container {
+      width: 100%;
+      display: grid;
+      place-items: center;
+      padding: 188px 0;
+      z-index: 1;
+
+      .inquire_card {
+        aspect-ratio: 5/1.5;
+        // border-radius: 8px;
+        // padding: 40px 30px;
+        // max-width: 1051px;
+        // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        width: 60%;
+      }
+
+      .font_20 {
+        font-family: manrope_thin;
+        font-size: 10px;
+      }
+
+      .input_wrapper input:focus + label,
+      .input_wrapper input:valid + label,
+      .input_wrapper textarea:focus + label,
+      .input_wrapper textarea:valid + label {
+        top: 4px;
+        font-size: 8px;
+        opacity: 0.9;
+      }
+
+      .submit_btn {
+        padding: 8px 36px;
+      }
+
+      .input_wrapper {
+        textarea {
+          height: calc(1.5rem * 2);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .font_18 {
+      font-size: 12px;
+    }
+    .font_32 {
+      font-size: 14px;
+    }
+    .font_40 {
+      font-size: 14px;
+    }
+    .font_140 {
+      font-size: 50px;
+    }
+
+    .section_1 {
+      .saffron_bg {
+        min-width: 700px;
+      }
+
+      .section_1_text {
+        .section_1_bottom_div {
+          width: 90%;
+        }
+
+        .head {
+          margin: 0;
+          margin-bottom: 50px;
+
+          * {
+            width: 100%;
+          }
+        }
+
+        .svg_text_flex {
+          // margin: 0;
+          width: 80%;
+          gap: 6px;
+          margin-bottom: 50px;
+          flex-direction: column;
+          align-items: flex-start;
+          * {
+            margin: 0;
+          }
+        }
+
+        .bottom_div {
+          width: 100%;
+          margin: 0;
+        }
+        .btn_div {
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
+          > * {
+            width: 80% !important;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      .saffron_logo {
+        width: 63%;
+      }
+      .section_2_text {
+        gap: 40px;
+        .btn {
+          padding: 11px 20px;
+        }
+      }
+    }
+
+    .section_3 {
+      .bg_container {
+        // aspect-ratio: 1.24;
+        overflow: visible;
+        width: 100%;
+        min-width: unset;
+        aspect-ratio: 1/1;
+        .section_3_bg {
+          width: 100%;
+          min-width: unset;
+          margin: 0;
+          aspect-ratio: 1 / 1;
+
+          img {
+            min-width: unset;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+          }
+        }
+      }
+      .section_3_content {
+        padding: 4% 7.9%;
+      }
+    }
+
+    .section_8 {
+      .section_8_img {
+        min-width: 700px;
+      }
+
+      .section_8_text {
+        padding-right: 45.5%;
+      }
+    }
+
+    .section_10_container {
+      padding: 80px 0;
+
+      .inquire_card {
+        min-width: 395px;
+      }
+
+      .font_64 {
+        font-size: 34px;
+      }
+
+      .font_20 {
+        font-size: 8px;
+      }
+
+      .input_wrapper input:focus + label,
+      .input_wrapper input:valid + label,
+      .input_wrapper textarea:focus + label,
+      .input_wrapper textarea:valid + label {
+        font-size: 7px;
+      }
+
+      .flex_div {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .section_8 {
+      .font_64 {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .section_8 {
+      .section_8_text {
+        padding-right: 10%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .font_16 {
+      font-size: 9px;
+    }
+    .font_18 {
+      font-size: 9px;
+    }
+    .font_20 {
+      font-size: 11px;
+    }
+    .font_32 {
+      font-size: 13px;
+    }
+    .font_40 {
+      font-size: 15px;
+    }
+    .font_64 {
+      font-size: 22px;
+    }
+    .font_140 {
+      font-size: 30px;
+    }
+
+    .section_1 {
+      .saffron_bg {
+        img {
+          margin-left: -10%;
+        }
+      }
+
+      .section_1_text {
+        .head,
+        .svg_text_flex {
+          margin-bottom: 15px;
+        }
+
+        .svg_text .svg {
+          width: 18px;
+        }
+
+        .btn_div {
+          gap: 13px;
+
+          .btn {
+            width: 19px;
+            padding: 8px 4px;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      .saffron_logo {
+        width: 90%;
+      }
+
+      .section_2_text {
+        padding: 22% 10%;
+
+        .btn {
+          .svg {
+            width: 19px;
+            svg {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .section_8 {
+      .section_8_img {
+        min-width: 600px;
+        img {
+          margin-left: -11%;
+        }
+      }
+
+      .section_8_text {
+        left: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .saffron_wrapper:not(.section_wrapper) {
+    .section_8 {
+      .section_8_img {
+        min-width: 500px;
+        img {
+          margin-left: -12%;
+        }
+      }
+
+      .section_8_text {
+        bottom: 5px;
+      }
+    }
+
+    .section_10_container {
+      padding-bottom: 5px;
+      .inquire_card {
+        padding: 20px 0;
+        min-width: unset;
+        width: 98%;
+      }
+
+      .back_marque {
+        top: 10px;
+        transform: translateY(0);
+      }
+    }
+  }
+}

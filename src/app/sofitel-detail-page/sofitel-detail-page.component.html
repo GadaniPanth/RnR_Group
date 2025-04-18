@@ -235,7 +235,7 @@
                 </div>
             </div>
             <div class="right_div">
-                <ul class="list">
+                <!-- <ul class="list">
                     <li>
                         <div class="text">
                             <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
@@ -386,13 +386,67 @@
                             </svg>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="sec-5-grid flex-gap-medium accordion">
+                    <div class="accordion-item" *ngFor="let section of sections; let i = index"
+                        [class.open]="section.isOpen">
+                        <div class="accordion-header" (click)="toggleSection(i)">
+                            <span class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
+                                data-wow-duration="1s">{{ section.title }}</span>
+                            <img class="icon"
+                                [src]="section.isOpen ? 'assets/images/home-saffron_sec-wrap/minus.svg' : 'assets/images/home-saffron_sec-wrap/plus (1).svg'"
+                                alt="toggle" />
+                        </div>
+
+                        <ul class="accordion-body" [style.maxHeight]="section.isOpen ? '200px' : '0px'">
+                            <li class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">{{
+                                section.content }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Swiper Here -->
-    <!-- <section class="section_5"></section> -->
+    <section class="section_5">
+        <div class="head relative">
+            <h1 class="font_120 bigilla wow fadeInLeft bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                L<span> uxury <span>Personified</span> </span>
+            </h1>
+            <h1 class="font_360 bigilla wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">L
+                <span>uxury</span>
+            </h1>
+            <div class="swiper-button-container wow fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                <div class="custom-swiper-button custom-swiper-button-prev" #prevBtn>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.00066 16.2102L8.00066 7.79019C8.00018 7.45778 8.09385 7.13202 8.27082 6.85064C8.44779 6.56925 8.70084 6.34373 9.00066 6.20019C9.3564 6.03216 9.75219 5.96744 10.1429 6.01341C10.5337 6.05938 10.9036 6.21419 11.2107 6.46019L16.3107 10.6702C16.5013 10.8354 16.6542 11.0397 16.759 11.2691C16.8637 11.4986 16.918 11.7479 16.918 12.0002C16.918 12.2525 16.8637 12.5018 16.759 12.7312C16.6542 12.9607 16.5013 13.165 16.3107 13.3302L11.2107 17.5402C10.9036 17.7862 10.5337 17.941 10.1429 17.987C9.75219 18.0329 9.3564 17.9682 9.00066 17.8002C8.70084 17.6566 8.44779 17.4311 8.27082 17.1497C8.09385 16.8684 8.00018 16.5426 8.00066 16.2102Z"
+                            fill="#9A6C3A" />
+                    </svg>
+                </div>
+                <div class="custom-swiper-button custom-swiper-button-next" #nextBtn>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.00066 16.2102L8.00066 7.79019C8.00018 7.45778 8.09385 7.13202 8.27082 6.85064C8.44779 6.56925 8.70084 6.34373 9.00066 6.20019C9.3564 6.03216 9.75219 5.96744 10.1429 6.01341C10.5337 6.05938 10.9036 6.21419 11.2107 6.46019L16.3107 10.6702C16.5013 10.8354 16.6542 11.0397 16.759 11.2691C16.8637 11.4986 16.918 11.7479 16.918 12.0002C16.918 12.2525 16.8637 12.5018 16.759 12.7312C16.6542 12.9607 16.5013 13.165 16.3107 13.3302L11.2107 17.5402C10.9036 17.7862 10.5337 17.941 10.1429 17.987C9.75219 18.0329 9.3564 17.9682 9.00066 17.8002C8.70084 17.6566 8.44779 17.4311 8.27082 17.1497C8.09385 16.8684 8.00018 16.5426 8.00066 16.2102Z"
+                            fill="#9A6C3A" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- #DFC6A3 -->
+
+        <div class="swiper-container relative wow bounceInRight" data-wow-delay=".5s" data-wow-duration="1.5s"
+            #swiperContainer>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img1.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png" /></div>
+                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png" /></div>
+            </div>
+        </div>
+    </section>
 
     <section class="section_6 sec_bg_pink">
         <div class="section_6_grid grid_95">
@@ -498,11 +552,12 @@
                     <h1 class="font_360 bigilla wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">Pulse</h1>
                 </div>
                 <div class="bottom_div">
-                    <ul class="list">
+                    <!-- <ul class="list">
                         <li>
                             <div class="text">
                                 <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
-                                    data-wow-duration="1s">Recreation</p>
+                                    data-wow-duration="1s">
+                                    Recreation</p>
                             </div>
                             <div class="svg wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -519,7 +574,8 @@
                         <li>
                             <div class="text">
                                 <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
-                                    data-wow-duration="1s">Hospitals</p>
+                                    data-wow-duration="1s">
+                                    Hospitals</p>
                             </div>
                             <div class="svg wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -536,7 +592,8 @@
                         <li>
                             <div class="text">
                                 <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
-                                    data-wow-duration="1s">Schools</p>
+                                    data-wow-duration="1s">
+                                    Schools</p>
                             </div>
                             <div class="svg wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -553,7 +610,8 @@
                         <li class="active">
                             <div class="text">
                                 <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
-                                    data-wow-duration="1s">Temples</p>
+                                    data-wow-duration="1s">
+                                    Temples</p>
                             </div>
                             <div class="svg wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -583,7 +641,8 @@
                         <li>
                             <div class="text">
                                 <p class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
-                                    data-wow-duration="1s">Daily Essentials</p>
+                                    data-wow-duration="1s">
+                                    Daily Essentials</p>
                             </div>
                             <div class="svg wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -597,7 +656,26 @@
                                 </svg>
                             </div>
                         </li>
-                    </ul>
+                    </ul> -->
+
+                    <div class="sec-5-grid flex-gap-medium accordion">
+                        <div class="accordion-item" *ngFor="let section of sections; let i = index"
+                            [class.open]="section.isOpen">
+                            <div class="accordion-header" (click)="toggleSection(i)">
+                                <span class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
+                                    data-wow-duration="1s">{{ section.title }}</span>
+                                <img class="icon"
+                                    [src]="section.isOpen ? 'assets/images/home-saffron_sec-wrap/minus.svg' : 'assets/images/home-saffron_sec-wrap/plus (1).svg'"
+                                    alt="toggle" />
+                            </div>
+
+                            <ul class="accordion-body" [style.maxHeight]="section.isOpen ? '200px' : '0px'">
+                                <li class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
+                                    data-wow-duration="1s">{{
+                                    section.content }}</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="right_div">

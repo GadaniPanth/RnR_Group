@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { title } from 'process';
 import { SofitelDetailPageComponent } from './sofitel-detail-page/sofitel-detail-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SaffronDetailPageComponent } from './saffron-detail-page/saffron-detail-page.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,11 @@ const routes: Routes = [
     path: 'sofitel',
     component: SofitelDetailPageComponent,
     data: { title: 'Rehvassa Sofitel' }
+  },
+  {
+    path: 'saffron',
+    component: SaffronDetailPageComponent,
+    data: { title: 'Rehvassa Saffron' }
   }
 ];
 

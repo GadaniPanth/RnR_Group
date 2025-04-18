@@ -99,6 +99,18 @@
   animation-name: slide_right;
 }
 
+.section-1-image {
+  transform: scale(0.5) translateY(0);
+  transform-origin: bottom;
+  transition: all 1s ease;
+}
+
+.section-1-image.active {
+  transform: scale(1) translateY(-50%);
+  transform-origin: bottom;
+  transition: all 1s ease;
+}
+
 .rehvassa_wrapper h1,
 .rehvassa_wrapper h2,
 .rehvassa_wrapper h3,
@@ -439,8 +451,13 @@ h3.abs-since {
 }
 
 .section-1-image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  margin: 0;
+  padding: 0;
   height: 600px;
-  width: 520px;
+  width: 90%;
 }
 
 .section-2,
@@ -596,7 +613,7 @@ a {
 }
 
 .section-6 {
-  background-image: url("../../assets/images/home_page/whychoose-sec-bg.png");
+  background-image: url("../../assets/images/home-saffron_sec-wrap/whychoose-sec-bg.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -681,7 +698,20 @@ a p:hover {
   display: block;
 }
 
-/* Respomsive */
+.swiper-wrapper {
+  width: 100%;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .swiper-slide {
+    width: calc(100% / 5);
+  }
+}
+
+/* Responsive */
 
 @media only screen and (max-width: 1680px) {
 }
@@ -1083,6 +1113,10 @@ a p:hover {
   }
   .mt-100 {
     margin-top: 20px;
+  }
+
+  .swiper-wrapper .swiper-slide {
+    width: 85%;
   }
 }
 
