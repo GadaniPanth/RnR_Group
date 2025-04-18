@@ -1,0 +1,125 @@
+<div class="saffron_wrapper">
+    <div class="navbar sticky">
+        <ul>
+            <li class="menu"><a href="">
+                    <h2 class="font_16 general_sans menu_text">menu</h2>
+                    <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
+                </a></li>
+            <li class="rnr_logo">
+                <img src="assets/images/Group 503 1.svg" alt="">
+            </li>
+            <li class="inquire_btn relative">
+                <p class="font_16 general_sans">Inquire Now</p>
+                <span class="arrow_svg">
+                    <svg class="arrow_svg" width="22" height="13" viewBox="0 0 22 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <section class="section-3 relative section-padding">
+        <div class="main_container">
+            <div class="sec-3-grid">
+                <div class="inner-flex flex-gap-big">
+                    <div class="section-content">
+                        <p class="white-color">Building Amenities</p>
+                        <h3 class="white-color billa-font font-80 font-weight200">Designed for <br class="hidden-xs">
+                            livable communities
+                        </h3>
+                    </div>
+                    <div class="section-paragraph">
+                        <p class="white-color">At Saffron,
+                            we believe that true luxury lies in the details. Our world-class amenities are designed to
+                            enhance your lifestyle and provide you with the ultimate living experience.</p>
+                    </div>
+                </div>
+                <div class="relative">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-4 relative section-padding">
+        <div class="main_container">
+            <div class="sticky-bg">
+                <h1 class="txt-center billa-font">
+                    Beauty and elegance <br>
+                    of saffron
+                </h1>
+            </div>
+            <div class="sticky-img relative">
+                <a href="#">
+                    <img src="assets/images/stickyimg01.png" alt="">
+                </a>
+            </div>
+            <div class="sticky-img relative">
+                <a href="#">
+                    <img src="assets/images/stickyimg02.png" alt="">
+                </a>
+            </div>
+            <div class="sticky-img relative">
+                <a href="#">
+                    <img src="assets/images/stickyimg03.png" alt="">
+                </a>
+            </div>
+            <div class="sticky-img relative">
+                <a href="#">
+                    <img src="assets/images/stickyimg01.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-5 relative section-padding">
+        <div class="main_container">
+            <div class="mini-section-padding pb0">
+                <div class="flex-row relative flex-gap-medium j-c-spb">
+                    <div class="section-5-title">
+                        <h2><span class="white-color billa-font font-title" style="padding-left: 4rem;">Highest
+                                standards</span></h2>
+                        <h2 class="white-color billa-font font-title">of quality and</h2>
+                        <h2 class="white-color billa-font font-title">craftsmanship</h2>
+                    </div>
+                    <div class="section-5-second section-padding-right wfc inner-flex">
+                        <div class="section-content">
+                            <p class="white-color">Building Amenities</p>
+                        </div>
+                        <div class="section-paragraph">
+                            <p class="white-color">
+                                Every element of our residences is <br class="hidden-xs">
+                                carefully selected to ensure durabilit , <br class="hidden-xs">
+                                comfort, and aesthetic appeal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mini-section-padding pt0 inner-flex flex-gap-medium sec-5-img">
+            <div class="img-5">
+                <img src="assets/images/craftsmanship.png" alt="">
+            </div>
+            <div class="sec-5-grid flex-gap-medium">
+                <!-- <div class="accordion"> -->
+                <div *ngFor="let section of sections; let i = index" class="accordion-item">
+                    <button (click)="toggleContent(i)" class="accordion-header" [attr.id]="'accordion-' + i">
+                        <span class="accordion-title">{{ section.title }}</span>
+                        <span class="accordion-icon">{{ section.isOpen ? '-' : '+' }}</span>
+                    </button>
+                    <div *ngIf="section.isOpen" class="accordion-body" [attr.id]="'content-' + i">
+                        <div class="content">
+                            {{ section.content }}
+                        </div>
+                    </div>  
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+    </section>
+</div>

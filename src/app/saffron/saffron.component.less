@@ -1,0 +1,431 @@
+.saffron_wrapper img {
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+}
+.saffron_wrapper h1,
+.saffron_wrapper h2,
+.saffron_wrapper h3,
+.saffron_wrapper h4,
+.saffron_wrapper h5,
+.saffron_wrapper h6,
+.saffron_wrapper p {
+    margin: 0;
+    padding: 0;
+    color: "#colorcode used for fonts";
+}
+
+.saffron_wrapper .banner_section {
+    overflow: hidden;
+}
+
+.saffron_wrapper .vcenter {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+    margin: 0 -1px;
+}
+
+.saffron_wrapper .vtop {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    margin: 0 -1px;
+}
+
+.saffron_wrapper .relative {
+    position: relative;
+}
+
+.saffron_wrapper .section-padding {
+    padding: 110px 0;
+}
+
+.saffron_wrapper .section-padding-right {
+    padding-right: 160px;
+}
+
+.saffron_wrapper .mini-section-padding {
+    padding: 70px 0;
+}
+
+.saffron_wrapper .section-padding-bottom {
+    padding-bottom: 110px;
+}
+
+.pb0 {
+    padding-bottom: 0 !important;
+}
+
+.pt0 {
+    padding-top: 0 !important;
+}
+
+.saffron_wrapper .saffron_container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.saffron_wrapper .main_container {
+    // width: 1760px;
+    width: 91%;
+    margin: 0 auto;
+}
+
+.saffron_wrapper .font-75 {
+    font-size: 75px;
+}
+
+.saffron_wrapper .font-48 {
+    font-size: 48px;
+}
+
+.saffron_wrapper .font-34 {
+    font-size: 34px;
+}
+
+.saffron_wrapper .font-20 {
+    font-size: 20px;
+}
+
+.saffron_wrapper .font-16 {
+    font-size: 16px;
+}
+
+.saffron_wrapper .font-18 {
+    font-size: 18px;
+}
+
+.saffron_wrapper .font-24 {
+    font-size: 24px;
+}
+
+.saffron_wrapper .font-32 {
+    font-size: 32px;
+}
+
+.saffron_wrapper .font-80 {
+    font-size: 80px;
+}
+
+.saffron_wrapper .icons {
+    width: calc(100% / 8);
+    display: inline-block;
+    float: none;
+    margin: 0 -2px;
+    vertical-align: top;
+    padding: 0px 0;
+}
+
+.saffron_wrapper .icon_img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.saffron_wrapper .icon_text {
+    padding-top: 30px;
+    font-family: "Rubik-Light";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mtb0 {
+    margin: 0 auto;
+}
+
+.white-color {
+    color: white;
+}
+
+.black-color {
+    color: black;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.inner-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.flex-gap-medium {
+    gap: 48px;
+}
+
+.j-c-end {
+    justify-content: end;
+}
+
+.j-c-c {
+    justify-content: center;
+}
+
+.j-c-spb {
+    justify-content: space-between;
+}
+
+.flex-gap-small {
+    gap: 24px;
+}
+
+.flex-gap-big {
+    gap: 96px;
+}
+
+.gap-16 {
+    gap: 16px;
+}
+
+.gap0 {
+    gap: 0 !important;
+}
+
+.font-title {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.section-paragraph {
+    font-size: 1.5rem;
+}
+
+.alc {
+    align-items: center;
+}
+
+.line-height {
+    line-height: 1.5rem;
+}
+
+.mt-100 {
+    margin-top: 150px;
+}
+
+.mb-100 {
+    margin-bottom: 150px;
+}
+
+.font-weight100 {
+    font-weight: 100;
+}
+
+.font-weight200 {
+    font-weight: 200;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.section-padding-web {
+    padding: 4rem 0;
+}
+
+.wfc {
+    width: fit-content;
+}
+
+.mlauto {
+    margin-left: auto;
+}
+
+.border-radius-16 {
+    border-radius: 16px;
+}
+
+
+// Navbar
+
+
+@text-blue: #213b74;
+@text-white: #ffffff;
+@bg-orange: #ec614a;
+@bg-white: #ffffff;
+@bg-transparent: transparent;
+
+.navbar {
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    background-color: @bg-white;
+    position: sticky;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+}
+
+.navbar li {
+    width: 150px;
+}
+
+.navbar ul li:first-of-type a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @text-blue;
+}
+
+.navbar .menu_btn {
+    display: none;
+}
+
+.navbar .rnr_logo {
+    width: 100px;
+}
+
+.navbar .inquire_btn {
+    background-color: @bg-orange;
+    color: @text-white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: solid 1px transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    justify-content: center;
+    width: fit-content;
+
+    &:hover {
+        background-color: @bg-white;
+        border: solid 1px @bg-orange;
+        color: @bg-orange;
+    }
+}
+
+.navbar .inquire_btn .arrow_svg {
+    width: 20px;
+    right: 0;
+    top: 0;
+}
+
+
+// Section 3 
+
+.sec-3-grid {
+    display: grid;
+    grid-template-columns: calc(40% - 2rem) calc(60% - 3rem);
+    gap: 6rem;
+}
+
+.section-3,
+.section-5 {
+    background-color: #24262B;
+}
+
+
+
+// Section 4
+
+.sticky-bg {
+
+    position: sticky;
+    top: 20%;
+    height: 100svh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    h1 {
+        font-size: 12.5rem;
+        color: #E3E1DE;
+    }
+}
+
+.sticky-img {
+    margin-bottom: 7.5rem;
+    width: 55%;
+}
+
+.sticky-img:nth-child(odd) {
+    margin-left: auto;
+}
+
+// Section 5
+
+.sec-5-img{
+    margin: -2rem 0 0 auto;
+    width: 88%;
+}
+
+.sec-5-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-right: 5.3rem;
+}
+
+// accordion
+
+// Width variables (appears count calculates by raw css)
+@width0: 100%; // Appears 3 times
+
+
+.accordion {
+	margin: 0 auto;
+	max-width: @width0;
+}
+.accordion-item {
+	border-bottom: 1px solid #dddddd;
+	margin: 5px 0;
+	padding: 10px;
+}
+.accordion-header {
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	font-size: 14px;
+	font-size: 16px;
+	font-weight: bold;
+	justify-content: space-between;
+	padding: 10px;
+	padding: 8px;
+	text-align: left;
+    color: white;
+	width: @width0;
+}
+.accordion-title {
+	flex-grow: 1;
+}
+.accordion-icon {
+	font-size: 20px;
+	font-weight: bold;
+}
+.accordion-body {
+	background-color: transparent;
+    color: white;
+	display: block;
+	max-height: 1000px;
+	max-height: 120px;
+	overflow-y: auto;
+	padding: 10px;
+	transition: max-height 0.3s ease-in-out;
+}
+.content {
+	display: block;
+	height: auto;
+	height: auto;
+	padding: 10px 0;
+}
