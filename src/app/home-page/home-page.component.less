@@ -99,17 +99,19 @@
   animation-name: slide_right;
 }
 
-.section-1-image {
-  transform: scale(0.5) translateY(0);
-  transform-origin: bottom;
-  transition: all 1s ease;
-}
+// .section-1-image {
+//   transform: scale(0.5) translateY(0);
+//   transform-origin: bottom;
+//   transition: all 1s ease;
+// }
 
-.section-1-image.active {
-  transform: scale(1) translateY(-50%);
-  transform-origin: bottom;
-  transition: all 1s ease;
-}
+// .section-1-image.active {
+//   transform: scale(1) translateY(-50%);
+//   transform-origin: bottom;
+//   transition: all 1s ease;
+// }
+
+
 
 .rehvassa_wrapper h1,
 .rehvassa_wrapper h2,
@@ -145,9 +147,6 @@
   position: relative;
 }
 
-// .rehvassa_wrapper {
-//     background-color: "#color code used for background";
-// }
 
 .rehvassa_wrapper .section-padding {
   padding: 110px 0;
@@ -417,22 +416,20 @@ body {
 // }
 
 h1.gradient-color {
-  background: linear-gradient(
-    90deg,
-    rgba(42, 54, 137, 1) 0%,
-    rgba(74, 49, 137, 1) 9%,
-    rgba(111, 43, 138, 1) 20%,
-    rgba(125, 41, 138, 1) 25%,
-    rgba(191, 28, 124, 1) 41%,
-    rgba(233, 21, 96, 1) 53%,
-    rgba(241, 86, 70, 1) 61%,
-    rgba(237, 56, 82, 1) 68%,
-    rgba(246, 136, 39, 1) 85%,
-    rgba(244, 186, 25, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(42, 54, 137, 1) 0%,
+      rgba(74, 49, 137, 1) 9%,
+      rgba(111, 43, 138, 1) 20%,
+      rgba(125, 41, 138, 1) 25%,
+      rgba(191, 28, 124, 1) 41%,
+      rgba(233, 21, 96, 1) 53%,
+      rgba(241, 86, 70, 1) 61%,
+      rgba(237, 56, 82, 1) 68%,
+      rgba(246, 136, 39, 1) 85%,
+      rgba(244, 186, 25, 1) 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 380px;
+  font-size: 350px;
   text-align: center;
 }
 
@@ -447,18 +444,90 @@ h3.abs-since {
 }
 
 .section-1 {
-  height: 120vh;
+  height: 140vh;
 }
 
-.section-1-image {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  height: 600px;
-  width: 90%;
+.sec-1-text {
+  top: 10%;
+  position: sticky;
+  // padding-bottom: 10%;
 }
+
+.sec-1-img {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  transform: scale(0.40);
+  transform-origin: bottom;
+  transition: all 1s ease;
+
+}
+
+.sec-1-img.active {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: all 1s ease;
+}
+
+.sec-1-img img {
+  width: 100%;
+  display: block;
+}
+
+.white-text h1,
+.white-text h3 {
+  color: white !important;
+  -webkit-text-fill-color: unset;
+}
+
+.h140svh {
+  height: 140svh;
+  object-fit: cover;
+}
+
+.blackOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000048;
+  z-index: 5;
+}
+
+.sofitel-home-main-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  .bannerImg2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: scale(0.4);
+    transform-origin: bottom;
+    transition: all 1s ease;
+
+    &.active {
+      transform: scale(1);
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+// .section-1-image {
+//   position: absolute;
+//   z-index: -1;
+//   top: 0;
+//   margin: 0;
+//   padding: 0;
+//   height: 600px;
+//   width: 90%;
+// }
 
 .section-2,
 .section-3,
@@ -534,11 +603,9 @@ p.color-orange {
 // }
 
 .banner-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.96) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.96) 100%);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -713,14 +780,11 @@ a p:hover {
 
 /* Responsive */
 
-@media only screen and (max-width: 1680px) {
-}
+@media only screen and (max-width: 1680px) {}
 
-@media only screen and (max-width: 1450px) {
-}
+@media only screen and (max-width: 1450px) {}
 
-@media only screen and (max-width: 1440px) {
-}
+@media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1366px) {
   h1.gradient-color {
@@ -1108,9 +1172,11 @@ a p:hover {
     gap: 20px;
     text-align: center;
   }
+
   .social-media {
     text-align: center;
   }
+
   .mt-100 {
     margin-top: 20px;
   }
@@ -1187,8 +1253,6 @@ a p:hover {
   }
 }
 
-@media only screen and (max-width: 400px) {
-}
+@media only screen and (max-width: 400px) {}
 
-@media only screen and (max-width: 375px) {
-}
+@media only screen and (max-width: 375px) {}
