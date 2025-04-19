@@ -7,12 +7,30 @@ import { Component, OnInit } from "@angular/core";
 })
 export class SaffronComponent implements OnInit {
   tabs = [
-    { title: "Ground Floor", image: "assets/images/groundFloor.png" },
-    { title: "First Floor", image: "assets/images/fristfloor.png" },
-    { title: "Second Floor", image: "assets/images/secondfloor (1).png" },
-    { title: "2 BHK", image: "assets/images/2bhk-type-01.png" },
-    { title: "3 BHK", image: "assets/images/2bhk-type-03.png" },
-    { title: "Typical Floor Plan", image: "assets/images/typicalfloor.png" },
+    {
+      title: "Ground Floor",
+      image: "assets/images/home-saffron_sec-wrap/groundFloor.png",
+    },
+    {
+      title: "First Floor",
+      image: "assets/images/home-saffron_sec-wrap/fristfloor.png",
+    },
+    {
+      title: "Second Floor",
+      image: "assets/images/home-saffron_sec-wrap/secondfloor (1).png",
+    },
+    {
+      title: "2 BHK",
+      image: "assets/images/home-saffron_sec-wrap/2bhk-type-01.png",
+    },
+    {
+      title: "3 BHK",
+      image: "assets/images/home-saffron_sec-wrap/2bhk-type-03.png",
+    },
+    {
+      title: "Typical Floor Plan",
+      image: "assets/images/home-saffron_sec-wrap/typicalfloor.png",
+    },
   ];
 
   sections = [
@@ -83,34 +101,33 @@ export class SaffronComponent implements OnInit {
       label: "Ample Parking",
       src: "assets/images/senoiur_citizen_sitting (1).png",
     },
+    {
+      label: "Ample Parking",
+      src: "assets/images/senoiur_citizen_sitting (1).png",
+    },
   ];
-  
+
   constructor() {}
   ngOnInit() {}
 
   selectedTabIndex = 0;
+  selectedIndex = 0;
 
   // selectTab(index: number): void {
   //   this.selectedTabIndex = index;
   // }
-
-  selectedIndex = 0;
 
   selectTab(index: number) {
     this.selectedIndex = index;
     this.selectedTabIndex = index;
   }
 
-  toggleSection(index: number): void {
-    this.sections[index].isOpen = !this.sections[index].isOpen;
-  }
-
   // toggleSection(index: number): void {
-  //   this.sections = this.sections.map((section, i) => {
-  //     return {
-  //       ...section,
-  //       isOpen: i === index ? !section.isOpen : false
-  //     };
-  //   });
+  //   this.sections[index].isOpen = !this.sections[index].isOpen;
   // }
+  toggleSection(index: number): void {
+    this.sections.forEach((section, i) => {
+      section.isOpen = i === index ? !section.isOpen : false;
+    });
+  }
 }

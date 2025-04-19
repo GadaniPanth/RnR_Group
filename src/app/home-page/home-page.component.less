@@ -472,6 +472,7 @@ h3.abs-since {
 .sec-1-img img {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .white-text h1,
@@ -1107,6 +1108,36 @@ a p:hover {
     display: none;
   }
 
+  .sec-1-text {
+    position: relative;
+    top: 25%;
+    left: unset;
+  }
+
+  .sec-1-img {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    transform: scale(1);
+    transform-origin: bottom;
+    transition: all 1s ease;
+  }
+
+
+  h1.gradient-color {
+    font-size: 115px;
+    -webkit-text-fill-color: white;
+
+  }
+
+  h3.abs-since {
+    font-size: 23px;
+    font-weight: 500;
+    top: 50%;
+    left: 2%;
+    color: white;
+  }
+
   .flex-gap-big {
     gap: 50px;
   }
@@ -1158,6 +1189,12 @@ a p:hover {
     width: fit-content;
   }
 
+  .grid-three-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: unset;
+  }
+
   // .inner-flex {
   //     display: flex;
   //     flex-direction: column;
@@ -1206,11 +1243,7 @@ a p:hover {
     text-align: center;
   }
 
-  .grid-three-box {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    place-items: unset;
-  }
+
 
   .flex-column {
     flex-direction: column;
@@ -1221,15 +1254,15 @@ a p:hover {
     height: 55svh;
   }
 
-  h1.gradient-color {
-    font-size: 100px;
-  }
+  // h1.gradient-color {
+  //   font-size: 75px;
+  // }
 
   h3.abs-since {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     top: 46%;
-    left: 2%;
+    left: -2%;
   }
 
   .mb-100 {

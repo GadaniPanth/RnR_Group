@@ -4,6 +4,122 @@
 @bg-white: #ffffff;
 @bg-transparent: transparent;
 
+
+.mtb0 {
+  margin: 0 auto;
+}
+
+.white-color {
+  color: white;
+}
+
+.black-color {
+  color: black;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.inner-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flex-gap-medium {
+  gap: 48px;
+}
+
+.j-c-end {
+  justify-content: end;
+}
+
+.j-c-c {
+  justify-content: center;
+}
+
+.j-c-spb {
+  justify-content: space-between;
+}
+
+.flex-gap-small {
+  gap: 24px;
+}
+
+.flex-gap-big {
+  gap: 96px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap0 {
+  gap: 0 !important;
+}
+
+.font-title {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.section-paragraph {
+  font-size: 1.5rem;
+}
+
+.alc {
+  align-items: center;
+}
+
+.line-height {
+  line-height: 1.5rem;
+}
+
+.mt-100 {
+  margin-top: 150px;
+}
+
+.mb-100 {
+  margin-bottom: 150px;
+}
+
+.font-weight100 {
+  font-weight: 100;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.section-padding-web {
+  padding: 4rem 0;
+}
+
+.wfc {
+  width: fit-content;
+}
+
+.mlauto {
+  margin-left: auto;
+}
+
+.border-radius-16 {
+  border-radius: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
 .navbar {
   width: 100%;
   top: 0;
@@ -109,17 +225,34 @@ a p:hover {
 }
 
 .footer-icon-map {
-  width: 60px;
+  width: 80px;
 }
 
 .hidden-xs {
   display: block;
 }
 
-@media only screen and (max-width: 1366px) {
+
+@media only screen and (max-width: 1152px) {
+
+  .footer-logo {
+    width: 7rem;
+  }
+
+  .footer-icon-map {
+    width: 106px;
+  }
+
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1366px) {}
+
+@media only screen and (max-width: 1280px) {}
+
+@media only screen and (max-width: 1024px) {
+  .footer-grid {
+    padding: 3rem 0;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -131,9 +264,11 @@ a p:hover {
   .navbar .menu_text {
     display: none;
   }
+
   .navbar li.menu {
     width: fit-content;
   }
+
   .navbar .menu_btn {
     display: block;
     font-size: 26px;
@@ -143,4 +278,56 @@ a p:hover {
   .navbar .inquire_btn {
     display: none;
   }
+
+
+  .footer-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    width: 6rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+
+  .flex-gap-small {
+    gap: 6px;
+  }
+
+  .footer-icon-map {
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hidden-xs {
+    display: none;
+  }
+
+
+
+  .w70 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flex-column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .mb-100 {
+    margin-bottom: 15px;
+  }
+
+  .flex-gap-medium {
+    gap: 20px;
+  }
+
+
 }

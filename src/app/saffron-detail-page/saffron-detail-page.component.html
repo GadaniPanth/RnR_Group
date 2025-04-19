@@ -1,8 +1,8 @@
 <div class="saffron_wrapper">
 
-    <section class="section_1 z-20 relative">
+    <section class="section_1 z-20 relative ovxhidden">
         <div class="saffron_bg">
-            <img src="assets/images/saffron_detail_page/sec1_bg.png" alt="">
+            <img src="assets/images/saffron_detail_page/sec1_bg.png" alt="saffron_detail">
         </div>
         <div class="section_1_text">
             <div class="section_1_bottom_div">
@@ -14,7 +14,7 @@
                     <div class="svg_text_flex d_flex">
                         <div class="svg_text">
                             <div class="svg">
-                                <img src="assets/images/saffron_detail_page/sec1_location_svg.svg" alt="">
+                                <img src="assets/images/saffron_detail_page/sec1_location_svg.svg" alt="saffron_detail">
                             </div>
                             <div class="text_div">
                                 <p class="font_64 bigilla">Nana Chiloda</p>
@@ -247,7 +247,7 @@
                             <div class="tab-panel">
                                 <div class="tab-list">
                                     <div *ngFor="let tab of tabs; let i = index" class="tab-item"
-                                        [class.active]="i === selectedTabIndex" (click)="selectTab(i)">
+                                        [class.active]=" i === selectedTabIndex" (click)="selectTab(i)">
                                         <p style="width: max-content;">
                                             {{ tab.title }}
                                         </p>
@@ -273,7 +273,7 @@
         </section>
     </div>
 
-    <section class="section_8 z-20 relative">
+    <section class="section_8 z-20 relative ovxhidden">
         <div class="section_8_img wow fadeIn" data-wow-delay=".3s" data-wow-duration="1s">
             <img src="assets/images/saffron_detail_page/sec8_bg.png" alt="">
         </div>
@@ -289,7 +289,7 @@
             <div class="relative inner-flex flex-gap-medium">
                 <div class="relative sec-9-img pb0">
                     <div class="relative section-padding-web">
-                        <img src="assets/images/home-saffron_sec-wrap/sec9_bulding.png" alt="">
+                        <img src="assets/images/home-saffron_sec-wrap/sec9_bulding.png" alt="" class="mobile-height">
                         <div class="arrow-rotate">
                             <a href="#">
                                 <div class="relative">
@@ -646,7 +646,7 @@
         </div>
     </section>
 
-    <footer>
+    <!-- <footer>
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="inner-flex flex-gap-medium">
@@ -736,5 +736,5 @@
                 <p class="font-18">Powerd By : REECOSYS</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
 </div>
