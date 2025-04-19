@@ -1,12 +1,18 @@
 <div class="rehvassa_wrapper">
   <div class="navbar sticky">
     <ul>
-      <li class="menu">
-        <h2 class="font_16 general_sans menu_text" (click)="!isMenuOpen">menu</h2>
-        <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
+      <li (click)="onMenuClick($event)">
+        <input type="checkbox" class="menu" id="menu" [checked]="isMenuOpen">
+        <label for="menu">
+          <h2 class="font_16 crp ">Menu</h2>
+        </label>
       </li>
+      <!-- <li class="menu" (click)="onMenuClick($event)">
+        <h2 class="font_16 general_sans menu_text">menu</h2>
+        <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
+      </li> -->
       <li class="rnr_logo">
-        <img src="assets/images/home_page/Group 503 1.svg" alt="">
+        <a routerLink="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
       </li>
       <li class="inquire_btn relative">
         <p class="font_16 general_sans">Inquire Now</p>
@@ -20,21 +26,115 @@
         </span>
       </li>
     </ul>
-    <div *ngIf="isMenuOpen" class="slider">
+    <div class="slider-overlay" [ngClass]="isMenuOpen ? 'show' : '' " (click)="onMenuClick($event)">
+    </div>
+    <div class="slider" [ngClass]="isMenuOpen ? 'open' : 'close'">
       <ul>
-        <li class="menu">
-          <h2 class="font_16 general_sans menu_btn" (click)="!isMenuOpen"><i class="ri-menu-close-line"></i></h2>
-        </li>
-        <li class="rnr_logo">
-          <img src="assets/images/home_page/Group 503 1.svg" alt="">
-        </li>
-      </ul>
-      <ul>
+        <li>
+          <div class="rnr_logo" (click)="onMenuClick($event)">
+            <a routerLink="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
+          </div>
+          <input type="checkbox" role="button" aria-label="Display the menu" class="menu menu_close"
+            (click)="onMenuClick($event)" [checked]="isMenuOpen">
 
+          <!-- <div class=" menu_close" (click)="onMenuClick($event)">
+          <h2 class="font_16 general_sans"><i class="ri-close-line"></i></h2>
+    </div> -->
+        </li>
+        <li>
+          <a routerLink="/" (click)="onMenuClick($event)">
+            <h2 class="font_48">Home</h2>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a>
+            <h2 class="font_48" (click)="toggleDropDown()">
+              Residential
+              <i class="ri-arrow-down-s-line" [ngClass]="isDropDownOpen ? 'rotate' : '' "></i>
+            </h2>
+          </a>
+        </li>
+        <li class="dropdown-content" [ngClass]="isDropDownOpen ? 'open' : 'close' ">
+          <div *ngFor="let item of ResidentialList">
+            <a [routerLink]="[item.navigate]" (click)="onMenuClick($event)">
+              <div class="dropdown_div">
+                <div class="left_img">
+                  <img [src]="item.image" [alt]='item.title'>
+                </div>
+                <div class="right_div">
+                  <div class="head">
+                    <h2 class="font_24 bigilla"> Rehvasa - {{ item.title }}</h2>
+                  </div>
+                  <div class="svg_div">
+                    <div class="svg_text">
+                      <div class="svg"><img src="assets/images/saffron_detail_page/sec1_location_svg.svg"
+                          alt="locationIcon"></div>
+                      <div class="text">
+                        <p class="font_20">{{ item.location }}</p>
+                      </div>
+                    </div>
+                    <div class="svg_text">
+                      <div class="svg"><img src="assets/images/sofitel_detail_page/sec1_home_svg.svg" alt="homeIcon">
+                      </div>
+                      <div class="text">
+                        <p class="font_20">{{ item.home_types }}</p>
+                      </div>
+                    </div>
+                    <div class="svg_text">
+                      <div class="svg_progerss" *ngIf="+item.percent < 100; else completed">
+                        <circle-progress [percent]="+item.percent" [radius]="100" [responsive]="true"
+                          [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#78C000'"
+                          [innerStrokeColor]="'#78C000'" [animation]="true" [titleColor]="'#ffffff'" [showUnits]="false"
+                          [showSubtitle]="false" [animationDuration]="1000" [titleFontSize]="100">
+                        </circle-progress>
+                      </div>
+                      <ng-template #completed>
+                        <div class="svg">
+                          <img src="assets/images/home-saffron_sec-wrap/building_white.svg" alt="buildingIcon">
+                        </div>
+                      </ng-template>
+                      <div class="text">
+                        <p class="font_20">{{ +item.percent < 100 ? 'Under Construction' : 'Completed' }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </li>
+        <li>
+          <a href="#" (click)="onMenuClick($event)">
+            <h2 class="font_48">About Us</h2>
+          </a>
+        </li>
+        <li>
+          <a href="#" (click)="onMenuClick($event)">
+            <h2 class="font_48">Channel Partner</h2>
+          </a>
+        </li>
+        <li>
+          <a href="#" (click)="onMenuClick($event)">
+            <h2 class="font_48">Career</h2>
+          </a>
+        </li>
+        <li>
+          <a href="#" (click)="onMenuClick($event)">
+            <h2 class="font_48">Contact</h2>
+          </a>
+        </li>
+        <li class="icons">
+          <a href="#"><i class="ri-phone-line"></i></a>
+          <a href="#"><i class="ri-mail-line"></i></a>
+          <a href="#"><i class="ri-map-pin-2-line"></i></a>
+        </li>
       </ul>
     </div>
   </div>
-  <router-outlet></router-outlet>
+  <div (click)="isMenuOpen ? onMenuClick($event) : return;" [ngClass]="isMenuOpen ? 'no-scroll' : '' ">
+    <router-outlet></router-outlet>
+  </div>
 
   <!-- <footer>
     <div class="footer-container">

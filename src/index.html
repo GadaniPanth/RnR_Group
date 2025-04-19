@@ -6,7 +6,7 @@
   <title>Rehvassa</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/images/R&R_group_logo.svg">
   <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
 </head>
 
@@ -17,38 +17,38 @@
     new WOW().init();
 
     document.addEventListener("DOMContentLoaded", function () {
-      const counters = document.querySelectorAll(".count-up");
-      const speed = 1000;
+      // const counters = document.querySelectorAll(".count-up");
+      // const speed = 1000;
 
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const updateCount = () => {
-              const target = +counter.getAttribute("data-target");
-              const count = +counter.innerText;
+      // const observer = new IntersectionObserver((entries, observer) => {
+      //   entries.forEach(entry => {
+      //     if (entry.isIntersecting) {
+      //       const counter = entry.target;
+      //       const updateCount = () => {
+      //         const target = +counter.getAttribute("data-target");
+      //         const count = +counter.innerText;
 
-              const increment = target / speed;
+      //         const increment = target / speed;
 
-              if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, (150 / count));
-              } else {
-                counter.innerText = target;
-              }
-            };
+      //         if (count < target) {
+      //           counter.innerText = Math.ceil(count + increment);
+      //           setTimeout(updateCount, (150 / count));
+      //         } else {
+      //           counter.innerText = target;
+      //         }
+      //       };
 
-            updateCount();
-            observer.unobserve(counter); // run only once
-          }
-        });
-      }, {
-        threshold: 1
-      });
+      //       updateCount();
+      //       observer.unobserve(counter); // run only once
+      //     }
+      //   });
+      // }, {
+      //   threshold: 1
+      // });
 
-      counters.forEach(counter => {
-        observer.observe(counter);
-      });
+      // counters.forEach(counter => {
+      //   observer.observe(counter);
+      // });
 
       const target = document.getElementById('rounded_animate');
       const fade_animation = document.getElementById('fade_animation');
@@ -69,21 +69,6 @@
       } else {
         console.warn('One or both elements not found');
       }
-
-      const banner = document.querySelector('.section-1-image');
-      if (banner) {
-        // console.log(banner)
-        // window.addEventListener('scroll', function () {
-
-        //   if (window.scrollY > 250) {
-        //     banner.classList.add('active')
-        //   } else {
-
-        //     banner.classList.remove('active')
-        //   }
-        // })
-      }
-
     });
   </script>
 </body>

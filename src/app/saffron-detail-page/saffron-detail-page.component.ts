@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-saffron-detail-page',
   templateUrl: './saffron-detail-page.component.html',
   styleUrls: ['./saffron-detail-page.component.less']
 })
-export class SaffronDetailPageComponent implements OnInit {
+export class SaffronDetailPageComponent implements AfterViewInit {
+
+  @ViewChild('roundedAnimate', { static: false }) roundedAnimate!: ElementRef;
+  @ViewChild('fadeAnimation', { static: false }) fadeAnimation!: ElementRef;
+
   tabs = [
     { title: "Ground Floor", image: "assets/images/home-saffron_sec-wrap/groundFloor.png" },
     { title: "First Floor", image: "assets/images/home-saffron_sec-wrap/fristfloor.png" },
@@ -13,7 +17,6 @@ export class SaffronDetailPageComponent implements OnInit {
     { title: "2 BHK", image: "assets/images/home-saffron_sec-wrap/2bhk-type-01.png" },
     { title: "3 BHK", image: "assets/images/home-saffron_sec-wrap/2bhk-type-03.png" },
     { title: "Typical Floor Plan", image: "assets/images/home-saffron_sec-wrap/typicalfloor.png" },
-
   ];
 
   sections = [
@@ -72,6 +75,7 @@ export class SaffronDetailPageComponent implements OnInit {
       isOpen: false,
     },
   ];
+
   images = [
     { label: "Block Entrance Foyer", src: "assets/images/home-saffron_sec-wrap/buliding02 (1).png" },
     { label: "Lawn Area", src: "assets/images/home-saffron_sec-wrap/Lawn_Area (1).png" },
@@ -83,21 +87,43 @@ export class SaffronDetailPageComponent implements OnInit {
     {
       label: "Ample Parking",
       src: "assets/images/home-saffron_sec-wrap/senoiur_citizen_sitting (1).png",
-    },
+    }
   ];
+
   constructor() { }
-  ngOnInit() { }
+  ngAfterViewInit() { }
 
   selectedTabIndex = 0;
+  selectedIndex = 0;
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const targetEl = this.roundedAnimate && this.roundedAnimate.nativeElement;
+    const fadeEl = this.fadeAnimation && this.fadeAnimation.nativeElement;
+
+    if (targetEl && fadeEl) {
+      const targetTop = targetEl.getBoundingClientRect().top;
+
+      if (targetTop >= 100) {
+        targetEl.style.borderRadius = '9999px';
+        fadeEl.style.opacity = '1';
+      } else {
+        targetEl.style.borderRadius = '0px';
+        fadeEl.style.opacity = '0';
+      }
+    }
+  }
 
   // selectTab(index: number): void {
   //   this.selectedTabIndex = index;
   // }
 
-  selectedIndex = 0;
 
-  selectTab(index: number) {
+  selectIn(index: number) {
     this.selectedIndex = index;
+  }
+
+  selectTabIn(index: number) {
     this.selectedTabIndex = index;
   }
 

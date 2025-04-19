@@ -100,21 +100,24 @@
 
     <section class="section_3 z-20 sec_bg_gray relative">
         <div class="bg_container">
-            <div id="rounded_animate" class="section_3_bg rounded">
+            <div #roundedAnimate id="rounded_animate" class="section_3_bg rounded">
                 <img src="assets/images/saffron_detail_page/Banner.png" alt="">
             </div>
         </div>
-        <div id="fade_animation" class="fade_animation_div">
+
+        <div #fadeAnimation id="fade_animation" class="fade_animation_div">
             <div class="section_3_content">
-                <p class="font_32 general_sans">Step into the world of Saffron with our exclusive <span
-                        class="text_bold">Walkthrough
-                        Video.</span> This immersive
-                    experience showcases the elegance and sophistication.</p>
+                <p class="font_32 general_sans">
+                    Step into the world of Saffron with our exclusive
+                    <span class="text_bold">Walkthrough Video.</span> This immersive experience showcases the elegance
+                    and sophistication.
+                </p>
             </div>
             <div class="saffron_logo">
                 <img src="assets/images/saffron_detail_page/Saffron_Logo_white.svg" alt="">
             </div>
         </div>
+
     </section>
 
     <div class="section_wrapper z-1">
@@ -141,7 +144,7 @@
                             <img [src]="images[selectedIndex].src" alt="Tab Image" />
                             <div class="tab-panel-1">
                                 <div class="tab" *ngFor="let img of images; let i = index"
-                                    [class.active]="i === selectedIndex" (click)="selectTab(i)">
+                                    [class.active]="i === selectedIndex" (click)="selectIn(i)">
                                     <p style="width: max-content;">
                                         {{ img.label }}
                                     </p>
@@ -247,7 +250,7 @@
                             <div class="tab-panel">
                                 <div class="tab-list">
                                     <div *ngFor="let tab of tabs; let i = index" class="tab-item"
-                                        [class.active]="i === selectedTabIndex" (click)="selectTab(i)">
+                                        [class.active]="i === selectedTabIndex" (click)="selectTabIn(i)">
                                         <p style="width: max-content;">
                                             {{ tab.title }}
                                         </p>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import Swiper, { Navigation } from 'swiper';
 
 @Component({
@@ -10,6 +10,8 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
   @ViewChild('nextBtn', { static: false }) nextBtn!: ElementRef;
   @ViewChild('prevBtn', { static: false }) prevBtn!: ElementRef;
+  @ViewChildren('countUp') counters!: QueryList<ElementRef>;
+  speed = 1000;
 
   ngAfterViewInit(): void {
     Swiper.use([Navigation]);
@@ -22,6 +24,36 @@ export class SofitelDetailPageComponent implements AfterViewInit {
         nextEl: this.nextBtn.nativeElement,
         prevEl: this.prevBtn.nativeElement
       }
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counterEl = entry.target as HTMLElement;
+          const target = +counterEl.getAttribute('data-target')!;
+          let count = 0;
+          const increment = target / this.speed;
+
+          const updateCount = () => {
+            count = +counterEl.innerText;
+            if (count < target) {
+              counterEl.innerText = `${Math.ceil(count + increment)}`;
+              setTimeout(updateCount, 150 / (count || 1));
+            } else {
+              counterEl.innerText = `${target}`;
+            }
+          };
+
+          updateCount();
+          observer.unobserve(counterEl); // run once
+        }
+      });
+    }, {
+      threshold: 0.6 // trigger when ~60% visible
+    });
+
+    this.counters.forEach(counter => {
+      observer.observe(counter.nativeElement);
     });
   }
 
@@ -85,5 +117,4 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   toggleSection(index: number): void {
     this.sections[index].isOpen = !this.sections[index].isOpen;
   }
-
 }
