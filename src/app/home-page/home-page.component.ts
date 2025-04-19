@@ -1,19 +1,32 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import Swiper from 'swiper';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from "@angular/core";
+import Swiper from "swiper";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.less']
+  selector: "app-home-page",
+  templateUrl: "./home-page.component.html",
+  styleUrls: ["./home-page.component.less"],
 })
 export class HomePageComponent implements AfterViewInit {
-  @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
+  @ViewChild("swiperContainer", { static: false }) swiperContainer!: ElementRef;
 
   ngAfterViewInit(): void {
     new Swiper(this.swiperContainer.nativeElement, {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       spaceBetween: 56,
       // freeMode: true,
     });
+  }
+
+  isActive = false;
+
+  @HostListener("window:scroll", [])
+  onWindowScroll(): void {
+    this.isActive = window.scrollY > 250;
   }
 }

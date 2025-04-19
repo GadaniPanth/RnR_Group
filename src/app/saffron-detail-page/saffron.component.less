@@ -13,7 +13,6 @@
 .saffron_wrapper .section_wrapper p {
   margin: 0;
   padding: 0;
-  color: "#colorcode used for fonts";
 }
 
 .saffron_wrapper .section_wrapper .banner_section {
@@ -141,6 +140,7 @@ body {
 .z-1 {
   z-index: 1;
 }
+
 .z-20 {
   z-index: 20;
 }
@@ -347,7 +347,7 @@ body {
   background-color: #24262b;
 }
 
-// Section 4
+// Section 5
 
 .sticky-bg {
   position: sticky;
@@ -374,7 +374,7 @@ body {
   margin-left: auto;
 }
 
-// Section 5
+// Section 6
 
 .sec-5-img {
   margin: -2rem 0 0 auto;
@@ -494,6 +494,14 @@ body {
 }
 
 //   Footer
+footer {
+  background-color: white;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
 
 .footer-container {
   width: 85%;
@@ -512,6 +520,7 @@ body {
 
 .footer-paragraph a {
   color: black;
+  text-decoration: none;
 }
 
 .footer-paragraph a:hover {
@@ -558,7 +567,7 @@ a p:hover {
     background-color: white;
     padding: 8px 12px;
     border-radius: 30px;
-    width: 70%;
+    width: 75%;
     padding: 9px 25px;
 
     .tab {
@@ -592,6 +601,8 @@ a p:hover {
     border: 1px solid #d9d9d9;
     border-radius: 20px;
     padding: 13px 25px;
+    overflow: scroll;
+    scrollbar-width: none;
 
     .tab-item {
       // padding: 16px 0;
@@ -621,11 +632,9 @@ a p:hover {
 
 //   Responsive
 
-@media only screen and (max-width: 1680px) {
-}
+@media only screen and (max-width: 1680px) {}
 
-@media only screen and (max-width: 1450px) {
-}
+@media only screen and (max-width: 1450px) {}
 
 @media only screen and (max-width: 1440px) {
   .font-title {
@@ -648,7 +657,24 @@ a p:hover {
     bottom: 40px;
     left: 50%;
     overflow: scroll;
+    scrollbar-width: none;
   }
+
+  .image-wrapper .tab-panel-1 {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 30px;
+    width: 95%;
+    padding: 9px 25px;
+  }
+
+
 
   .sticky-bg h1 {
     font-size: 10.5rem;
@@ -968,8 +994,9 @@ a p:hover {
   }
 
   .tab-panel .tab-list {
-    // width: 65%;
     overflow: scroll;
+    width: 100%;
+    scrollbar-width: none;
   }
 
   .saffron_wrapper .section_wrapper .main_container {

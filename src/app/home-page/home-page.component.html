@@ -2,18 +2,21 @@
 
 
 <div class="rehvassa_wrapper">
+    
     <section class="section-1 relative">
-        <div class="main_container">
-            <div class="center-text relative mtb0 wfc wow fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
-                <h1 class="gradient-color white-color txt-center general-font">1990</h1>
-                <h3 class="abs-since general-font">Since</h3>
+        <div class="sec-1-img" [class.active]="isActive">
+            <div class="w100">
+                <img src="assets/images/home_page/home2_bannerimg.png" alt="Banner" class="w100 h140svh">
             </div>
-            <div class="section-1-image mtb0">
-                <img src="assets/images/home-saffron_sec-wrap/Frame 401.png" alt="">
+            <div class="blackOverlay"></div>
+        </div>
+        <div class="sec-1-text inner-flex mtb0 wfc">
+            <div class="relative" [ngClass]="{ 'white-text': isActive }">
+                <h1 class="gradient-color txt-center general-font chronicle">1990</h1>
+                <h3 class="abs-since general-font">Since</h3>
             </div>
         </div>
     </section>
-
     <section class="section-2 section-padding">
         <div class="main_container">
             <div class="inner-flex flex-gap-big">
@@ -283,7 +286,7 @@
             </div>
         </div>
     </section>
-    <footer>
+    <!-- <footer>
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="inner-flex flex-gap-medium">
@@ -373,5 +376,5 @@
                 <p class=" font-18">Powerd By : REECOSYS</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
 </div>
