@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent {
   title = 'rehvassa';
 
   isMenuOpen: boolean = false;
-  isDropDownOpen: boolean = false;
+  isDropDownOpen: boolean = true;
 
   ResidentialList = [
     {
@@ -43,5 +44,11 @@ export class AppComponent {
 
   get constructionStatus(): string {
     return this.ResidentialList['percent'] < 100 ? 'Under Construction' : 'Completed';
+  }
+
+  constructor(private router: Router) { }
+
+  navigateInquire() {
+    this.router.navigate(['/inquire'])
   }
 }
