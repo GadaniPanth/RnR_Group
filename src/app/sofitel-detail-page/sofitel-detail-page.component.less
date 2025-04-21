@@ -17,6 +17,33 @@
   margin: 0 auto;
 }
 
+.sofitel_wrapper {
+  .font-16 {
+    font-size: 16px;
+  }
+  .font_18 {
+    font-size: 18px;
+  }
+  .font_20 {
+    font-size: 20px;
+  }
+  .font_48 {
+    font-size: 48px;
+  }
+  .font_64 {
+    font-size: 64px;
+  }
+  .font-120 {
+    font-size: 120px;
+  }
+  .font_200 {
+    font-size: 200px;
+  }
+  .font_360 {
+    font-size: 360px;
+  }
+}
+
 .section_1 {
   * {
     color: white;
@@ -34,7 +61,6 @@
     margin: 0 auto;
   }
 }
-
 
 .section_1_bottom_div .head {
   text-transform: uppercase;
@@ -71,6 +97,9 @@
   align-items: center;
   width: 100%;
   color: @text-browen;
+}
+.swiper-pagination-bullets {
+  visibility: hidden;
 }
 
 .section_2_content {
@@ -163,12 +192,7 @@
     color: @text-black;
   }
 
-  h1:first-of-type {
-    margin-left: -70px;
-  }
-
   h1:last-of-type {
-    margin-right: -130px;
     text-align: right;
   }
 }
@@ -388,7 +412,7 @@
   //   z-index: 1;
   // }
 
-  .font_120 {
+  .font-120 {
     font-family: bigilla_bold;
     line-height: 120px;
     margin-left: 58px;
@@ -432,6 +456,12 @@
       width: 24px;
       height: 24px;
     }
+  }
+
+  .custom-swiper-button.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   .custom-swiper-button-next::after,
@@ -541,7 +571,7 @@
 
   .right_div {
     z-index: 2;
-    .font_120 {
+    .font-120 {
       font-family: bigilla_bold;
       line-height: 120px;
     }
@@ -600,7 +630,7 @@
 
   .left_div {
     z-index: 2;
-    .font_120 {
+    .font-120 {
       font-family: bigilla_bold;
       line-height: 120px;
     }
@@ -900,20 +930,50 @@
   }
 }
 
-
-
 @media only screen and (max-width: 1440px) {
-  .section_4 {
-    .section_4_content {
-      .font_120 {
-        font-size: 80px;
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 80px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
+  .section_2_content {
+    .section_2_text .head {
+      line-height: 96px;
+    }
+  }
+
+  .section_3 {
+    .section_3_head {
+      .font_200 {
+        font-size: 135px;
       }
     }
   }
 
   .sofitel_wrapper .section_5 {
-    .font_120 {
-      font-size: 92px;
+    .font-120 {
       line-height: 82px;
     }
 
@@ -924,18 +984,10 @@
     }
   }
 
-  .section_6_grid {
-    .head {
-      .font_120 {
-        font-size: 80px;
-      }
-    }
-  }
-
   .sofitel_wrapper {
     .section_8_grid {
       .right_div {
-        .font_16 {
+        .font-16 {
           font-size: 12px;
         }
 
@@ -943,8 +995,7 @@
           font-size: 15px;
         }
 
-        .font_120 {
-          font-size: 92px;
+        .font-120 {
           line-height: 82px;
         }
 
@@ -966,8 +1017,7 @@
           font-size: 15px;
         }
 
-        .font_120 {
-          font-size: 92px;
+        .font-120 {
           line-height: 82px;
         }
 
@@ -982,7 +1032,7 @@
           width: 38%;
         }
 
-        .font_16 {
+        .font-16 {
           font-size: 12px;
         }
 
@@ -995,15 +1045,37 @@
 }
 
 @media only screen and (max-width: 1280px) {
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
   .section_2_content {
     grid-template-columns: 1fr 1fr;
     gap: 0;
     .section_2_text {
       .head {
         line-height: 85px;
-      }
-      .font_120 {
-        font-size: 85px;
+        padding-right: 106px;
       }
       .font_24 {
         font-size: 15px;
@@ -1029,7 +1101,7 @@
       font-size: 15px;
     }
 
-    .font_160 {
+    .font-160 {
       font-size: 113px;
     }
 
@@ -1073,8 +1145,7 @@
   }
 
   .sofitel_wrapper .section_5 {
-    .font_120 {
-      font-size: 72px;
+    .font-120 {
       line-height: 70px;
     }
 
@@ -1085,18 +1156,10 @@
     // }
   }
 
-  .section_6_grid {
-    .head {
-      .font_120 {
-        font-size: 60px;
-      }
-    }
-  }
-
   .sofitel_wrapper {
     .section_8_grid {
       .right_div {
-        .font_16 {
+        .font-16 {
           font-size: 10px;
         }
 
@@ -1104,8 +1167,7 @@
           font-size: 12px;
         }
 
-        .font_120 {
-          font-size: 72px;
+        .font-120 {
           line-height: 70px;
         }
 
@@ -1123,8 +1185,7 @@
           font-size: 12px;
         }
 
-        .font_120 {
-          font-size: 72px;
+        .font-120 {
           line-height: 70px;
         }
 
@@ -1146,7 +1207,7 @@
           padding: 9px 13px;
         }
 
-        .font_16 {
+        .font-16 {
           font-size: 10px;
         }
       }
@@ -1155,6 +1216,33 @@
 }
 
 @media only screen and (max-width: 1152px) {
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 62px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
   .accordion span {
     font-size: 13px;
   }
@@ -1164,10 +1252,38 @@
     height: 40px;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   .sofitel_wrapper .grid_95 {
     width: 98%;
     padding: 20px;
+  }
+
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 53px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
   }
 
   .features_div {
@@ -1188,7 +1304,7 @@
     gap: 65px;
 
     .section_2_text .head {
-      line-height: 75px;
+      line-height: 55px;
       padding-right: 30px;
     }
 
@@ -1215,13 +1331,6 @@
 
       .font_200 {
         font-size: 90px;
-      }
-
-      h1:first-of-type {
-        margin-left: -15px;
-      }
-      h1:last-of-type {
-        margin-right: -15px;
       }
     }
 
@@ -1251,11 +1360,6 @@
   }
 
   .section_4 .section_4_content {
-    .font_120 {
-      font-size: 64px;
-    }
-
-
     .right_div {
       .list {
         > li {
@@ -1272,9 +1376,9 @@
 
   .sofitel_wrapper .section_5 {
     padding: 60px 0;
-    .font_120 {
-      font-size: 53px;
-      line-height: 50px;
+    .font-120 {
+      // font-size: 53px;
+      line-height: 58px;
     }
 
     // .font_360 {
@@ -1300,12 +1404,6 @@
 
   .sofitel_wrapper .section_6_grid {
     grid-template-columns: 1fr 0.9fr;
-
-    .head {
-      .font_120 {
-        font-size: 45px;
-      }
-    }
 
     .left_div {
       .list {
@@ -1340,8 +1438,7 @@
       }
 
       .right_div {
-        .font_120 {
-          font-size: 53px;
+        .font-120 {
           line-height: 50px;
         }
 
@@ -1374,8 +1471,7 @@
       }
 
       .left_div {
-        .font_120 {
-          font-size: 53px;
+        .font-120 {
           line-height: 50px;
         }
 
@@ -1442,6 +1538,33 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 65px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
   .sofitel_bg {
     min-width: 1000px;
     max-width: 1000px;
@@ -1483,10 +1606,9 @@
       * {
         margin: 0;
       }
-      h1.font_120 {
+      h1.font-120 {
         margin-top: 20px;
         margin-bottom: 10px;
-        font-size: 75px;
         text-align: left;
       }
     }
@@ -1509,24 +1631,57 @@
     }
   }
 
+  .sofitel_wrapper .section_2_content {
+    &.grid_95 {
+      padding-top: 111px;
+    }
+  }
+
+  .section_2 .features_div > div {
+    display: flex;
+    flex-shrink: 0;
+    width: 50%;
+  }
+  .swiper-pagination-bullets {
+    visibility: visible;
+    position: absolute;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0;
+    bottom: 0;
+    justify-content: center;
+  }
+  .features_div {
+    --swiper-pagination-color: #9a6c3a;
+  }
   .section_2_content {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 30px;
 
-    .font_120 {
-      font-size: 75px;
-      padding-right: 45%;
+    .head {
+      position: absolute;
+      top: 0;
+      width: 80%;
+      padding-right: 20%;
+    }
+
+    .font-120 {
+      padding-right: 36.5%;
     }
 
     .section_2_text {
       //   text-align: center;
+      order: 2;
       width: 100%;
+
+      .p_text {
+        margin-top: 0;
+      }
+
       .btn_div {
-        position: absolute;
-        bottom: 0;
         display: block;
-        width: 92%;
+        width: 100%;
         margin: 0;
 
         .btn {
@@ -1546,7 +1701,7 @@
     }
     .section_2_img img {
       margin-top: 0;
-      padding-bottom: 80px;
+      padding-bottom: 0;
     }
   }
 
@@ -1557,14 +1712,6 @@
       .font_200 {
         font-size: 60px;
         font-family: bigilla_bold;
-      }
-
-      h1:first-of-type {
-        margin-left: 0;
-      }
-
-      h1:last-of-type {
-        margin-right: 0;
       }
     }
 
@@ -1614,8 +1761,7 @@
   .sofitel_wrapper .section_5 {
     position: relative;
 
-    .font_120 {
-      font-size: 60px;
+    .font-120 {
       line-height: 60px;
     }
 
@@ -1649,20 +1795,21 @@
     margin-bottom: 50px;
   }
 
+  .sec-5-grid {
+    width: 85%;
+  }
+
   .sofitel_wrapper .section_6_grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     position: relative;
     &.grid_95 {
-      padding-top: 145px;
+      padding-top: 160px;
     }
 
     .head {
       position: absolute;
       top: 0;
-      .font_120 {
-        font-size: 60px;
-      }
     }
 
     .left_div {
@@ -1708,8 +1855,7 @@
         }
       }
       .right_div {
-        .font_120 {
-          font-size: 60px;
+        .font-120 {
           line-height: 60px;
         }
       }
@@ -1745,8 +1891,7 @@
       .left_div {
         width: 100%;
         order: 2;
-        .font_120 {
-          font-size: 60px;
+        .font-120 {
           line-height: 60px;
 
           span {
@@ -1804,7 +1949,103 @@
   }
 }
 
+@media only screen and (max-width: 540px) {
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 60px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
+  .section_1_bottom_div .sofitel_logo img {
+    width: 178px;
+  }
+
+  .section_2_content .font-120 {
+    padding-right: 24%;
+  }
+
+  .sofitel_wrapper {
+    .section_9_grid {
+      .right_div {
+        .white_box {
+          width: 35.5%;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 486px) {
+  .sofitel_wrapper {
+    .font-16 {
+      font-size: 16px;
+    }
+    .font_18 {
+      font-size: 18px;
+    }
+    .font_20 {
+      font-size: 20px;
+    }
+    .font_48 {
+      font-size: 48px;
+    }
+    .font_64 {
+      font-size: 64px;
+    }
+    .font-120 {
+      font-size: 43px;
+    }
+    .font_200 {
+      font-size: 200px;
+    }
+    .font_360 {
+      font-size: 360px;
+    }
+  }
+
+  .section_1_bottom_div {
+    top: 31%;
+  }
+
+  .section_2_content {
+    .font-120 {
+      padding-right: 22%;
+    }
+    .section_2_text .head {
+      line-height: 43px;
+    }
+
+    .btn_div {
+      .btn:first-of-type {
+        padding: 7px 0;
+      }
+      .btn:last-of-type {
+        padding: 8.5px 0;
+      }
+    }
+  }
+
   .section_3 .section_3_head {
     .font_200 {
       font-size: 40px;
@@ -1817,9 +2058,8 @@
   }
 
   .sofitel_wrapper .section_5 {
-    .font_120 {
+    .font-120 {
       margin-left: 20px;
-      font-size: 50px;
       line-height: 50px;
     }
 
@@ -1845,16 +2085,6 @@
     }
   }
 
-  .sofitel_wrapper {
-    .section_6_grid {
-      .head {
-        .font_120 {
-          font-size: 45px;
-        }
-      }
-    }
-  }
-
   .section_7 {
     .section_7_bg img {
       aspect-ratio: 15 / 15;
@@ -1873,8 +2103,7 @@
           top: -78px;
         }
 
-        .font_120 {
-          font-size: 50px;
+        .font-120 {
           line-height: 50px;
         }
       }
@@ -1890,19 +2119,45 @@
           left: -9px;
         }
 
-        .font_120 {
-          font-size: 50px;
+        .font-120 {
           line-height: 50px;
         }
       }
     }
   }
+
+  .sofitel_wrapper .section_10_container {
+    padding: 80px 0;
+
+    .inquire_card {
+      min-width: 345px;
+    }
+
+    // .font_64 {
+    //   font-size: 34px;
+    // }
+
+    // .font_20 {
+    //   font-size: 8px;
+    // }
+
+    // .input_wrapper input:focus + label,
+    // .input_wrapper input:valid + label,
+    // .input_wrapper textarea:focus + label,
+    // .input_wrapper textarea:valid + label {
+    //   font-size: 7px;
+    // }
+
+    // .flex_div {
+    //   flex-direction: column;
+    // }
+  }
 }
 
 @media only screen and (max-width: 370px) {
   .sofitel_wrapper .grid_95 {
-    width: 100%;
-    margin: 0;
+    width: 95%;
+    margin: 0 auto;
     padding: 0;
     padding-bottom: 10px;
   }
@@ -1921,7 +2176,7 @@
     top: unset;
 
     & * {
-      color: black;
+      // color: black;
     }
 
     .sofitel_logo {
@@ -1931,11 +2186,6 @@
       }
     }
 
-    .head {
-      h1.font_120 {
-        font-size: 55px;
-      }
-    }
     .text.font_48 {
       font-size: 20px;
     }
@@ -1950,7 +2200,7 @@
     padding: 0;
 
     .feature {
-      h1.font_120 {
+      h1.font-120 {
         font-size: 30px;
       }
       h1.font_24 {
@@ -1960,18 +2210,15 @@
   }
 
   .section_2_content {
-    .font_120 {
+    .font-120 {
       padding: 0;
     }
 
     .section_2_text {
       .btn_div {
         width: 98%;
-        margin: 0 1%;
+        margin: 25px 1%;
       }
-    }
-    .radius8 {
-      border-radius: unset;
     }
   }
 
@@ -1980,7 +2227,7 @@
   }
 
   .sofitel_wrapper .section_5 {
-    .font_120 {
+    .font-120 {
       font-size: 37px;
       line-height: 38px;
     }
@@ -1988,6 +2235,9 @@
     .font_360 {
       font-size: 105px;
     }
+  }
+  .sec-5-grid {
+    width: 90%;
   }
 
   .sofitel_wrapper {
@@ -1997,7 +2247,7 @@
           font-size: 105px;
         }
 
-        .font_120 {
+        .font-120 {
           font-size: 37px;
           line-height: 38px;
         }
@@ -2012,7 +2262,7 @@
           font-size: 105px;
         }
 
-        .font_120 {
+        .font-120 {
           font-size: 37px;
           line-height: 38px;
         }

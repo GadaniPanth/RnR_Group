@@ -50,25 +50,25 @@
       //   observer.observe(counter);
       // });
 
-      const target = document.getElementById('rounded_animate');
-      const fade_animation = document.getElementById('fade_animation');
+      // const target = document.getElementById('rounded_animate');
+      // const fade_animation = document.getElementById('fade_animation');
 
-      if (target && fade_animation) {
-        window.addEventListener("scroll", function () {
-          const targetTop = target.getBoundingClientRect().top;
+      // if (target && fade_animation) {
+      //   window.addEventListener("scroll", function () {
+      //     const targetTop = target.getBoundingClientRect().top;
 
-          // Trigger when target is within 100px from top of the screen
-          if (targetTop >= 100) {
-            target.style.borderRadius = "9999px";
-            fade_animation.style.opacity = 1;
-          } else {
-            target.style.borderRadius = "0px";
-            fade_animation.style.opacity = 0;
-          }
-        });
-      } else {
-        console.warn('One or both elements not found');
-      }
+      //     // Trigger when target is within 100px from top of the screen
+      //     if (targetTop >= 100) {
+      //       target.style.borderRadius = "9999px";
+      //       fade_animation.style.opacity = 1;
+      //     } else {
+      //       target.style.borderRadius = "0px";
+      //       fade_animation.style.opacity = 0;
+      //     }
+      //   });
+      // } else {
+      //   console.warn('One or both elements not found');
+      // }
     });
   </script>
 </body>

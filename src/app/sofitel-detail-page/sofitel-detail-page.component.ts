@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 @Component({
   selector: 'app-sofitel-detail-page',
@@ -8,54 +8,94 @@ import Swiper, { Navigation } from 'swiper';
 })
 export class SofitelDetailPageComponent implements AfterViewInit {
   @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
+  @ViewChild('swiperContainerCounter', { static: false }) swiperContainerCounter!: ElementRef;
   @ViewChild('nextBtn', { static: false }) nextBtn!: ElementRef;
   @ViewChild('prevBtn', { static: false }) prevBtn!: ElementRef;
   @ViewChildren('countUp') counters!: QueryList<ElementRef>;
-  speed = 1000;
+  private speed = 1000;
+  swiper!: Swiper;
+  private hasInitializedCounters = false;
+
+  ngOnInit() { }
 
   ngAfterViewInit(): void {
     Swiper.use([Navigation]);
 
-    new Swiper(this.swiperContainer.nativeElement, {
+    this.swiper = new Swiper(this.swiperContainer.nativeElement, {
       slidesPerView: 'auto',
       spaceBetween: 24,
       speed: 500,
       navigation: {
         nextEl: this.nextBtn.nativeElement,
         prevEl: this.prevBtn.nativeElement
+      },
+      on: {
+        slideChange: () => this.updateButtonStates(),
+        reachBeginning: () => this.updateButtonStates(),
+        reachEnd: () => this.updateButtonStates(),
       }
     });
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counterEl = entry.target as HTMLElement;
-          const target = +counterEl.getAttribute('data-target')!;
-          let count = 0;
-          const increment = target / this.speed;
+    this.updateButtonStates();
 
-          const updateCount = () => {
-            count = +counterEl.innerText;
-            if (count < target) {
-              counterEl.innerText = `${Math.ceil(count + increment)}`;
-              setTimeout(updateCount, 150 / (count || 1));
-            } else {
-              counterEl.innerText = `${target}`;
-            }
-          };
+    this.initCounters();
+    this.hasInitializedCounters = true;
 
-          updateCount();
-          observer.unobserve(counterEl); // run once
-        }
-      });
-    }, {
-      threshold: 0.6 // trigger when ~60% visible
-    });
-
-    this.counters.forEach(counter => {
-      observer.observe(counter.nativeElement);
-    });
+    Swiper.use([Pagination])
+    new Swiper(this.swiperContainerCounter.nativeElement, {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+    })
   }
+
+  ngAfterViewChecked(): void {
+    if (!this.hasInitializedCounters && this.counters.length) {
+      this.initCounters();
+      this.hasInitializedCounters = true;
+    }
+  }
+
+  updateButtonStates() {
+    const isBeginning = this.swiper.isBeginning;
+    const isEnd = this.swiper.isEnd;
+
+    if (this.prevBtn.nativeElement) {
+      this.prevBtn.nativeElement.classList.toggle('disabled', isBeginning);
+    }
+
+    if (this.nextBtn.nativeElement) {
+      this.nextBtn.nativeElement.classList.toggle('disabled', isEnd);
+    }
+  }
+
+  swiperSlides = [
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img1.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img2.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img3.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img4.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img5.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img6.png'
+    },
+    {
+      'img': 'assets/images/sofitel_detail_page/sec5_img7.png'
+    },
+  ]
 
   sections = [
     {
@@ -117,4 +157,38 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   toggleSection(index: number): void {
     this.sections[index].isOpen = !this.sections[index].isOpen;
   }
+
+  initCounters(): void {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counterEl = entry.target as HTMLElement;
+          const target = +counterEl.getAttribute('data-target')!;
+          let count = 0;
+          const increment = target / this.speed;
+
+          const updateCount = () => {
+            count = +counterEl.innerText;
+            if (count < target) {
+              counterEl.innerText = `${Math.ceil(count + increment)}`;
+              setTimeout(updateCount, 150 / (count || 1));
+            } else {
+              counterEl.innerText = `${target}`;
+            }
+          };
+
+          updateCount();
+          observer.unobserve(counterEl); // trigger only once per element
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
+    this.counters.forEach(counter => {
+      counter.nativeElement.innerText = '0'; // reset count
+      observer.observe(counter.nativeElement);
+    });
+  }
+
 }

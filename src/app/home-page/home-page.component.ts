@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import Swiper from "swiper";
+import { Pagination } from "swiper";
 
 @Component({
   selector: "app-home-page",
@@ -16,9 +17,14 @@ export class HomePageComponent implements AfterViewInit {
   @ViewChild("swiperContainer", { static: false }) swiperContainer!: ElementRef;
 
   ngAfterViewInit(): void {
+    Swiper.use([Pagination]);
     new Swiper(this.swiperContainer.nativeElement, {
       slidesPerView: "auto",
       spaceBetween: 56,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar'
+      },
       // freeMode: true,
     });
   }

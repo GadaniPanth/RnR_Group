@@ -9,7 +9,7 @@
                 <img src="assets/images/sofitel_detail_page/sec1_Sofitel_Logo_Svg.svg" alt="sofitelLogo">
             </div>
             <div class="head">
-                <h1 class="font_120 bigilla">Rehvassa Sofitel</h1>
+                <h1 class="font-120 bigilla">Rehvassa Sofitel</h1>
             </div>
             <div class="svg_text_flex d_flex">
                 <div class="svg_text">
@@ -37,7 +37,7 @@
             <div>
                 <div class="towers feature">
                     <div class="top">
-                        <h1 class="font_120 chronicle">2</h1>
+                        <h1 class="font-120 chronicle">2</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Towers</h1>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="storey feature">
                     <div class="top">
-                        <h1 class="font_120 chronicle">13</h1>
+                        <h1 class="font-120 chronicle">13</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Storey</h1>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="towers feature">
                     <div class="top">
-                        <h1 class="font_120 chronicle">45%</h1>
+                        <h1 class="font-120 chronicle">45%</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Open Space</h1>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="towers feature">
                     <div class="top">
-                        <h1 class="font_120 chronicle">64</h1>
+                        <h1 class="font-120 chronicle">64</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Limited Unites</h1>
@@ -71,11 +71,11 @@
         </div> -->
 
         <!-- Swiper Container -->
-        <div class="features_div swiper-container">
+        <div class="features_div swiper-container relative" #swiperContainerCounter>
             <div class="swiper-wrapper">
                 <div class="swiper-slide feature towers">
                     <div class="top">
-                        <h1 #countUp class="font_120 chronicle count-up" data-target="2">0</h1>
+                        <h1 #countUp class="font-120 chronicle count-up" data-target="2">0</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Towers</h1>
@@ -84,7 +84,7 @@
 
                 <div class="swiper-slide feature storey">
                     <div class="top">
-                        <h1 #countUp class="font_120 chronicle count-up" data-target="13">0</h1>
+                        <h1 #countUp class="font-120 chronicle count-up" data-target="13">0</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Storey</h1>
@@ -93,7 +93,7 @@
 
                 <div class="swiper-slide feature towers">
                     <div class="top">
-                        <h1 class="font_120 chronicle">
+                        <h1 class="font-120 chronicle">
                             <span #countUp class="count-up" data-target="45">0</span>%
                         </h1>
                     </div>
@@ -104,25 +104,26 @@
 
                 <div class="swiper-slide feature towers">
                     <div class="top">
-                        <h1 #countUp class="font_120 chronicle count-up" data-target="64">0</h1>
+                        <h1 #countUp class="font-120 chronicle count-up" data-target="64">0</h1>
                     </div>
                     <div class="bottom">
                         <h1 class="font_24 general_sans">Limited Units</h1>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
 
 
-        <div class="section_2_content grid_95">
+        <div class="section_2_content grid_95 relative">
             <div class="section_2_text">
                 <div class="head">
-                    <h1 class="font_120 bigilla wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">Undeniably
+                    <h1 class="font-120 bigilla wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">Undeniably
                         <span>Grandeur</span>
                     </h1>
                 </div>
                 <div class="p_text">
-                    <p class="font_24 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">This is
+                    <p class="font_24 general_sans wow fadeIn" data-wow-delay=".5s" data-wow-duration="1s">This is
                         Rehvassa Sofitel, a haven nestled amidst the bustling city,
                         yet offering a world apart.
                         The essence of its concept whispers a promise of grandeur: "Rehvas" echoing from the depths of
@@ -131,7 +132,7 @@
                 </div>
                 <div class="btn_div">
                     <div class="btn inquire_btn general_sans">
-                        <div class="svg wow bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <div class="svg wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -140,11 +141,11 @@
                             </svg>
                         </div>
                         <div class="text">
-                            <p class="font_16">Inquire Now</p>
+                            <p class="font-16">Inquire Now</p>
                         </div>
                     </div>
                     <div class="btn download_btn general_sans">
-                        <div class="svg wow bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <div class="svg wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                             <svg class="download-icon" width="18" height="19" viewBox="0 0 18 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -154,7 +155,7 @@
                             </svg>
                         </div>
                         <div class="text">
-                            <p class="font_16">Download Brochure</p>
+                            <p class="font-16">Download Brochure</p>
                         </div>
                     </div>
                 </div>
@@ -168,9 +169,11 @@
     <section class="section_3 sec_bg_pink">
         <div class="section_3_head">
             <div class="head">
-                <h1 class="font_200 bigilla wow slideInLeft" data-wow-delay=".5s" data-wow-duration="1s">Every Detail
+                <h1 class="font_200 bigilla_bold wow slideInLeft" data-wow-delay=".5s" data-wow-duration="1s">Every
+                    Detail
                 </h1>
-                <h1 class="font_200 bigilla wow slide_right" data-wow-delay=".5s" data-wow-duration="1s">Exudes Prestige
+                <h1 class="font_200 bigilla_bold wow slide_right" data-wow-delay=".5s" data-wow-duration="1s">Exudes
+                    Prestige
                 </h1>
             </div>
         </div>
@@ -197,11 +200,11 @@
                         comfort amidst breathtaking surroundings.</p>
                 </div>
                 <div class="text_bottom wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1s">
-                    <h1 class="font_160 bigilla">3</h1>
+                    <h1 class="font-160 bigilla">3</h1>
                     <div class="list">
                         <ul>
                             <li>
-                                <p class="font_24 general_sans wow fadeInUp" data-wow-delay="1.2s"
+                                <p class="font_24 general_sans wow fadeInUpSmall" data-wow-delay="1s"
                                     data-wow-duration="1s">
                                     side open views</p>
                             </li>
@@ -209,7 +212,7 @@
                                 <hr>
                             </li>
                             <li>
-                                <p class="font_24 general_sans wow fadeInUp" data-wow-delay="1.4s"
+                                <p class="font_24 general_sans wow fadeInUpSmall" data-wow-delay="1s"
                                     data-wow-duration="1s">
                                     balconies</p>
                             </li>
@@ -217,7 +220,7 @@
                                 <hr>
                             </li>
                             <li>
-                                <p class="font_24 general_sans wow fadeInUp" data-wow-delay="1.6s"
+                                <p class="font_24 general_sans wow fadeInUpSmall" data-wow-delay="1s"
                                     data-wow-duration="1s">
                                     prime connections</p>
                             </li>
@@ -232,7 +235,7 @@
         <div class="section_4_content grid_95">
             <div class="left_div">
                 <div class="section_4_heading head">
-                    <h1 class="font_120 bigilla wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
+                    <h1 class="font-120 bigilla wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
                         <span>Exper<span> ience</span></span> the Glamour of Living
                     </h1>
                 </div>
@@ -399,7 +402,7 @@
                         <div class="accordion-header" (click)="toggleSection(i)">
                             <span class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
                                 data-wow-duration="1s">{{ section.title }}</span>
-                            <img class="icon"
+                            <img class="icon wow zoomInLeft" data-wow-delay=".5s" data-wow-duration="1s"
                                 [src]="section.isOpen ? 'assets/images/home-saffron_sec-wrap/minus.svg' : 'assets/images/home-saffron_sec-wrap/plus (1).svg'"
                                 alt="toggle" />
                         </div>
@@ -417,7 +420,7 @@
     <!-- Swiper Here -->
     <section class="section_5">
         <div class="head relative">
-            <h1 class="font_120 bigilla wow fadeInLeft bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+            <h1 class="font-120 bigilla wow fadeIn bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
                 L<span> uxury <span>Personified</span> </span>
             </h1>
             <h1 class="font_360 bigilla wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">L
@@ -443,16 +446,9 @@
 
         <!-- #DFC6A3 -->
 
-        <div class="swiper-container relative wow bounceInRight" data-wow-delay=".5s" data-wow-duration="1.5s"
-            #swiperContainer>
+        <div class="swiper-container relative wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s" #swiperContainer>
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img1.png"
-                        alt="luxuryImage" /></div>
-                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png"
-                        alt="luxuryImage" /></div>
-                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png"
-                        alt="luxuryImage" /></div>
-                <div class="swiper-slide"><img src="assets/images/sofitel_detail_page/sec5_img2.png"
+                <div class="swiper-slide" *ngFor="let slide of swiperSlides;"><img [src]='slide.img'
                         alt="luxuryImage" /></div>
             </div>
         </div>
@@ -462,39 +458,45 @@
         <div class="section_6_grid grid_95">
             <div class="left_div">
                 <div class="head">
-                    <h1 class="font_120 bigilla_bold wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">Every
+                    <h1 class="font-120 bigilla_bold wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">Every
                         Exquisite <span>Aspiration Realized</span></h1>
                 </div>
                 <div class="list">
                     <ul>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 CCTV Cameras</p>
                         </li>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 Party Lawn</p>
                         </li>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 Entrance Gate</p>
                         </li>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 Landscape Garden</p>
                         </li>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 Kids Play Area</p>
                         </li>
                         <li>
-                            <p class="font_18 general_sans wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s">
+                            <p class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
+                                data-wow-duration="1s">
                                 Box Cricket</p>
                         </li>
                     </ul>
                 </div>
                 <div class="btn_more btn general_sans">
-                    <p class="font_16">View More</p>
+                    <p class="font-16">View More</p>
                 </div>
             </div>
             <div class="right_div">
@@ -527,12 +529,12 @@
             </div>
             <div class="right_div">
                 <div class="head relative">
-                    <h1 class="font_120 bigilla wow fadeInRight bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <h1 class="font-120 bigilla wow fadeIn bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
                         Where Prestige <span>Meets Passion</span></h1>
                     <h1 class="font_360 bigilla wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">Prestige
                     </h1>
                 </div>
-                <div class="p_text wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">
+                <div class="p_text wow fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     <p class="font_18 general_sans">
                         Discover luxury and thoughtful design with our meticulously crafted floor plans. Each layout
                         blends elegance with functionality, reflecting our commitment to excellence. Experience
@@ -540,8 +542,8 @@
                         home becomes a reality with our architectural brilliance.</p>
                 </div>
                 <div class="btn_more btn general_sans">
-                    <p class="font_16">View Floor Plans</p>
-                    <div class="svg wow bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <p class="font-16">View Floor Plans</p>
+                    <div class="svg wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                         <svg class="arrow-icon" width="22" height="13" viewBox="0 0 22 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
@@ -557,7 +559,7 @@
         <div class="section_9_grid grid_95">
             <div class="left_div">
                 <div class="head relative">
-                    <h1 class="font_120 bigilla wow fadeInRight bounceIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <h1 class="font-120 bigilla wow fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                         Plugged Into the <span>Pulse of the City</span></h1>
                     <h1 class="font_360 bigilla wow fadeInRight" data-wow-delay=".5s" data-wow-duration="1s">Pulse</h1>
                 </div>
@@ -672,15 +674,15 @@
                         <div class="accordion-item" *ngFor="let section of sections; let i = index"
                             [class.open]="section.isOpen">
                             <div class="accordion-header" (click)="toggleSection(i)">
-                                <span class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
+                                <span class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
                                     data-wow-duration="1s">{{ section.title }}</span>
-                                <img class="icon"
+                                <img class="icon wow zoomInLeft" data-wow-delay=".5s" data-wow-duration="1s"
                                     [src]="section.isOpen ? 'assets/images/home-saffron_sec-wrap/minus.svg' : 'assets/images/home-saffron_sec-wrap/plus (1).svg'"
                                     alt="toggle" />
                             </div>
 
                             <ul class="accordion-body" [style.maxHeight]="section.isOpen ? '200px' : '0px'">
-                                <li class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
+                                <li class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
                                     data-wow-duration="1s">{{
                                     section.content }}</li>
                             </ul>
@@ -693,7 +695,7 @@
                     <img class="radius8" src="assets/images/sofitel_detail_page/sec9_img.png" alt="mapImage">
                     <div class="white_box">
                         <div class="btn map_btn general_sans">
-                            <p class="font_16">View On Map</p>
+                            <p class="font-16">View On Map</p>
                             <div class="svg">
                                 <svg class="arrow-icon" width="22" height="13" viewBox="0 0 22 13" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -755,7 +757,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="submit_btn manrope font_16">Send</button>
+                    <button type="submit" class="submit_btn manrope font-16">Send</button>
                 </form>
             </div>
             <div class="back_marque">

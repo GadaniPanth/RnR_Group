@@ -323,14 +323,14 @@ a {
       transition: max-height 0.5s linear, padding 0.5s linear;
 
       &.open {
-        max-height: none;
-        height: fit-content;
+        max-height: calc(310px * 2);
+        // height: fit-content;
         padding: 16px;
       }
 
       &.close {
         max-height: 0;
-        height: 0;
+        // height: 0;
         padding: 0 16px;
       }
     }
@@ -581,6 +581,9 @@ a p:hover {
 
   .slider {
     min-width: 100%;
+    .font_24 {
+      font-size: 24px;
+    }
   }
   .footer-container {
     width: 95%;
@@ -714,5 +717,13 @@ a p:hover {
     //     }
     //   }
     // }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .slider {
+    .font_24 {
+      font-size: 22px;
+    }
   }
 }

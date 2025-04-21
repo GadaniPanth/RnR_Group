@@ -1,5 +1,14 @@
 @import url("./saffron.component.less");
 
+@font-face {
+  font-family: manrope_thin;
+  src: url("../../assets/fonts/manrope/manrope-thin.otf");
+}
+
+.manrope_thin {
+  font-family: "manrope_thin";
+}
+
 @sec-bg-gray: #f5f4f4;
 @sec-bg-black: #24262b;
 @bg-orange: #ec614a;
@@ -363,8 +372,8 @@
       transition: 0.2s ease all;
     }
 
-    .phone_field input:focus+label,
-    .phone_field input:valid+label {
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
       top: 4px;
       font-size: 20px;
       opacity: 0.9;
@@ -418,10 +427,10 @@
       transition: 0.2s ease all;
     }
 
-    .input_wrapper input:focus+label,
-    .input_wrapper input:valid+label,
-    .input_wrapper textarea:focus+label,
-    .input_wrapper textarea:valid+label {
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
       top: 4px;
       font-size: 15px;
       opacity: 0.9;
@@ -580,7 +589,6 @@
         }
 
         .btn_div {
-
           .btn,
           .btn:last-of-type {
             width: 149px;
@@ -623,10 +631,10 @@
         font-size: 10px;
       }
 
-      .input_wrapper input:focus+label,
-      .input_wrapper input:valid+label,
-      .input_wrapper textarea:focus+label,
-      .input_wrapper textarea:valid+label {
+      .input_wrapper input:focus + label,
+      .input_wrapper input:valid + label,
+      .input_wrapper textarea:focus + label,
+      .input_wrapper textarea:valid + label {
         top: 4px;
         font-size: 8px;
         opacity: 0.9;
@@ -705,8 +713,8 @@
           width: 100%;
           margin: 0;
 
-          >* {
-            width: 80% !important;
+          > * {
+            width: 100% !important;
           }
         }
       }
@@ -778,10 +786,10 @@
         font-size: 8px;
       }
 
-      .input_wrapper input:focus+label,
-      .input_wrapper input:valid+label,
-      .input_wrapper textarea:focus+label,
-      .input_wrapper textarea:valid+label {
+      .input_wrapper input:focus + label,
+      .input_wrapper input:valid + label,
+      .input_wrapper textarea:focus + label,
+      .input_wrapper textarea:valid + label {
         font-size: 7px;
       }
 
@@ -815,7 +823,7 @@
     width: 12%;
   }
 
-  .mobile-height{
+  .mobile-height {
     height: 34svh;
     object-fit: cover;
     border-radius: 16px;
@@ -870,7 +878,6 @@
       }
 
       .section_1_text {
-
         .head,
         .svg_text_flex {
           margin-bottom: 15px;

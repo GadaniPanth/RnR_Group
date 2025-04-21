@@ -83,9 +83,9 @@
                     <div class="svg_text">
                       <div class="svg_progerss" *ngIf="+item.percent < 100; else completed">
                         <circle-progress [percent]="+item.percent" [radius]="100" [responsive]="true"
-                          [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#78C000'"
-                          [innerStrokeColor]="'#78C000'" [animation]="true" [titleColor]="'#ffffff'" [showUnits]="false"
-                          [showSubtitle]="false" [animationDuration]="1000" [titleFontSize]="100">
+                          [outerStrokeWidth]="10" [innerStrokeWidth]="5" [outerStrokeColor]="'#78C000'"
+                          [innerStrokeColor]="'#1e1e1e'" [animation]="isMenuOpen" [titleColor]="'#ffffff'"
+                          [showUnits]="false" [showSubtitle]="false" [animationDuration]="2000" [titleFontSize]="100">
                         </circle-progress>
                       </div>
                       <ng-template #completed>
@@ -147,7 +147,12 @@
         <div class="residential inner-flex flex-gap-small">
           <p class="font-24">Residential</p>
           <div class="inner-flex wfc">
-            <a href="#">
+            <a routerLink="/sofitel">
+              <p class="black-color font-16">Rehvassa Sofitel</p>
+            </a>
+          </div>
+          <div class="inner-flex wfc">
+            <a routerLink="/saffron">
               <p class="black-color font-16">Rehvassa Saffron</p>
             </a>
           </div>
