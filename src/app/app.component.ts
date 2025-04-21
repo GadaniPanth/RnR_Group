@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,15 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'rehvassa';
 
-  isMenuOpen: boolean = false;
+  private _isMenuOpen = false;
+  get isMenuOpen(): boolean {
+    return this._isMenuOpen;
+  }
+  set isMenuOpen(value: boolean) {
+    this._isMenuOpen = value;
+    document.body.style.overflow = value ? 'hidden' : '';
+  }
+
   isDropDownOpen: boolean = true;
 
   ResidentialList = [
@@ -31,7 +39,14 @@ export class AppComponent {
     },
   ]
 
-  onInit() {
+  ngOnInit() {
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLocaleLowerCase() == 'escape') {
+        this.isMenuOpen = false;
+      }
+    })
+
   }
 
   onMenuClick(event: MouseEvent) {
@@ -46,7 +61,14 @@ export class AppComponent {
     return this.ResidentialList['percent'] < 100 ? 'Under Construction' : 'Completed';
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        window.scroll(0, 0);
+      }
+    });
+
+  }
 
   navigateInquire() {
     this.router.navigate(['/inquire'])
