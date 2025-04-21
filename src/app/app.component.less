@@ -241,6 +241,7 @@ a {
   transition: all 0.8s ease-in-out;
   padding: 0;
   min-width: 435px;
+
   a p.font_20:hover {
     color: @text-white !important;
   }
@@ -288,6 +289,7 @@ a {
       padding: 20px;
       width: 100%;
     }
+
     .dropdown a h2 {
       display: flex;
       justify-content: space-between;
@@ -379,25 +381,25 @@ a {
   padding: 0;
   border-inline: calc(var(--s) / 2) solid #0000;
   box-sizing: content-box;
-  --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat
-    content-box border-box;
-  --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000)
-    repeat-y content-box border-box;
+  --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
   background: var(--_g2) left var(--_p, 0px) top,
-    var(--_g1) left calc(var(--s) / 10 + var(--_p, 0px)) top,
-    var(--_g2) right var(--_p, 0px) top,
-    var(--_g1) right calc(var(--s) / 10 + var(--_p, 0px)) top;
-  background-size: 20% 80%, 40% 100%;
+  var(--_g1) left calc(var(--s) / 10 + var(--_p, 0px)) top,
+  var(--_g2) right var(--_p, 0px) top,
+  var(--_g1) right calc(var(--s) / 10 + var(--_p, 0px)) top;
+  background-size: 20% 80%,
+  40% 100%;
   position: relative;
   clip-path: inset(0 25%);
   -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
   cursor: pointer;
   transition: background-position 0.3s var(--_s, 0.3s),
-    clip-path 0s var(--_s, 0.6s);
+  clip-path 0s var(--_s, 0.6s);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .menu:before,
 .menu:after {
   content: "";
@@ -413,12 +415,15 @@ a {
   --_p: calc(-1 * var(--s));
   --_s: 0s;
 }
+
 .menu:checked:before {
   transform: rotate(45deg);
 }
+
 .menu:checked:after {
   transform: rotate(-45deg);
 }
+
 .menu:focus-visible {
   clip-path: none;
   -webkit-mask: none;
@@ -479,11 +484,9 @@ a p:hover {
   }
 }
 
-@media only screen and (max-width: 1366px) {
-}
+@media only screen and (max-width: 1366px) {}
 
-@media only screen and (max-width: 1280px) {
-}
+@media only screen and (max-width: 1280px) {}
 
 @media only screen and (max-width: 1024px) {
   .footer-grid {
@@ -502,6 +505,7 @@ a p:hover {
     .font_20 {
       font-size: 13px;
     }
+
     .font_48 {
       font-size: 32px;
     }
@@ -559,6 +563,7 @@ a p:hover {
   .slider {
     min-width: 100%;
   }
+
   .footer-container {
     width: 95%;
     margin: 0 auto;
@@ -629,6 +634,7 @@ a p:hover {
     .font_48 {
       font-size: 30px;
     }
+
     // ul {
     //   display: block;
     //   padding: 10px;

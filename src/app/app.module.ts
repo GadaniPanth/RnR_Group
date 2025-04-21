@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SaffronDetailPageComponent } from './saffron-detail-page/saffron-detail-page.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { InquirePageComponent } from './inquire-page/inquire-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InquirePageComponent } from './inquire-page/inquire-page.component';
     SofitelDetailPageComponent,
     HomePageComponent,
     SaffronDetailPageComponent,
-    InquirePageComponent
+    InquirePageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
