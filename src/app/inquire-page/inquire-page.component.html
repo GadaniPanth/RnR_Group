@@ -2,7 +2,7 @@
     <div class="section_10_container relative">
         <div class="inquire_card sec_bg_black relative">
             <div class="card_bg_attach saffron_logo">
-                <img src="assets/images/saffron_detail_page/Saffron Logo.svg" alt="">
+                <img src="assets/images/saffron_detail_page/Saffron Logo.svg" alt="saffronLogo">
             </div>
             <div class="card_head">
                 <h1 class="font_64 bigilla">Inquire Now</h1>
@@ -40,54 +40,55 @@
                         <div class="input_wrapper phone_input">
                             <div class="flag">
                                 <div class="svg">
-                                    <img src="assets/images/sofitel_detail_page/flag.svg" alt="" />
+                                    <img src="assets/images/sofitel_detail_page/flag.svg" alt="flagImage />
                                 </div>
                                 <span>
                                     <p>+91</p>
                                 </span>
                             </div>
-                            <div class="phone_field">
-                                <input type="tel" formControlName="phone" (keypress)="restrictNonNumeric($event)"
-                                    pattern="^[0-9]{10}$" maxlength="10" class="manrope font_20" required />
-                                <label class="manrope font_20">Phone Number</label>
+                            <div class=" phone_field">
+                                    <input type="tel" formControlName="phone" (keypress)="restrictNonNumeric($event)"
+                                        pattern="^[0-9]{10}$" maxlength="10" class="manrope font_20" required />
+                                    <label class="manrope font_20">Phone Number</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form_group" [ngClass]="{
+                    <div class="form_group" [ngClass]="{
     'has-error': formSubmitted && inquireForm.get('budget')?.invalid
   }">
-                    <div class="input_wrapper">
-                        <select name="budget" formControlName="budget" tabindex="5" id="budget" required
-                            aria-required="true" aria-invalid="true"
-                            style="width: 100%; border: none; background: transparent;" required>
-                            <option value="" disabled selected hidden></option>
-                            <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
-                            <option value="1 Cr - 1.5 Cr">1 Cr - 1.5 Cr</option>
-                            <option value="1.5 Cr - 2.0 Cr">1.5 Cr - 2.0 Cr</option>
-                            <option value="2.0 cr - above">2.0 cr - above</option>
-                        </select>
-                        <label class="manrope font_20">Budget</label>
+                        <div class="input_wrapper">
+                            <select name="budget" formControlName="budget" tabindex="5" id="budget" required
+                                aria-required="true" aria-invalid="true"
+                                style="width: 100%; border: none; background: transparent;" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
+                                <option value="1 Cr - 1.5 Cr">1 Cr - 1.5 Cr</option>
+                                <option value="1.5 Cr - 2.0 Cr">1.5 Cr - 2.0 Cr</option>
+                                <option value="2.0 cr - above">2.0 cr - above</option>
+                            </select>
+                            <label class="manrope font_20">Budget</label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form_group" [ngClass]="{
+                    <div class="form_group" [ngClass]="{
     'has-error': formSubmitted && inquireForm.get('type')?.invalid
   }">
-                    <div class="input_wrapper">
-                        <select name="Type" formControlName="type" tabindex="5" id="Type" required aria-required="true"
-                            aria-invalid="true" style="width: 100%; border: none; background: transparent;" required>
-                            <option value="" disabled selected hidden></option>
-                            <option value="2 BHK">2 BHK</option>
-                            <option value="3 BHK">3 BHK</option>
-                            <option value="4 BHK">4 BHK</option>
-                            <option value="Villas">Villas</option>
-                        </select>
-                        <label class="manrope font_20">Type</label>
+                        <div class="input_wrapper">
+                            <select name="Type" formControlName="type" tabindex="5" id="Type" required
+                                aria-required="true" aria-invalid="true"
+                                style="width: 100%; border: none; background: transparent;" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="2 BHK">2 BHK</option>
+                                <option value="3 BHK">3 BHK</option>
+                                <option value="4 BHK">4 BHK</option>
+                                <option value="Villas">Villas</option>
+                            </select>
+                            <label class="manrope font_20">Type</label>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="form_group"
+                    <!-- <div class="form_group"
   [ngClass]="{
     'has-error': formSubmitted && inquireForm.get('fullName')?.invalid
   }">
@@ -97,7 +98,7 @@
                         </div>
                     </div> -->
 
-                <button type="submit" class="submit_btn manrope font_16">Send</button>
+                    <button type="submit" class="submit_btn manrope font_16">Send</button>
             </form>
         </div>
         <div class="back_marque">
