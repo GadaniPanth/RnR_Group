@@ -99,7 +99,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     },
   ]
 
-  sections = [
+  glamourSections = [
     {
       title: "Floring",
       content:
@@ -110,7 +110,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
       title: "Doors & Windows",
       content: [
         ["Decorative main door and other are flush doors."],
-        ["Decorative main door and other are flush doors."],
+        ["Premium Aluminum section window with granite frames or equivalent."],
       ],
       isOpen: false,
     },
@@ -156,8 +156,63 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     },
   ];
 
-  toggleSection(index: number): void {
-    this.sections[index].isOpen = !this.sections[index].isOpen;
+  toggleGlamourSection(index: number): void {
+    this.glamourSections[index].isOpen = !this.glamourSections[index].isOpen;
+  }
+
+  pulseSections = [
+    {
+      title: "Recreation",
+      content: [
+        ['1545 Box Cricket - 1 Min.'],
+        ['sargasan Lake - 1 Min.'],
+        ['swagat Holiday Mall - 3 Mins.'],
+        ['new Guda Garden - 6 Mins.'],
+        ['city Pulse - 5 Mins.'],
+        ['sarita Udhyan - 9 Mins.']
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Hospitals",
+      content: [
+        ["aashka Hospital - 4 Mins"],
+        ["smvs Swaminarayan Hospital - 8 Mins."],
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Schools ",
+      content: [
+        ['ved International - 4 Mins.'],
+        ['infocity School - 6 Mins.'],
+        ['sajhanand Achiever School - 4 Mins.'],
+        ['kameshwar International School - 4 Mins.'],
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Temples",
+      content: [
+        ['Dholeshwar Mahadev - 8 mins.'],
+        ['munisijvrat Jain Temple - 5 Mins.'],
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Daily Essentials",
+      content: [
+        ['croma - 3 Mins.'],
+        ['zudio - 3 Mins.'],
+        ['D-mart - 2 Mins.'],
+        ['Pantaloons - 3 Mins.'],
+      ],
+      isOpen: false,
+    }
+  ];
+
+  togglePulseSection(index: number): void {
+    this.pulseSections[index].isOpen = !this.pulseSections[index].isOpen;
   }
 
   initCounters(): void {
