@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -64,7 +66,7 @@ export class AppComponent {
     return this.ResidentialList['percent'] < 100 ? 'Under Construction' : 'Completed';
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private titleService: Title, private metaService: Meta, private activatedRoute: ActivatedRoute) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         window.scroll(0, 0);
@@ -72,6 +74,30 @@ export class AppComponent {
         this.isSaffron = e.urlAfterRedirects.endsWith('/saffron');
       }
     });
+
+    {
+      this.router.events
+        .pipe(
+          filter(event => event instanceof NavigationEnd),
+          map(() => {
+            let route = this.activatedRoute;
+            while (route.firstChild) route = route.firstChild;
+            return route;
+          }),
+          mergeMap(route => route.data)
+        )
+        .subscribe(data => {
+          // Set title
+          this.titleService.setTitle(data['title'] || 'Default Title');
+
+          // Set meta description
+          if (data['description']) {
+            this.metaService.updateTag({ name: 'description', content: data['description'] });
+          } else {
+            this.metaService.removeTag("name='description'");
+          }
+        });
+    }
   }
 
   navigateInquire() {
