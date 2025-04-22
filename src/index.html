@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- <title>Rehvassa</title> -->
+  <title>Loading...</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./assets/images/R&R_group_logo.svg">
@@ -13,64 +13,6 @@
 <body>
   <app-root></app-root>
   <script src="./assets/js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // const counters = document.querySelectorAll(".count-up");
-      // const speed = 1000;
-
-      // const observer = new IntersectionObserver((entries, observer) => {
-      //   entries.forEach(entry => {
-      //     if (entry.isIntersecting) {
-      //       const counter = entry.target;
-      //       const updateCount = () => {
-      //         const target = +counter.getAttribute("data-target");
-      //         const count = +counter.innerText;
-
-      //         const increment = target / speed;
-
-      //         if (count < target) {
-      //           counter.innerText = Math.ceil(count + increment);
-      //           setTimeout(updateCount, (150 / count));
-      //         } else {
-      //           counter.innerText = target;
-      //         }
-      //       };
-
-      //       updateCount();
-      //       observer.unobserve(counter); // run only once
-      //     }
-      //   });
-      // }, {
-      //   threshold: 1
-      // });
-
-      // counters.forEach(counter => {
-      //   observer.observe(counter);
-      // });
-
-      // const target = document.getElementById('rounded_animate');
-      // const fade_animation = document.getElementById('fade_animation');
-
-      // if (target && fade_animation) {
-      //   window.addEventListener("scroll", function () {
-      //     const targetTop = target.getBoundingClientRect().top;
-
-      //     // Trigger when target is within 100px from top of the screen
-      //     if (targetTop >= 100) {
-      //       target.style.borderRadius = "9999px";
-      //       fade_animation.style.opacity = 1;
-      //     } else {
-      //       target.style.borderRadius = "0px";
-      //       fade_animation.style.opacity = 0;
-      //     }
-      //   });
-      // } else {
-      //   console.warn('One or both elements not found');
-      // }
-    });
-  </script>
 </body>
 
 </html>
