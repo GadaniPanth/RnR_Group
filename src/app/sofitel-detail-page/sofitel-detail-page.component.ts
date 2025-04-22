@@ -55,8 +55,10 @@ export class SofitelDetailPageComponent implements AfterViewInit {
 
   ngAfterViewChecked(): void {
     if (!this.hasInitializedCounters && this.counters.length) {
-      this.initCounters();
-      this.hasInitializedCounters = true;
+      setTimeout(() => {
+        this.initCounters();
+        this.hasInitializedCounters = true;
+      }, 2000);
     }
   }
 
@@ -171,7 +173,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
             count = +counterEl.innerText;
             if (count < target) {
               counterEl.innerText = `${Math.ceil(count + increment)}`;
-              setTimeout(updateCount, 150 / (count || 1));
+              setTimeout(updateCount, 500 / (count * 5 || 1));
             } else {
               counterEl.innerText = `${target}`;
             }
