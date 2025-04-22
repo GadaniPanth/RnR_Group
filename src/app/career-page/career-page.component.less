@@ -1,0 +1,158 @@
+@sec-bg-gray: #f5f4f4;
+@sec-bg-black: #24262b;
+@bg-orange: #ec614a;
+@bg-transparent: #00000052;
+@text-white: #ffffff;
+@text-orange: #ec614a;
+
+.main-container {
+    width: 91%;
+    margin: 0 auto;
+}
+
+.career-img {
+    img {
+        height: 100svh;
+        object-fit: cover;
+    }
+}
+
+.banner_overly {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.96) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.career-abs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: white;
+    text-align: center;
+}
+
+.career-paragraph {
+    h3 {
+        font-size: 48px;
+    }
+}
+
+.banner-title {
+    h1 {
+        font-size: 140px;
+    }
+}
+
+.career-paragraph {
+    h3 {
+        font-size: 64px;
+    }
+}
+
+.section-paragraph {
+    p {
+        font-size: 24px;
+    }
+}
+
+.flex-row {
+    display: flex;
+}
+
+.j-c-sb {
+    justify-content: space-between;
+}
+
+.al-start {
+    align-items: start;
+}
+
+.submit_btn {
+    background-color: @sec-bg-black;
+    color: @text-white;
+    border: none;
+    padding: 16px 60px;
+    border: solid 1px @sec-bg-black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+.submit_btn:hover {
+    background-color: @bg-orange;
+    color: white;
+    border: @bg-orange;
+}
+
+
+
+@media only screen and (max-width: 1680px) {}
+
+@media only screen and (max-width: 1440px) {}
+
+@media only screen and (max-width: 1366px) {}
+
+@media only screen and (max-width: 1280px) {}
+
+@media only screen and (max-width: 1152px) {}
+
+@media only screen and (max-width: 1024px) {
+
+    .banner-title h1 {
+        font-size: 100px;
+    }
+
+    .career-paragraph h3 {
+        font-size: 48px;
+    }
+
+    .section-paragraph p {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (max-width: 767px) {
+
+    .career-img img {
+        height: 90svh;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .career-paragraph h3 {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hidden-xs {
+        display: none;
+    }
+
+    .flex-row {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .section-padding {
+        padding: 55px 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .banner-title h1 {
+        font-size: 70px;
+    }
+
+    .career-paragraph h3 {
+        font-size: 33px;
+    }
+}

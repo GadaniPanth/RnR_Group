@@ -14,17 +14,18 @@
       <li class="rnr_logo">
         <a routerLink="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
       </li>
-      <li class="inquire_btn relative" (click)="navigateInquire()">
-        <p class="font_16 general_sans">Inquire Now</p>
-        <span class="arrow_svg">
-          <svg class="arrow_svg" width="22" height="13" viewBox="0 0 22 13" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-        </span>
-      </li>
+      <a routerLink="/inquiry">
+        <li class="inquire_btn relative">
+          <p class="font_16 general_sans">Inquire Now</p>
+          <span class="arrow_svg">
+            <svg class="arrow_svg" width="22" height="13" viewBox="0 0 22 13" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </li>
+      </a>
     </ul>
     <div class="slider-overlay" [ngClass]="isMenuOpen ? 'show' : '' " (click)="onMenuClick($event)">
     </div>
@@ -43,12 +44,12 @@
         </li>
         <li>
           <a routerLink="/" (click)="onMenuClick($event)">
-            <h2 class="font_48">Home</h2>
+            <h2 class="font_32" style="margin-top: 30px;">Home</h2>
           </a>
         </li>
         <li class="dropdown">
           <a>
-            <h2 class="font_48" (click)="toggleDropDown()">
+            <h2 class="font_32" (click)="toggleDropDown()">
               Residential
               <i class="ri-arrow-down-s-line" [ngClass]="isDropDownOpen ? 'rotate' : '' "></i>
             </h2>
@@ -105,23 +106,23 @@
 
         </li>
         <li>
-          <a href="#" (click)="onMenuClick($event)">
-            <h2 class="font_48">About Us</h2>
+          <a routerLink="/about" (click)="onMenuClick($event)">
+            <h2 class="font_32">About Us</h2>
           </a>
         </li>
         <li>
           <a href="#" (click)="onMenuClick($event)">
-            <h2 class="font_48">Channel Partner</h2>
+            <h2 class="font_32">Channel Partner</h2>
           </a>
         </li>
         <li>
-          <a href="#" (click)="onMenuClick($event)">
-            <h2 class="font_48">Career</h2>
+          <a routerLink="/career" (click)="onMenuClick($event)">
+            <h2 class="font_32">Career</h2>
           </a>
         </li>
         <li>
-          <a href="#" (click)="onMenuClick($event)">
-            <h2 class="font_48">Contact</h2>
+          <a routerLink="/contact" (click)="onMenuClick($event)">
+            <h2 class="font_32">Contact</h2>
           </a>
         </li>
         <li class="icons">
