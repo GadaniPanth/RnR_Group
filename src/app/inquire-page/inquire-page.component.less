@@ -145,9 +145,10 @@
 
   .phone_field input:focus + label,
   .phone_field input:valid + label {
-    top: 4px;
-    font-size: 20px;
-    opacity: 0.9;
+    left: -18%;
+    // top: 4px;
+    font-size: 10px;
+    // opacity: 0.9;
   }
 
   textarea {
@@ -458,106 +459,6 @@
       font-size: 50px;
     }
 
-    .section_1 {
-      .saffron_bg {
-        min-width: 700px;
-      }
-
-      .section_1_text {
-        .section_1_bottom_div {
-          width: 90%;
-        }
-
-        .head {
-          margin: 0;
-          margin-bottom: 50px;
-
-          * {
-            width: 100%;
-          }
-        }
-
-        .svg_text_flex {
-          // margin: 0;
-          width: 80%;
-          gap: 6px;
-          margin-bottom: 50px;
-          flex-direction: column;
-          align-items: flex-start;
-
-          * {
-            margin: 0;
-          }
-        }
-
-        .bottom_div {
-          width: 100%;
-          margin: 0;
-        }
-
-        .btn_div {
-          flex-direction: column;
-          width: 100%;
-          margin: 0;
-
-          > * {
-            width: 80% !important;
-          }
-        }
-      }
-    }
-
-    .section_2 {
-      .saffron_logo {
-        width: 63%;
-      }
-
-      .section_2_text {
-        gap: 40px;
-
-        .btn {
-          padding: 11px 20px;
-        }
-      }
-    }
-
-    .section_3 {
-      .bg_container {
-        // aspect-ratio: 1.24;
-        overflow: visible;
-        width: 100%;
-        min-width: unset;
-        aspect-ratio: 1/1;
-
-        .section_3_bg {
-          width: 100%;
-          min-width: unset;
-          margin: 0;
-          aspect-ratio: 1 / 1;
-
-          img {
-            min-width: unset;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-          }
-        }
-      }
-
-      .section_3_content {
-        padding: 4% 7.9%;
-      }
-    }
-
-    .section_8 {
-      .section_8_img {
-        min-width: 700px;
-      }
-
-      .section_8_text {
-        padding-right: 45.5%;
-      }
-    }
-
     .section_10_container {
       padding: 80px 0;
 
@@ -593,14 +494,6 @@
 }
 
 @media only screen and (max-width: 680px) {
-  .saffron_wrapper:not(.section_wrapper) {
-    .section_8 {
-      .font_64 {
-        font-size: 25px;
-      }
-    }
-  }
-
   .section_10_container {
     .inquire_card {
       width: 70%;
@@ -629,14 +522,6 @@
 }
 
 @media only screen and (max-width: 540px) {
-  .saffron_wrapper:not(.section_wrapper) {
-    .section_8 {
-      .section_8_text {
-        padding-right: 10%;
-      }
-    }
-  }
-
   .section_10_container {
     padding-bottom: 5px;
 
@@ -682,68 +567,11 @@
     .font_140 {
       font-size: 30px;
     }
+  }
 
-    .section_1 {
-      .saffron_bg {
-        img {
-          margin-left: -10%;
-        }
-      }
-
-      .section_1_text {
-        .head,
-        .svg_text_flex {
-          margin-bottom: 15px;
-        }
-
-        .svg_text .svg {
-          width: 18px;
-        }
-
-        .btn_div {
-          gap: 13px;
-
-          .btn {
-            width: 19px;
-            padding: 8px 4px;
-          }
-        }
-      }
-    }
-
-    .section_2 {
-      .saffron_logo {
-        width: 90%;
-      }
-
-      .section_2_text {
-        padding: 22% 10%;
-
-        .btn {
-          .svg {
-            width: 19px;
-
-            svg {
-              width: 100%;
-              object-fit: cover;
-            }
-          }
-        }
-      }
-    }
-
-    .section_8 {
-      .section_8_img {
-        min-width: 600px;
-
-        img {
-          margin-left: -11%;
-        }
-      }
-
-      .section_8_text {
-        left: 10px;
-      }
+  .section_10_container {
+    .font_64 {
+      font-size: 40px;
     }
   }
 
@@ -764,33 +592,24 @@
 }
 
 @media only screen and (max-width: 370px) {
-  .saffron_wrapper:not(.section_wrapper) {
-    .section_8 {
-      .section_8_img {
-        min-width: 500px;
+  .section_10_container {
+    padding-bottom: 5px;
 
-        img {
-          margin-left: -12%;
-        }
-      }
-
-      .section_8_text {
-        bottom: 5px;
-      }
+    .inquire_card {
+      padding: 20px 0;
+      min-width: unset;
+      width: 98%;
     }
 
-    .section_10_container {
-      padding-bottom: 5px;
+    .back_marque {
+      top: 10px;
+      transform: translateY(0);
+    }
 
-      .inquire_card {
-        padding: 20px 0;
-        min-width: unset;
-        width: 98%;
-      }
-
-      .back_marque {
-        top: 10px;
-        transform: translateY(0);
+    .input_wrapper {
+      .phone_field input:focus + label,
+      .phone_field input:valid + label {
+        left: -23%;
       }
     }
   }
