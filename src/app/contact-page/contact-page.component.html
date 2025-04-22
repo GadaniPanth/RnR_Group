@@ -92,7 +92,8 @@
                                 </div>
                                 <div class="phone_field">
                                     <input type="tel" formControlName="phone" pattern="^[0-9]{10}$"
-                                        (keypress)="restrictNonNumeric($event)" class="manrope font_20" required />
+                                        (keypress)="restrictNonNumeric($event)" maxlength="10" class="manrope font_20"
+                                        required />
                                     <label class="manrope font_20">Phone Number</label>
                                 </div>
                             </div>
