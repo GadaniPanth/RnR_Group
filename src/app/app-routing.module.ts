@@ -10,6 +10,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CareerPageComponent } from './career-page/career-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
+import { ChannelPartnerPageComponent } from './channel-partner-page/channel-partner-page.component';
 
 
 const routes: Routes = [
@@ -44,27 +45,32 @@ const routes: Routes = [
   {
     path: 'inquiry',
     component: InquirePageComponent,
-    data: { title: 'Rehvassa Saffron/inquiry-form' }
+    data: { title: 'Inquiry Form' }
   },
   {
     path: 'contact',
     component: ContactPageComponent,
-    data: { title: 'Rehvassa Saffron/Contact us' }
+    data: { title: 'Contact us' }
   },
   {
     path: 'about',
     component: AboutPageComponent,
-    data: { title: 'Rehvassa Saffron/About us' }
+    data: { title: 'About us' }
   },
   {
     path: 'career',
     component: CareerPageComponent,
-    data: { title: 'Rehvassa Saffron/Career' }
+    data: { title: 'Career' }
+  },
+  {
+    path: 'channelpartner',
+    component: ChannelPartnerPageComponent,
+    data: { title: 'Channel Partner' }
   },
   {
     path: 'projects',
     component: ProjectPageComponent,
-    data: { title: 'Rehvassa Saffron/Projects' }
+    data: { title: 'Projects' }
   }
 ];
 

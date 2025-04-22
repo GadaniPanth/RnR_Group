@@ -111,7 +111,7 @@
           </a>
         </li>
         <li>
-          <a href="#" (click)="onMenuClick($event)">
+          <a routerLink="/channelpartner" (click)="onMenuClick($event)">
             <h2 class="font_32">Channel Partner</h2>
           </a>
         </li>
@@ -127,17 +127,17 @@
         </li>
         <li class="inquiry-mobile visible-xs">
           <a routerLink="/inquiry">
-            <li class="inquire_btn relative">
-              <p class="font_16 general_sans">Inquire Now</p>
-              <span class="arrow_svg">
-                <svg class="arrow_svg" width="22" height="13" viewBox="0 0 22 13" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
-                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </li>
-          </a>
+        <li class="inquire_btn relative">
+          <p class="font_16 general_sans">Inquire Now</p>
+          <span class="arrow_svg">
+            <svg class="arrow_svg" width="22" height="13" viewBox="0 0 22 13" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </li>
+        </a>
         </li>
         <li class="icons">
           <a href="#"><i class="ri-phone-line"></i></a>
@@ -156,7 +156,7 @@
       <div class="footer-grid">
         <div class="inner-flex flex-gap-medium">
           <div class="footer-logo">
-            <img src="assets/images/home_page/Group 503 1.svg" alt="">
+            <img [src]="isSaffron ? logoFooter[0] : logoFooter[1]" alt="footerLogo">
           </div>
         </div>
         <div class="residential inner-flex flex-gap-small">
@@ -194,6 +194,9 @@
             </a>
             <a routerLink="/contact">
               <p class="black-color font-16">Contact</p>
+            </a>
+            <a routerLink="/channelpartner">
+              <p class="black-color font-16">Channel Partner</p>
             </a>
             <a href="#">
               <p class="black-color font-16">Privacy Policy</p>

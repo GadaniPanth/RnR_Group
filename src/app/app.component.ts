@@ -8,6 +8,11 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'rehvassa';
+  isSaffron: boolean = false;
+  logoFooter = [
+    'assets/images/1R&R.svg',
+    'assets/images/home_page/Group 503 1.svg',
+  ]
 
   private _isMenuOpen = false;
   get isMenuOpen(): boolean {
@@ -40,13 +45,11 @@ export class AppComponent {
   ]
 
   ngOnInit() {
-
     document.addEventListener('keydown', (e) => {
       if (e.key.toLocaleLowerCase() == 'escape') {
         this.isMenuOpen = false;
       }
-    })
-
+    });
   }
 
   onMenuClick(event: MouseEvent) {
@@ -65,9 +68,10 @@ export class AppComponent {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         window.scroll(0, 0);
+
+        this.isSaffron = e.urlAfterRedirects.endsWith('/saffron');
       }
     });
-
   }
 
   navigateInquire() {

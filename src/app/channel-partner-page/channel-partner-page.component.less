@@ -1,0 +1,497 @@
+@sec-bg-gray: #f5f4f4;
+@sec-bg-black: #24262b;
+@bg-orange: #ec614a;
+@bg-transparent: #00000052;
+@text-white: #ffffff;
+@text-orange: #ec614a;
+
+.channelPartner-img {
+  img {
+    height: 100svh;
+    object-fit: cover;
+  }
+}
+
+.banner_overly {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.channelPartner-abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  color: white;
+  text-align: center;
+}
+
+.font_24 {
+  font-size: 24px;
+}
+.font_100 {
+  font-size: 100px;
+}
+.font_200 {
+  font-size: 200px;
+}
+
+.grid_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  padding: 20% 8%;
+  gap: 2%;
+
+  .left_div {
+    // padding-left: 10%;
+    .head {
+      text-transform: uppercase;
+    }
+    p {
+      margin-top: 5%;
+    }
+  }
+}
+
+.section_10_container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  // padding: 188px 0;
+  z-index: 1;
+
+  .font_20 {
+    font-size: 23px;
+  }
+
+  .inquire_card {
+    width: 100%;
+    //   z-index: 1;
+    //   aspect-ratio: 10/1;
+    //   border-radius: 8px;
+    //   padding: 40px 30px;
+    //   max-width: 1051px;
+    //   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  // .saffron_logo {
+  //   position: absolute;
+  //   z-index: -1;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 80%;
+  // }
+
+  // .card_head {
+  //   text-align: center;
+  //   margin-bottom: 30px;
+  // }
+
+  // .card_head h1 {
+  //   color: white;
+  //   letter-spacing: 1px;
+  //   text-transform: uppercase;
+  // }
+
+  .inquire_form {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a4a4a4;
+    border-radius: 12px;
+  }
+
+  .form_group label {
+    color: #fff;
+    // font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  textarea {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    // font-size: 14px;
+    background-color: transparent;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #fff;
+    opacity: 0.7;
+  }
+
+  .flex_div {
+    display: flex;
+    gap: 15px;
+
+    .form_group {
+      width: 100%;
+    }
+  }
+
+  .phone_input {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .phone_input .flag {
+    display: flex;
+    align-items: bottom;
+    gap: 10px;
+    // font-size: 14px;
+    color: #fff;
+  }
+
+  .phone_input .svg img {
+    width: 24px;
+  }
+
+  .phone_field {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .phone_field input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    // font-size: 14px;
+  }
+
+  .phone_field label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .phone_field input:focus + label,
+  .phone_field input:valid + label {
+    top: 4px;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+
+  textarea {
+    resize: none;
+    // height: 80px;
+  }
+
+  .submit_btn {
+    margin: 0 auto;
+    background-color: @bg-orange;
+    color: @text-white;
+    border: none;
+    padding: 16px 60px;
+    border: solid 1px @bg-orange;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+    width: 100%;
+  }
+
+  .submit_btn:hover {
+    background-color: @sec-bg-black;
+    color: @bg-orange;
+  }
+
+  .input_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .input_wrapper input,
+  .input_wrapper textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .input_wrapper label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .input_wrapper input:focus + label,
+  .input_wrapper input:valid + label,
+  .input_wrapper textarea:focus + label,
+  .input_wrapper textarea:valid + label {
+    top: 4px;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  .date_field label {
+    top: 4px;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .back_marque {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+
+    ul {
+      display: flex;
+      text-wrap: nowrap;
+      align-items: center;
+      list-style: none;
+      gap: 32px;
+    }
+
+    ul:nth-of-type(odd) {
+      opacity: 11%;
+
+      li h1 {
+        color: #24262b;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .font_100 {
+    font-size: 76px;
+  }
+  .font_200 {
+    font-size: 148px;
+  }
+
+  .section_10_container {
+    .font_20 {
+      font-size: 15px;
+    }
+
+    .inquire_form {
+      gap: 25px;
+    }
+
+    .submit_btn {
+      padding: 14px 0;
+    }
+
+    .date_field label {
+      top: 2px;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .font_24 {
+    font-size: 18px;
+  }
+  .font_100 {
+    font-size: 58px;
+  }
+
+  .section_10_container {
+    .font_20 {
+      font-size: 10px;
+    }
+
+    .inquire_form {
+      gap: 16px;
+    }
+
+    .submit_btn {
+      padding: 12px 0;
+    }
+
+    .date_field label {
+      top: 2px;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .font_24 {
+    font-size: 12px;
+  }
+  .font_100 {
+    font-size: 41px;
+  }
+  .font_200 {
+    font-size: 98px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .font_24 {
+    font-size: 16px;
+  }
+  .font_100 {
+    font-size: 55px;
+  }
+  .font_200 {
+    font-size: 68px;
+  }
+
+  .grid_div {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 16% 5%;
+    gap: 7%;
+    // margin-bottom: ;
+  }
+
+  .section_10_container {
+    .font_20 {
+      font-size: 15px;
+    }
+
+    .inquire_form {
+      gap: 24px;
+    }
+
+    .submit_btn {
+      padding: 14px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  .channelPartner-img {
+    img {
+      height: 100svh;
+      object-fit: cover;
+    }
+  }
+
+  .channelPartner-abs {
+    top: 40%;
+  }
+
+  .font_24 {
+    font-size: 14px;
+  }
+  .font_100 {
+    font-size: 40px;
+  }
+  .font_200 {
+    font-size: 50px;
+  }
+
+  .grid_div {
+    padding-bottom: 20%;
+  }
+
+  .section_10_container {
+    .font_20 {
+      font-size: 15px;
+    }
+
+    .inquire_form {
+      gap: 24px;
+    }
+
+    .flex_div {
+      flex-direction: column;
+    }
+
+    .date_input {
+      margin-top: 18px;
+    }
+
+    .submit_btn {
+      padding: 10px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .channelPartner-img {
+    img {
+      height: 100svh;
+      object-fit: cover;
+    }
+  }
+
+  //   .channelPartner-abs {
+  //     top: 40%;
+  //   }
+
+  .font_24 {
+    font-size: 13px;
+  }
+  .font_100 {
+    font-size: 38px;
+  }
+  //   .font_200 {
+  //     font-size: 50px;
+  //   }
+
+  .grid_div {
+    padding-top: 7%;
+    padding-bottom: 20%;
+    gap: 4%;
+  }
+
+  .section_10_container {
+    .font_20 {
+      font-size: 13px;
+    }
+
+    .inquire_form {
+      gap: 24px;
+    }
+
+    .flex_div {
+      flex-direction: column;
+    }
+
+    .date_input {
+      margin-top: 18px;
+    }
+
+    .submit_btn {
+      padding: 8px 0;
+    }
+  }
+}
