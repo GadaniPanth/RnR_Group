@@ -9,6 +9,9 @@ import { SaffronDetailPageComponent } from './saffron-detail-page/saffron-detail
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { InquirePageComponent } from './inquire-page/inquire-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { CareerPageComponent } from './career-page/career-page.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     HomePageComponent,
     SaffronDetailPageComponent,
     InquirePageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    AboutPageComponent,
+    CareerPageComponent,
+    ProjectPageComponent
   ],
   imports: [
     BrowserModule,

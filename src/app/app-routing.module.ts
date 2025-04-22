@@ -7,6 +7,9 @@ import { SofitelDetailPageComponent } from './sofitel-detail-page/sofitel-detail
 import { HomePageComponent } from './home-page/home-page.component';
 import { SaffronDetailPageComponent } from './saffron-detail-page/saffron-detail-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { CareerPageComponent } from './career-page/career-page.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
 
 
 const routes: Routes = [
@@ -47,6 +50,21 @@ const routes: Routes = [
     path: 'contact',
     component: ContactPageComponent,
     data: { title: 'Rehvassa Saffron/Contact us' }
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
+    data: { title: 'Rehvassa Saffron/About us' }
+  },
+  {
+    path: 'career',
+    component: CareerPageComponent,
+    data: { title: 'Rehvassa Saffron/Career' }
+  },
+  {
+    path: 'projects',
+    component: ProjectPageComponent,
+    data: { title: 'Rehvassa Saffron/Projects' }
   }
 ];
 
