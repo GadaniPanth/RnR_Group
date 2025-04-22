@@ -200,7 +200,16 @@
   .phone_field input:focus + label,
   .phone_field input:valid + label {
     top: 4px;
-    font-size: 20px;
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  .input_wrapper input:focus + label,
+  .input_wrapper input:valid + label,
+  .input_wrapper textarea:focus + label,
+  .input_wrapper textarea:valid + label {
+    top: 4px;
+    font-size: 18px;
     opacity: 0.9;
   }
 
@@ -253,19 +262,22 @@
     transition: 0.2s ease all;
   }
 
-  .input_wrapper input:focus + label,
-  .input_wrapper input:valid + label,
-  .input_wrapper textarea:focus + label,
-  .input_wrapper textarea:valid + label {
-    top: 4px;
-    font-size: 15px;
-    opacity: 0.9;
-  }
-
   .date_field label {
     top: 4px;
     font-size: 13px;
     opacity: 0.9;
+  }
+
+  .form_group.has-error {
+    border-color: red;
+
+    // label {
+    //   color: red;
+    // }
+
+    input {
+      border-color: red;
+    }
   }
 
   .back_marque {
@@ -305,6 +317,18 @@
       font-size: 15px;
     }
 
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
+      font-size: 14px;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      font-size: 14px;
+    }
+
     .inquire_form {
       gap: 25px;
     }
@@ -332,6 +356,18 @@
   .section_10_container {
     .font_20 {
       font-size: 10px;
+    }
+
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
+      font-size: 8px;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      font-size: 8px;
     }
 
     .inquire_form {
@@ -392,6 +428,18 @@
   .section_10_container {
     .font_20 {
       font-size: 15px;
+    }
+
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
+      font-size: 13px;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      font-size: 13px;
     }
 
     .inquire_form {
@@ -484,6 +532,18 @@
   .section_10_container {
     .font_20 {
       font-size: 13px;
+    }
+
+    .phone_field input:focus + label,
+    .phone_field input:valid + label {
+      font-size: 11px;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      font-size: 11px;
     }
 
     .inquire_form {
