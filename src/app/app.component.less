@@ -2,6 +2,7 @@
   font-size: 32px;
   font-weight: normal;
 }
+
 @text-blue: #213b74;
 @text-white: #ffffff;
 @bg-black: #24262b;
@@ -394,21 +395,20 @@ a {
   padding: 0;
   border-inline: calc(var(--s) / 2) solid #0000;
   box-sizing: content-box;
-  --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat
-    content-box border-box;
-  --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000)
-    repeat-y content-box border-box;
+  --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
   background: var(--_g2) left var(--_p, 0px) top,
-    var(--_g1) left calc(var(--s) / 10 + var(--_p, 0px)) top,
-    var(--_g2) right var(--_p, 0px) top,
-    var(--_g1) right calc(var(--s) / 10 + var(--_p, 0px)) top;
-  background-size: 20% 80%, 40% 100%;
+  var(--_g1) left calc(var(--s) / 10 + var(--_p, 0px)) top,
+  var(--_g2) right var(--_p, 0px) top,
+  var(--_g1) right calc(var(--s) / 10 + var(--_p, 0px)) top;
+  background-size: 20% 80%,
+  40% 100%;
   position: relative;
   clip-path: inset(0 25%);
   -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
   cursor: pointer;
   transition: background-position 0.3s var(--_s, 0.3s),
-    clip-path 0s var(--_s, 0.6s);
+  clip-path 0s var(--_s, 0.6s);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -484,8 +484,12 @@ a p:hover {
   width: 80px;
 }
 
+.visible-xs {
+  display: none !important;
+}
+
 .hidden-xs {
-  display: block;
+  display: block !important;
 }
 
 @media only screen and (max-width: 1152px) {
@@ -498,11 +502,9 @@ a p:hover {
   }
 }
 
-@media only screen and (max-width: 1366px) {
-}
+@media only screen and (max-width: 1366px) {}
 
-@media only screen and (max-width: 1280px) {
-}
+@media only screen and (max-width: 1280px) {}
 
 @media only screen and (max-width: 1024px) {
   .footer-grid {
@@ -578,6 +580,7 @@ a p:hover {
 
   .slider {
     min-width: 100%;
+
     .font_24 {
       font-size: 24px;
     }
@@ -603,6 +606,18 @@ a p:hover {
 
   .footer-icon-map {
     width: 32px;
+  }
+
+  .visible-xs {
+    display: block !important;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .inquiry-mobile {
+    width: 30% !important;
   }
 }
 
