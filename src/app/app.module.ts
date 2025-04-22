@@ -13,6 +13,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { CareerPageComponent } from './career-page/career-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { ChannelPartnerPageComponent } from './channel-partner-page/channel-partner-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { ChannelPartnerPageComponent } from './channel-partner-page/channel-part
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,

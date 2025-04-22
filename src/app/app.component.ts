@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
@@ -68,9 +68,12 @@ export class AppComponent {
 
   constructor(private router: Router, private titleService: Title, private metaService: Meta, private activatedRoute: ActivatedRoute) {
     this.router.events.subscribe((e) => {
+      if (e instanceof NavigationStart) {
+        window.scrollTo({
+          top: 0,
+        });
+      }
       if (e instanceof NavigationEnd) {
-        window.scroll(0, 0);
-
         this.isSaffron = e.urlAfterRedirects.endsWith('/saffron');
       }
     });

@@ -908,6 +908,28 @@
     opacity: 0.9;
   }
 
+  // .form_group:has(input.ng-invalid.ng-touched),
+  // .form_group:has(textarea.ng-invalid.ng-touched) {
+  //   border-color: red !important;
+  // }
+
+  // .input_wrapper input.ng-invalid.ng-touched + label,
+  // .input_wrapper textarea.ng-invalid.ng-touched + label {
+  //   color: red;
+  // }
+
+  .form_group.has-error {
+    border-color: red;
+
+    label {
+      color: red;
+    }
+
+    input {
+      border-color: red;
+    }
+  }
+
   .back_marque {
     position: absolute;
     z-index: -1;

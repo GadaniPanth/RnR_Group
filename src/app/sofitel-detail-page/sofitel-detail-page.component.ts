@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 @Component({
@@ -15,6 +16,8 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   private speed = 1000;
   swiper!: Swiper;
   private hasInitializedCounters = false;
+
+  formSubmitted = false;
 
   ngOnInit() { }
 
@@ -246,6 +249,22 @@ export class SofitelDetailPageComponent implements AfterViewInit {
       counter.nativeElement.innerText = '0'; // reset count
       observer.observe(counter.nativeElement);
     });
+  }
+
+  inquireForm = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    message: new FormControl(''),
+  });
+
+  onSubmit() {
+    this.formSubmitted = true;
+
+    if (this.inquireForm.invalid) {
+      return;
+    }
+
   }
 
 }

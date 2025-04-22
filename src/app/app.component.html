@@ -12,9 +12,9 @@
         <h2 class="font_16 general_sans menu_btn"><i class="ri-menu-line"></i></h2>
       </li> -->
       <li class="rnr_logo">
-        <a routerLink="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
+        <a routerLink="/" href="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
       </li>
-      <a routerLink="/inquiry" class="hidden-xs">
+      <a routerLink="/inquiry" href="/inquiry" class="hidden-xs">
         <li class="inquire_btn relative">
           <p class="font_16 general_sans">Inquire Now</p>
           <span class="arrow_svg">
@@ -33,7 +33,7 @@
       <ul>
         <li>
           <div class="rnr_logo" (click)="onMenuClick($event)">
-            <a routerLink="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
+            <a routerLink="/" href="/"><img src="assets/images/home_page/Group 503 1.svg" alt="RnR Logo"></a>
           </div>
           <input type="checkbox" role="button" aria-label="Display the menu" class="menu menu_close"
             (click)="onMenuClick($event)" [checked]="isMenuOpen">
@@ -43,7 +43,7 @@
     </div> -->
         </li>
         <li>
-          <a routerLink="/" (click)="onMenuClick($event)">
+          <a routerLink="/" (click)="onMenuClick($event)" href="/">
             <h2 class="font_32" style="margin-top: 30px;">Home</h2>
           </a>
         </li>
@@ -57,7 +57,7 @@
         </li>
         <li class="dropdown-content" [ngClass]="isDropDownOpen ? 'open' : 'close' ">
           <div *ngFor="let item of ResidentialList">
-            <a [routerLink]="[item.navigate]" (click)="onMenuClick($event)">
+            <a [routerLink]="[item.navigate]" (click)="onMenuClick($event)" [attr.href]="item.navigate">
               <div class="dropdown_div">
                 <div class="left_img">
                   <img [src]="item.image" [alt]='item.title'>
@@ -106,27 +106,27 @@
 
         </li>
         <li>
-          <a routerLink="/about" (click)="onMenuClick($event)">
+          <a routerLink="/about" href="/about" (click)="onMenuClick($event)">
             <h2 class="font_32">About Us</h2>
           </a>
         </li>
         <li>
-          <a routerLink="/channelpartner" (click)="onMenuClick($event)">
+          <a routerLink="/channelpartner" href="/channelpartner" (click)="onMenuClick($event)">
             <h2 class="font_32">Channel Partner</h2>
           </a>
         </li>
         <li>
-          <a routerLink="/career" (click)="onMenuClick($event)">
+          <a routerLink="/career" href="/career" (click)="onMenuClick($event)">
             <h2 class="font_32">Career</h2>
           </a>
         </li>
         <li>
-          <a routerLink="/contact" (click)="onMenuClick($event)">
+          <a routerLink="/contact" href="/contact" (click)="onMenuClick($event)">
             <h2 class="font_32">Contact</h2>
           </a>
         </li>
         <li class="inquiry-mobile visible-xs">
-          <a routerLink="/inquiry">
+          <a routerLink="/inquiry" href="/inquiry">
         <li class="inquire_btn relative">
           <p class="font_16 general_sans">Inquire Now</p>
           <span class="arrow_svg">
@@ -147,7 +147,7 @@
       </ul>
     </div>
   </div>
-  <div (click)="isMenuOpen ? onMenuClick($event) : return;" [ngClass]="isMenuOpen ? 'no-scroll' : '' ">
+  <div (click)="isMenuOpen ? onMenuClick($event) : '';" [ngClass]="isMenuOpen ? 'no-scroll' : '' ">
     <router-outlet></router-outlet>
   </div>
 
@@ -162,12 +162,12 @@
         <div class="residential inner-flex flex-gap-small">
           <p class="font-24">Residential</p>
           <div class="inner-flex wfc">
-            <a routerLink="/sofitel">
+            <a routerLink="/sofitel" href="/sofitel">
               <p class="black-color font-16">Rehvassa Sofitel</p>
             </a>
           </div>
           <div class="inner-flex wfc">
-            <a routerLink="/saffron">
+            <a routerLink="/saffron" href="/saffron">
               <p class="black-color font-16">Rehvassa Saffron</p>
             </a>
           </div>
@@ -183,19 +183,19 @@
         <div class="residential inner-flex flex-gap-small">
           <p class="font-24">Other Links</p>
           <div class="inner-flex wfc">
-            <a routerLink="/projects">
+            <a routerLink="/projects" href="/projects">
               <p class="black-color font-16">Projects</p>
             </a>
             <a href="#">
               <p class="black-color font-16">Articles</p>
             </a>
-            <a routerLink="/about">
+            <a routerLink="/about" href="/about">
               <p class="black-color font-16">About Us</p>
             </a>
-            <a routerLink="/contact">
+            <a routerLink="/contact" href="/contact">
               <p class="black-color font-16">Contact</p>
             </a>
-            <a routerLink="/channelpartner">
+            <a routerLink="/channelpartner" href="/channelpartner">
               <p class="black-color font-16">Channel Partner</p>
             </a>
             <a href="#">
