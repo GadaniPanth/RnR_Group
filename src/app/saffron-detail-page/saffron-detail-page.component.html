@@ -397,22 +397,28 @@
                 <div class="card_head">
                     <h1 class="font_64 bigilla">Inquire Now</h1>
                 </div>
-                <form class="inquire_form">
-                    <div class="form_group">
+                <form class="inquire_form" [formGroup]="inquireForm" (ngSubmit)="onSubmit()">
+                    <div class="form_group" [ngClass]="{
+    'has-error': formSubmitted && inquireForm.get('fullName')?.invalid
+  }">
                         <div class="input_wrapper">
-                            <input type="text" class="manrope font_20" required />
+                            <input type="text" formControlName="fullName" class="manrope font_20" required />
                             <label class="manrope font_20">Full Name</label>
                         </div>
                     </div>
 
                     <div class="flex_div">
-                        <div class="form_group">
+                        <div class="form_group" [ngClass]="{
+    'has-error': formSubmitted && inquireForm.get('email')?.invalid
+  }">
                             <div class="input_wrapper">
-                                <input type="email" class="manrope font_20" required />
+                                <input type="email" formControlName="email" class="manrope font_20" required />
                                 <label class="manrope font_20">Email address</label>
                             </div>
                         </div>
-                        <div class="form_group">
+                        <div class="form_group" [ngClass]="{
+    'has-error': formSubmitted && inquireForm.get('phone')?.invalid
+  }">
                             <div class="input_wrapper phone_input">
                                 <div class="flag">
                                     <div class="svg">
@@ -423,7 +429,8 @@
                                     </span>
                                 </div>
                                 <div class="phone_field">
-                                    <input type="tel" class="manrope font_20" required />
+                                    <input type="tel" formControlName="phone" pattern="^[0-9]{10}$" maxlength="10"
+                                        (keypress)="restrictNonNumeric($event)" class="manrope font_20" required />
                                     <label class="manrope font_20">Phone Number</label>
                                 </div>
                             </div>
@@ -432,7 +439,7 @@
 
                     <div class="form_group">
                         <div class="input_wrapper msg">
-                            <textarea rows="5" class="manrope font_20" required></textarea>
+                            <textarea rows="5" formControlName="message" class="manrope font_20" required></textarea>
                             <label class="manrope font_20">Message</label>
                         </div>
                     </div>

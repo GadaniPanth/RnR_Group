@@ -258,6 +258,13 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     message: new FormControl(''),
   });
 
+  restrictNonNumeric(event: KeyboardEvent) {
+    const regex = /[0-9]/;
+    if (!regex.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   onSubmit() {
     this.formSubmitted = true;
 

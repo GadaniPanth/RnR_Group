@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-saffron-detail-page',
@@ -150,4 +151,27 @@ export class SaffronDetailPageComponent implements AfterViewInit {
   //     };
   //   });
   // }
+  formSubmitted = false;
+
+  inquireForm = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    message: new FormControl(''),
+  });
+
+  restrictNonNumeric(event: KeyboardEvent) {
+    const regex = /[0-9]/;
+    if (!regex.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+
+  onSubmit() {
+    this.formSubmitted = true;
+    if (this.inquireForm.invalid) {
+      return;
+    }
+  }
+
 }
