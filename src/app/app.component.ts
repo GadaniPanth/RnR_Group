@@ -69,9 +69,7 @@ export class AppComponent {
   constructor(private router: Router, private titleService: Title, private metaService: Meta, private activatedRoute: ActivatedRoute) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationStart) {
-        window.scrollTo({
-          top: 0,
-        });
+        window.scroll(0, 0)
       }
       if (e instanceof NavigationEnd) {
         this.isSaffron = e.urlAfterRedirects.endsWith('/saffron');
