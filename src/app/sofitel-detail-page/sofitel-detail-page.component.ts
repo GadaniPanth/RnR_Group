@@ -83,19 +83,19 @@ export class SofitelDetailPageComponent implements AfterViewInit {
       'img': 'assets/images/sofitel_detail_page/sec5_img2.png'
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img3.png'
+      'img': 'assets/images/sofitel_detail_page/luxuryimg-02.jpg'
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img4.png'
+      'img': 'assets/images/sofitel_detail_page/luxuryimg-04.jpg'
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img5.png'
+      'img': 'assets/images/sofitel_detail_page/luxuryimg-05.jpg'
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img6.png'
+      'img': 'assets/images/sofitel_detail_page/luxuryimg-06.jpg'
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img7.png'
+      'img': 'assets/images/sofitel_detail_page/luxuryimg-07.jpg'
     },
   ]
 
