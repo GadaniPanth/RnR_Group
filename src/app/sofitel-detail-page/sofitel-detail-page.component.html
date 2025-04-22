@@ -397,9 +397,9 @@
                     </li>
                 </ul> -->
                 <div class="sec-5-grid flex-gap-medium accordion">
-                    <div class="accordion-item" *ngFor="let section of sections; let i = index"
+                    <div class="accordion-item" *ngFor="let section of glamourSections; let i = index"
                         [class.open]="section.isOpen">
-                        <div class="accordion-header" (click)="toggleSection(i)">
+                        <div class="accordion-header" (click)="toggleGlamourSection(i)">
                             <span class="font_18 general_sans wow fadeInUp" data-wow-delay=".5s"
                                 data-wow-duration="1s">{{ section.title }}</span>
                             <img class="icon wow zoomInLeft" data-wow-delay=".5s" data-wow-duration="1s"
@@ -671,9 +671,9 @@
                     </ul> -->
 
                     <div class="sec-5-grid flex-gap-medium accordion">
-                        <div class="accordion-item" *ngFor="let section of sections; let i = index"
+                        <div class="accordion-item" *ngFor="let section of pulseSections; let i = index"
                             [class.open]="section.isOpen">
-                            <div class="accordion-header" (click)="toggleSection(i)">
+                            <div class="accordion-header" (click)="togglePulseSection(i)">
                                 <span class="font_18 general_sans wow fadeInUpSmall" data-wow-delay=".5s"
                                     data-wow-duration="1s">{{ section.title }}</span>
                                 <img class="icon wow zoomInLeft" data-wow-delay=".5s" data-wow-duration="1s"
