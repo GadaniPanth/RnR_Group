@@ -83,6 +83,13 @@ export class AppComponent {
     this.isDropDownOpen = !this.isDropDownOpen
   }
 
+  restrictNonNumeric(event: KeyboardEvent) {
+    const regex = /[0-9]/;
+    if (!regex.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   get constructionStatus(): string {
     return this.ResidentialList['percent'] < 100 ? 'Under Construction' : 'Completed';
   }
