@@ -90,7 +90,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
 
     Swiper.use([Pagination]);
     new Swiper(this.swiperContainerCounter.nativeElement, {
-      slidesPerView: 2,
+      slidesPerView: 'auto',
       spaceBetween: 0,
       pagination: {
         el: ".swiper-pagination",
