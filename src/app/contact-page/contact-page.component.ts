@@ -19,7 +19,7 @@ export class ContactPageComponent implements OnInit {
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
-    message: new FormControl(''),
+    message: new FormControl('', Validators.required),
   });
 
   restrictNonNumeric(event: KeyboardEvent) {

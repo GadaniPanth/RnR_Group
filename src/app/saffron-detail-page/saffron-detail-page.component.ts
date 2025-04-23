@@ -11,6 +11,39 @@ export class SaffronDetailPageComponent implements AfterViewInit {
   @ViewChild('roundedAnimate', { static: false }) roundedAnimate!: ElementRef;
   @ViewChild('fadeAnimation', { static: false }) fadeAnimation!: ElementRef;
 
+  typedTextMain = '';
+  fullTextMain = 'OF THE ONES WHO';
+  typedTextSpan = '';
+  fullTextSpan = 'EXPERIENCE THEM';
+  private typingSpeed = 100;
+
+  ngOnInit() {
+    this.startTyping()
+  }
+
+  startTyping() {
+    let indexMain = 0;
+    let indexSpan = 0;
+
+    const typeMain = () => {
+      if (indexMain < this.fullTextMain.length) {
+        this.typedTextMain += this.fullTextMain.charAt(indexMain++);
+        setTimeout(typeMain, this.typingSpeed);
+      } else {
+        typeSpan();
+      }
+    };
+
+    const typeSpan = () => {
+      if (indexSpan < this.fullTextSpan.length) {
+        this.typedTextSpan += this.fullTextSpan.charAt(indexSpan++);
+        setTimeout(typeSpan, this.typingSpeed);
+      }
+    };
+
+    typeMain();
+  }
+
   tabs = [
     { title: "Ground Floor", image: "assets/images/home-saffron_sec-wrap/groundFloor.png" },
     { title: "First Floor", image: "assets/images/home-saffron_sec-wrap/fristfloor.png" },
@@ -157,7 +190,7 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
-    message: new FormControl(''),
+    message: new FormControl('', Validators.required),
   });
 
   restrictNonNumeric(event: KeyboardEvent) {

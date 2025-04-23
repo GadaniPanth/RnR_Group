@@ -32,7 +32,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
-    message: new FormControl(''),
+    message: new FormControl('', Validators.required),
   });
 
   formSubmitted = false;
@@ -274,7 +274,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
-    message: new FormControl(''),
+    message: new FormControl('', Validators.required),
   });
 
   restrictNonNumeric(event: KeyboardEvent) {
