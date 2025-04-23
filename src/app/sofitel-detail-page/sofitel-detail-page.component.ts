@@ -17,6 +17,17 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   swiper!: Swiper;
   private hasInitializedCounters = false;
 
+  private _isInquiryOpen = true;
+  get isInquiryOpen(): boolean {
+    return this._isInquiryOpen;
+  }
+  set isInquiryOpen(value: boolean) {
+    this._isInquiryOpen = value;
+    document.body.style.overflow = value ? 'hidden' : '';
+  }
+  onInquiryClick(event: MouseEvent) {
+    this.isInquiryOpen = !this.isInquiryOpen;
+  }
   formSubmitted = false;
 
   ngOnInit() { }

@@ -47,6 +47,254 @@
   }
 }
 
+.sidepanel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+  transform-origin: left;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.sidepanel {
+  position: fixed;
+  background-color: #24262b;
+  height: 100dvh;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  overflow-y: scroll;
+  transition: all 0.8s ease-in-out;
+  padding: 0;
+  min-width: 435px;
+  width: 0;
+  right: -100%;
+  transition-delay: 0.3s;
+
+  .font-16 {
+    font-size: 16px;
+  }
+  .font_30 {
+    font-size: 30px;
+  }
+
+  .sidepanel_close {
+    cursor: pointer;
+    color: #ffffff;
+    text-align: right;
+  }
+
+  &.active {
+    width: 30%;
+    right: 0;
+  }
+
+  .inquire_card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card_head {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .card_head h1 {
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .inquire_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a4a4a4;
+    border-radius: 12px;
+  }
+
+  .form_group label {
+    color: #fff;
+    // font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    // font-size: 14px;
+    background-color: transparent;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #fff;
+    opacity: 0.7;
+  }
+
+  .flex_div {
+    display: flex;
+    gap: 15px;
+
+    .form_group {
+      width: 100%;
+    }
+  }
+
+  .phone_input {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .phone_input .flag {
+    display: flex;
+    align-items: bottom;
+    gap: 10px;
+    // font-size: 14px;
+    color: #fff;
+  }
+
+  .phone_input .svg img {
+    width: 24px;
+  }
+
+  .phone_field {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .phone_field input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    // font-size: 14px;
+  }
+
+  .phone_field label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .phone_field input:focus + label,
+  .phone_field input:valid + label {
+    top: 4px;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+
+  // textarea {
+  //   resize: none;
+  //   // height: 80px;
+  // }
+
+  .submit_btn {
+    margin: 0 auto;
+    background-color: @sec-bg-pink;
+    color: @text-browen;
+    border: none;
+    padding: 16px 60px;
+    border: solid 1px @sec-bg-pink;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+  }
+
+  .submit_btn:hover {
+    background-color: @bg-brown;
+    color: @sec-bg-pink;
+  }
+
+  .input_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .input_wrapper input,
+  .input_wrapper textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .input_wrapper label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .input_wrapper input:focus + label,
+  .input_wrapper input:valid + label,
+  .input_wrapper textarea:focus + label,
+  .input_wrapper textarea:valid + label {
+    top: 4px;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  // .form_group:has(input.ng-invalid.ng-touched),
+  // .form_group:has(textarea.ng-invalid.ng-touched) {
+  //   border-color: red !important;
+  // }
+
+  // .input_wrapper input.ng-invalid.ng-touched + label,
+  // .input_wrapper textarea.ng-invalid.ng-touched + label {
+  //   color: red;
+  // }
+
+  .form_group.has-error {
+    border-color: red;
+
+    // label {
+    //   color: red;
+    // }
+
+    input {
+      border-color: red;
+    }
+  }
+}
+
 .section_1 {
   * {
     color: white;
@@ -1524,6 +1772,41 @@
     }
   }
 
+  .sidepanel {
+    .inquire_card {
+      // aspect-ratio: 5/1.5;
+      // border-radius: 8px;
+      // padding: 40px 30px;
+      // max-width: 1051px;
+      // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      // width: 60%;
+    }
+
+    .font_20 {
+      font-family: manrope_thin;
+      font-size: 10px;
+    }
+
+    .input_wrapper input:focus + label,
+    .input_wrapper input:valid + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      top: 4px;
+      font-size: 8px;
+      opacity: 0.9;
+    }
+
+    .submit_btn {
+      padding: 8px 36px;
+    }
+
+    .input_wrapper {
+      textarea {
+        height: calc(1.5rem * 2);
+      }
+    }
+  }
+
   .sofitel_wrapper .section_10_container {
     width: 100%;
     display: grid;
@@ -1950,6 +2233,36 @@
     }
   }
 
+  .sidepanel {
+    &.active {
+      width: 100%;
+      right: 0;
+    }
+
+    // .inquire_card {
+    //   min-width: 395px;
+    // }
+
+    // .font_64 {
+    //   font-size: 34px;
+    // }
+
+    // .font_20 {
+    //   font-size: 8px;
+    // }
+
+    // .input_wrapper input:focus + label,
+    // .input_wrapper input:valid + label,
+    // .input_wrapper textarea:focus + label,
+    // .input_wrapper textarea:valid + label {
+    //   font-size: 7px;
+    // }
+
+    // .flex_div {
+    //   flex-direction: column;
+    // }
+  }
+
   .sofitel_wrapper .section_10_container {
     padding: 80px 0;
 
@@ -2152,6 +2465,41 @@
           line-height: 50px;
         }
       }
+    }
+  }
+
+  .sidepanel {
+    min-width: unset;
+    &.active {
+      width: 100%;
+      right: 0;
+    }
+
+    .inquire_card {
+      min-width: none;
+    }
+
+    // .inquire_card {
+    //   min-width: 395px;
+    // }
+
+    // .font_64 {
+    //   font-size: 34px;
+    // }
+
+    // .font_20 {
+    //   font-size: 8px;
+    // }
+
+    // .input_wrapper input:focus + label,
+    // .input_wrapper input:valid + label,
+    // .input_wrapper textarea:focus + label,
+    // .input_wrapper textarea:valid + label {
+    //   font-size: 7px;
+    // }
+
+    .flex_div {
+      flex-direction: column;
     }
   }
 

@@ -1,4 +1,65 @@
 <div class="sofitel_wrapper ovxhidden">
+    <div class="sidepanel-overlay" [ngClass]="isInquiryOpen ? 'show' : '' " (click)="onInquiryClick($event)">
+    </div>
+    <div class="sidepanel sidepanel_inquiry" [ngClass]="isInquiryOpen ? 'active' : ''">
+        <div class="sidepanel_close">
+            <p class="font_30"><i class="ri-close-large-line" (click)="onInquiryClick($event)"></i></p>
+        </div>
+        <div class="inquire_card">
+            <div class="card_head">
+                <h1 class="font_64 bigilla">Inquire Now</h1>
+            </div>
+            <form class="inquire_form" [formGroup]="inquireForm" (ngSubmit)="onSubmit()">
+                <div class="form_group" [ngClass]="{
+'has-error': formSubmitted && inquireForm.get('fullName')?.invalid
+}">
+                    <div class="input_wrapper">
+                        <input type="text" formControlName="fullName" class="manrope font_20" required />
+                        <label class="manrope font_20">Full Name</label>
+                    </div>
+                </div>
+
+                <div class="flex_div">
+                    <div class="form_group" [ngClass]="{
+'has-error': formSubmitted && inquireForm.get('email')?.invalid
+}">
+                        <div class="input_wrapper">
+                            <input type="email" formControlName="email" class="manrope font_20" required />
+                            <label class="manrope font_20">Email address</label>
+                        </div>
+                    </div>
+                    <div class="form_group" [ngClass]="{
+'has-error': formSubmitted && inquireForm.get('phone')?.invalid
+}">
+                        <div class="input_wrapper phone_input">
+                            <div class="flag">
+                                <div class="svg">
+                                    <img src="assets/images/sofitel_detail_page/flag.svg" alt="flagImage" />
+                                </div>
+                                <span>
+                                    <p>(+91)</p>
+                                </span>
+                            </div>
+                            <div class="phone_field">
+                                <input type="tel" (keypress)="restrictNonNumeric($event)" formControlName="phone"
+                                    pattern="^[0-9]{10}$" maxlength="10" class="manrope font_20" required />
+                                <label class="manrope font_20">Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_group">
+                    <div class="input_wrapper msg">
+                        <textarea rows="1" formControlName="message" class="manrope font_20"></textarea>
+                        <label class="manrope font_20">Message</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit_btn manrope font-16">Send</button>
+            </form>
+        </div>
+    </div>
 
     <section class="section_1 relative">
         <div class="sofitel_bg">
@@ -114,7 +175,6 @@
             <div class="swiper-pagination"></div>
         </div>
 
-
         <div class="section_2_content grid_95 relative">
             <div class="section_2_text">
                 <div class="head">
@@ -131,7 +191,8 @@
                         "Sofitel", synonymous with unparalleled French luxury hospitality.</p>
                 </div>
                 <div class="btn_div">
-                    <div class="btn inquire_btn general_sans">
+                    <!-- <a routerLink="/inquiry" href="/inquiry"> -->
+                    <div class="btn inquire_btn general_sans" (click)="onInquiryClick()">
                         <div class="svg wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +205,9 @@
                             <p class="font-16">Inquire Now</p>
                         </div>
                     </div>
-                    <div class="btn download_btn general_sans">
+                    <!-- </a> -->
+                    <!-- <a routerLink="/inquiry" href="/inquiry"> -->
+                    <div class="btn download_btn general_sans" (click)="onInquiryClick()">
                         <div class="svg wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                             <svg class="download-icon" width="18" height="19" viewBox="0 0 18 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -158,6 +221,7 @@
                             <p class="font-16">Download Brochure</p>
                         </div>
                     </div>
+                    <!-- </a> -->
                 </div>
             </div>
             <div class="section_2_img wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
@@ -694,17 +758,19 @@
                 <div class="section_9_img relative wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s">
                     <img class="radius8" src="assets/images/sofitel_detail_page/sec9_img.png" alt="mapImage">
                     <div class="white_box">
-                        <div class="btn map_btn general_sans">
-                            <p class="font-16">View On Map</p>
-                            <div class="svg">
-                                <svg class="arrow-icon" width="22" height="13" viewBox="0 0 22 13" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                        <a href="https://maps.app.goo.gl/uLV36NCR2aDwcsUv9" target="_blank">
+                            <div class="btn map_btn general_sans">
+                                <p class="font-16">View On Map</p>
+                                <div class="svg">
+                                    <svg class="arrow-icon" width="22" height="13" viewBox="0 0 22 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6.5L21 6.5M21 6.5L15.6154 11.8846M21 6.5L15.6154 1.11538"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
