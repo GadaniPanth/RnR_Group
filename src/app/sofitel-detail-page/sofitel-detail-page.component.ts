@@ -17,7 +17,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   swiper!: Swiper;
   private hasInitializedCounters = false;
 
-  private _isInquiryOpen = true;
+  private _isInquiryOpen = false;
   get isInquiryOpen(): boolean {
     return this._isInquiryOpen;
   }
@@ -28,7 +28,15 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   onInquiryClick(event: MouseEvent) {
     this.isInquiryOpen = !this.isInquiryOpen;
   }
+  sideInquireForm = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    message: new FormControl(''),
+  });
+
   formSubmitted = false;
+  sideFormSubmitted = false;
 
   ngOnInit() { }
 
@@ -276,10 +284,19 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     }
   }
 
-  onSubmit() {
+  onMainSubmit() {
     this.formSubmitted = true;
 
     if (this.inquireForm.invalid) {
+      return;
+    }
+
+  }
+
+  onSideSubmit() {
+    this.sideFormSubmitted = true;
+
+    if (this.sideInquireForm.invalid) {
       return;
     }
 

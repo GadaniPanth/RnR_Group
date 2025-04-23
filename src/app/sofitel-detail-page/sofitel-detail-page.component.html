@@ -9,9 +9,9 @@
             <div class="card_head">
                 <h1 class="font_64 bigilla">Inquire Now</h1>
             </div>
-            <form class="inquire_form" [formGroup]="inquireForm" (ngSubmit)="onSubmit()">
+            <form class="inquire_form" [formGroup]="sideInquireForm" (ngSubmit)="onSideSubmit()">
                 <div class="form_group" [ngClass]="{
-'has-error': formSubmitted && inquireForm.get('fullName')?.invalid
+'has-error': sideFormSubmitted && sideInquireForm.get('fullName')?.invalid
 }">
                     <div class="input_wrapper">
                         <input type="text" formControlName="fullName" class="manrope font_20" required />
@@ -21,7 +21,7 @@
 
                 <div class="flex_div">
                     <div class="form_group" [ngClass]="{
-'has-error': formSubmitted && inquireForm.get('email')?.invalid
+'has-error': sideFormSubmitted && sideInquireForm.get('email')?.invalid
 }">
                         <div class="input_wrapper">
                             <input type="email" formControlName="email" class="manrope font_20" required />
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="form_group" [ngClass]="{
-'has-error': formSubmitted && inquireForm.get('phone')?.invalid
+'has-error': sideFormSubmitted && sideInquireForm.get('phone')?.invalid
 }">
                         <div class="input_wrapper phone_input">
                             <div class="flag">
@@ -783,7 +783,7 @@
                 <div class="card_head">
                     <h1 class="font_64 bigilla">Inquire Now</h1>
                 </div>
-                <form class="inquire_form" [formGroup]="inquireForm" (ngSubmit)="onSubmit()">
+                <form class="inquire_form" [formGroup]="inquireForm" (ngSubmit)="onMainSubmit()">
                     <div class="form_group" [ngClass]="{
     'has-error': formSubmitted && inquireForm.get('fullName')?.invalid
   }">
