@@ -1,18 +1,26 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  QueryList,
+  ViewChildren,
+} from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import Swiper, { Navigation, Pagination } from "swiper";
 
 @Component({
-  selector: 'app-sofitel-detail-page',
-  templateUrl: './sofitel-detail-page.component.html',
-  styleUrls: ['./sofitel-detail-page.component.less']
+  selector: "app-sofitel-detail-page",
+  templateUrl: "./sofitel-detail-page.component.html",
+  styleUrls: ["./sofitel-detail-page.component.less"],
 })
 export class SofitelDetailPageComponent implements AfterViewInit {
-  @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
-  @ViewChild('swiperContainerCounter', { static: false }) swiperContainerCounter!: ElementRef;
-  @ViewChild('nextBtn', { static: false }) nextBtn!: ElementRef;
-  @ViewChild('prevBtn', { static: false }) prevBtn!: ElementRef;
-  @ViewChildren('countUp') counters!: QueryList<ElementRef>;
+  @ViewChild("swiperContainer", { static: false }) swiperContainer!: ElementRef;
+  @ViewChild("swiperContainerCounter", { static: false })
+  swiperContainerCounter!: ElementRef;
+  @ViewChild("nextBtn", { static: false }) nextBtn!: ElementRef;
+  @ViewChild("prevBtn", { static: false }) prevBtn!: ElementRef;
+  @ViewChildren("countUp") counters!: QueryList<ElementRef>;
   private speed = 1000;
   swiper!: Swiper;
   private hasInitializedCounters = false;
@@ -23,7 +31,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   }
   set isInquiryOpen(value: boolean) {
     this._isInquiryOpen = value;
-    document.body.style.overflow = value ? 'hidden' : '';
+    document.body.style.overflow = value ? "hidden" : "";
   }
   onInquiryClick(event: MouseEvent) {
     this.isInquiryOpen = !this.isInquiryOpen;
@@ -44,18 +52,18 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     Swiper.use([Navigation]);
 
     this.swiper = new Swiper(this.swiperContainer.nativeElement, {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       spaceBetween: 24,
       speed: 500,
       navigation: {
         nextEl: this.nextBtn.nativeElement,
-        prevEl: this.prevBtn.nativeElement
+        prevEl: this.prevBtn.nativeElement,
       },
       on: {
         slideChange: () => this.updateButtonStates(),
         reachBeginning: () => this.updateButtonStates(),
         reachEnd: () => this.updateButtonStates(),
-      }
+      },
     });
 
     this.updateButtonStates();
@@ -63,16 +71,16 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     this.initCounters();
     this.hasInitializedCounters = true;
 
-    Swiper.use([Pagination])
+    Swiper.use([Pagination]);
     new Swiper(this.swiperContainerCounter.nativeElement, {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       spaceBetween: 0,
       pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
       },
-    })
+    });
   }
 
   ngAfterViewChecked(): void {
@@ -89,37 +97,37 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     const isEnd = this.swiper.isEnd;
 
     if (this.prevBtn.nativeElement) {
-      this.prevBtn.nativeElement.classList.toggle('disabled', isBeginning);
+      this.prevBtn.nativeElement.classList.toggle("disabled", isBeginning);
     }
 
     if (this.nextBtn.nativeElement) {
-      this.nextBtn.nativeElement.classList.toggle('disabled', isEnd);
+      this.nextBtn.nativeElement.classList.toggle("disabled", isEnd);
     }
   }
 
   swiperSlides = [
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img1.png'
+      img: "assets/images/sofitel_detail_page/sec5_img1.png",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/sec5_img2.png'
+      img: "assets/images/sofitel_detail_page/sec5_img2.png",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/luxuryimg-02.jpg'
+      img: "assets/images/sofitel_detail_page/luxuryimg-02.jpg",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/luxuryimg-04.jpg'
+      img: "assets/images/sofitel_detail_page/luxuryimg-04.jpg",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/luxuryimg-05.jpg'
+      img: "assets/images/sofitel_detail_page/luxuryimg-05.jpg",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/luxuryimg-06.jpg'
+      img: "assets/images/sofitel_detail_page/luxuryimg-06.jpg",
     },
     {
-      'img': 'assets/images/sofitel_detail_page/luxuryimg-07.jpg'
+      img: "assets/images/sofitel_detail_page/luxuryimg-07.jpg",
     },
-  ]
+  ];
 
   glamourSections = [
     {
@@ -186,12 +194,12 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     {
       title: "Recreation",
       content: [
-        ['1545 Box Cricket - 1 Min.'],
-        ['sargasan Lake - 1 Min.'],
-        ['swagat Holiday Mall - 3 Mins.'],
-        ['new Guda Garden - 6 Mins.'],
-        ['city Pulse - 5 Mins.'],
-        ['sarita Udhyan - 9 Mins.']
+        ["1545 Box Cricket - 1 Min."],
+        ["sargasan Lake - 1 Min."],
+        ["swagat Holiday Mall - 3 Mins."],
+        ["new Guda Garden - 6 Mins."],
+        ["city Pulse - 5 Mins."],
+        ["sarita Udhyan - 9 Mins."],
       ],
       isOpen: false,
     },
@@ -206,31 +214,31 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     {
       title: "Schools ",
       content: [
-        ['ved International - 4 Mins.'],
-        ['infocity School - 6 Mins.'],
-        ['sajhanand Achiever School - 4 Mins.'],
-        ['kameshwar International School - 4 Mins.'],
+        ["ved International - 4 Mins."],
+        ["infocity School - 6 Mins."],
+        ["sajhanand Achiever School - 4 Mins."],
+        ["kameshwar International School - 4 Mins."],
       ],
       isOpen: false,
     },
     {
       title: "Temples",
       content: [
-        ['Dholeshwar Mahadev - 8 mins.'],
-        ['munisijvrat Jain Temple - 5 Mins.'],
+        ["Dholeshwar Mahadev - 8 mins."],
+        ["munisijvrat Jain Temple - 5 Mins."],
       ],
       isOpen: false,
     },
     {
       title: "Daily Essentials",
       content: [
-        ['croma - 3 Mins.'],
-        ['zudio - 3 Mins.'],
-        ['D-mart - 2 Mins.'],
-        ['Pantaloons - 3 Mins.'],
+        ["croma - 3 Mins."],
+        ["zudio - 3 Mins."],
+        ["D-mart - 2 Mins."],
+        ["Pantaloons - 3 Mins."],
       ],
       isOpen: false,
-    }
+    },
   ];
 
   togglePulseSection(index: number): void {
@@ -238,34 +246,37 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   }
 
   initCounters(): void {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counterEl = entry.target as HTMLElement;
-          const target = +counterEl.getAttribute('data-target')!;
-          let count = 0;
-          const increment = target / this.speed;
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counterEl = entry.target as HTMLElement;
+            const target = +counterEl.getAttribute("data-target")!;
+            let count = 0;
+            const increment = target / this.speed;
 
-          const updateCount = () => {
-            count = +counterEl.innerText;
-            if (count < target) {
-              counterEl.innerText = `${Math.ceil(count + increment)}`;
-              setTimeout(updateCount, 500 / (count * 5 || 1));
-            } else {
-              counterEl.innerText = `${target}`;
-            }
-          };
+            const updateCount = () => {
+              count = +counterEl.innerText;
+              if (count < target) {
+                counterEl.innerText = `${Math.ceil(count + increment)}`;
+                setTimeout(updateCount, 500 / (count * 5 || 1));
+              } else {
+                counterEl.innerText = `${target}`;
+              }
+            };
 
-          updateCount();
-          observer.unobserve(counterEl); // trigger only once per element
-        }
-      });
-    }, {
-      threshold: 0.6
-    });
+            updateCount();
+            observer.unobserve(counterEl); // trigger only once per element
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      }
+    );
 
-    this.counters.forEach(counter => {
-      counter.nativeElement.innerText = '0'; // reset count
+    this.counters.forEach((counter) => {
+      counter.nativeElement.innerText = "0"; // reset count
       observer.observe(counter.nativeElement);
     });
   }
@@ -290,7 +301,6 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     if (this.inquireForm.invalid) {
       return;
     }
-
   }
 
   onSideSubmit() {
@@ -299,7 +309,5 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     if (this.sideInquireForm.invalid) {
       return;
     }
-
   }
-
 }
