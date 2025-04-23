@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-saffron-detail-page',
@@ -16,6 +17,13 @@ export class SaffronDetailPageComponent implements AfterViewInit {
   typedTextSpan = '';
   fullTextSpan = 'EXPERIENCE THEM';
   private typingSpeed = 100;
+
+  constructor(private appComponent: AppComponent) { }
+
+
+  onInquiryClick() {
+    this.appComponent.isInquiryOpen = true;
+  }
 
   ngOnInit() {
     this.startTyping()
@@ -124,7 +132,6 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     }
   ];
 
-  constructor() { }
   ngAfterViewInit() { }
 
   selectedTabIndex = 0;

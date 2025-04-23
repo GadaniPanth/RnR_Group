@@ -8,6 +8,7 @@ import {
 } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import Swiper, { Navigation, Pagination } from "swiper";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: "app-sofitel-detail-page",
@@ -25,26 +26,32 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   swiper!: Swiper;
   private hasInitializedCounters = false;
 
-  private _isInquiryOpen = false;
-  get isInquiryOpen(): boolean {
-    return this._isInquiryOpen;
+  constructor(private appComponent: AppComponent) { }
+
+  onInquiryClick() {
+    this.appComponent.isInquiryOpen = true;
   }
-  set isInquiryOpen(value: boolean) {
-    this._isInquiryOpen = value;
-    document.body.style.overflow = value ? "hidden" : "";
-  }
-  onInquiryClick(event: MouseEvent) {
-    this.isInquiryOpen = !this.isInquiryOpen;
-  }
-  sideInquireForm = new FormGroup({
-    fullName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', Validators.required),
-    message: new FormControl('', Validators.required),
-  });
+
+  // private _isInquiryOpen = false;
+  // get isInquiryOpen(): boolean {
+  //   return this._isInquiryOpen;
+  // }
+  // set isInquiryOpen(value: boolean) {
+  //   this._isInquiryOpen = value;
+  //   document.body.style.overflow = value ? "hidden" : "";
+  // }
+  // onInquiryClick(event: MouseEvent) {
+  //   this.isInquiryOpen = !this.isInquiryOpen;
+  // }
+  // sideInquireForm = new FormGroup({
+  //   fullName: new FormControl('', Validators.required),
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  //   phone: new FormControl('', Validators.required),
+  //   message: new FormControl('', Validators.required),
+  // });
 
   formSubmitted = false;
-  sideFormSubmitted = false;
+  // sideFormSubmitted = false;
 
   ngOnInit() { }
 
@@ -303,11 +310,11 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     }
   }
 
-  onSideSubmit() {
-    this.sideFormSubmitted = true;
+  // onSideSubmit() {
+  //   this.sideFormSubmitted = true;
 
-    if (this.sideInquireForm.invalid) {
-      return;
-    }
-  }
+  //   if (this.sideInquireForm.invalid) {
+  //     return;
+  //   }
+  // }
 }

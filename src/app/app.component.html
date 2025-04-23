@@ -148,6 +148,69 @@
       </ul>
     </div>
   </div>
+
+  <div class="sidepanel-overlay" [ngClass]="isInquiryOpen ? 'show' : '' " (click)="onInquiryClick($event)">
+  </div>
+  <div class="sidepanel sidepanel_inquiry" [ngClass]="isInquiryOpen ? 'active' : ''">
+    <div class="sidepanel_close">
+      <p class="font_30"><i class="ri-close-large-line" (click)="onInquiryClick($event)"></i></p>
+    </div>
+    <div class="inquire_card">
+      <div class="card_head">
+        <h1 class="font_64 bigilla">Inquire Now</h1>
+      </div>
+      <form class="inquire_form" [formGroup]="sideInquireForm" (ngSubmit)="onSideSubmit()">
+        <div class="form_group" [ngClass]="{
+'has-error': sideFormSubmitted && sideInquireForm.get('fullName')?.invalid
+}">
+          <div class="input_wrapper">
+            <input type="text" formControlName="fullName" class="manrope font_20" required />
+            <label class="manrope font_20">Full Name</label>
+          </div>
+        </div>
+
+        <div class="flex_div">
+          <div class="form_group" [ngClass]="{
+'has-error': sideFormSubmitted && sideInquireForm.get('email')?.invalid
+}">
+            <div class="input_wrapper">
+              <input type="email" formControlName="email" class="manrope font_20" required />
+              <label class="manrope font_20">Email address</label>
+            </div>
+          </div>
+          <div class="form_group" [ngClass]="{
+'has-error': sideFormSubmitted && sideInquireForm.get('phone')?.invalid
+}">
+            <div class="input_wrapper phone_input">
+              <div class="flag">
+                <div class="svg">
+                  <img src="assets/images/sofitel_detail_page/flag.svg" alt="flagImage" />
+                </div>
+                <span>
+                  <p>(+91)</p>
+                </span>
+              </div>
+              <div class="phone_field">
+                <input type="tel" (keypress)="restrictNonNumeric($event)" formControlName="phone" pattern="^[0-9]{10}$"
+                  maxlength="10" class="manrope font_20" required />
+                <label class="manrope font_20">Phone Number</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="input_wrapper msg">
+            <textarea rows="1" formControlName="message" class="manrope font_20" required></textarea>
+            <label class="manrope font_20">Message</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit_btn manrope font-16">Send</button>
+      </form>
+    </div>
+  </div>
+
   <div (click)="isMenuOpen ? onMenuClick($event) : '';" [ngClass]="isMenuOpen ? 'no-scroll' : '' ">
     <router-outlet></router-outlet>
   </div>

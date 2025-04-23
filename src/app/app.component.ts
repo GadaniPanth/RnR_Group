@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
@@ -24,6 +25,25 @@ export class AppComponent {
     this._isMenuOpen = value;
     document.body.style.overflow = value ? 'hidden' : '';
   }
+
+  private _isInquiryOpen = false;
+  get isInquiryOpen(): boolean {
+    return this._isInquiryOpen;
+  }
+  set isInquiryOpen(value: boolean) {
+    this._isInquiryOpen = value;
+    document.body.style.overflow = value ? "hidden" : "";
+  }
+  onInquiryClick(event: MouseEvent) {
+    this.isInquiryOpen = !this.isInquiryOpen;
+  }
+  sideInquireForm = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
+  });
+  sideFormSubmitted = false;
 
   isDropDownOpen: boolean = true;
 
@@ -103,5 +123,13 @@ export class AppComponent {
 
   navigateInquire() {
     this.router.navigate(['/inquire'])
+  }
+
+  onSideSubmit() {
+    this.sideFormSubmitted = true;
+
+    if (this.sideInquireForm.invalid) {
+      return;
+    }
   }
 }
