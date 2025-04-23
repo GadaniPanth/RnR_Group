@@ -10,6 +10,8 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import Swiper, { Navigation, Pagination } from "swiper";
 import { AppComponent } from "../app.component";
 
+declare const Fancybox: any;
+
 @Component({
   selector: "app-sofitel-detail-page",
   templateUrl: "./sofitel-detail-page.component.html",
@@ -25,6 +27,8 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   private speed = 1000;
   swiper!: Swiper;
   private hasInitializedCounters = false;
+
+  // declare const Fancybox: any;
 
   constructor(private appComponent: AppComponent) { }
 
@@ -94,6 +98,8 @@ export class SofitelDetailPageComponent implements AfterViewInit {
         clickable: true,
       },
     });
+
+    Fancybox.bind("[data-fancybox='gallery-a']", {});
   }
 
   ngAfterViewChecked(): void {

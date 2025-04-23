@@ -548,8 +548,11 @@
 
         <div class="swiper-container relative wow zoomIn" data-wow-delay=".5s" data-wow-duration="1s" #swiperContainer>
             <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let slide of swiperSlides;"><img [src]='slide.img'
-                        alt="luxuryImage" /></div>
+                <div class="swiper-slide" *ngFor="let slide of swiperSlides;">
+                    <a [href]="slide.img" data-fancybox="gallery-a">
+                        <img [src]='slide.img' alt="luxuryImage" />
+                    </a>
+                </div>
             </div>
         </div>
     </section>

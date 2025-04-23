@@ -29,9 +29,12 @@
             ],
             "styles": [
               "src/styles.less",
-              "node_modules/swiper/swiper-bundle.min.css"
+              "node_modules/swiper/swiper-bundle.min.css",
+              "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js"
+            ]
           },
           "configurations": {
             "production": {
