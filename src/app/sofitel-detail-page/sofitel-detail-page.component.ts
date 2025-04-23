@@ -112,6 +112,18 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     }
   }
 
+  private _isPopupOpen = false;
+  get isPopupOpen(): boolean {
+    return this._isPopupOpen;
+  }
+  set isPopupOpen(value: boolean) {
+    this._isPopupOpen = value;
+    document.body.style.overflow = value ? "hidden" : "";
+  }
+  togglePopup(event: MouseEvent) {
+    this.isPopupOpen = !this.isPopupOpen;
+  }
+
   swiperSlides = [
     {
       img: "assets/images/sofitel_detail_page/sec5_img1.png",

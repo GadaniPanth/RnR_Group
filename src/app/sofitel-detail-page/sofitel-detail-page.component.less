@@ -1236,6 +1236,59 @@
   }
 }
 
+.popup_box_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9997;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.popup_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: @text-gray;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .list {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    padding-right: 0;
+  }
+
+  .close_btn {
+    text-align: right;
+    cursor: pointer;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
   .flex-gap-medium {
     gap: 16px;

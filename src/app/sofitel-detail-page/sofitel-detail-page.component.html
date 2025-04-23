@@ -61,6 +61,42 @@
         </div>
     </div> -->
 
+    <div class="popup_box_overlay" [class.show]="isPopupOpen" (click)="togglePopup($event)"></div>
+    <div class="popup_box sec_bg_brown" [class.active]="isPopupOpen">
+        <div class="close_btn" (click)="togglePopup($event)">
+            <p class="font_30"><i class="ri-close-large-line"></i></p>
+        </div>
+        <div class="list_container">
+            <ul class="list">
+                <li>24/7 Security</li>
+                <li>GYM</li>
+                <li>Banquet Hall with Screen Setting</li>
+                <li>CCTV Camera</li>
+                <li>Built in Seating</li>
+                <li>Party Lawn</li>
+                <li>Entrance Gate</li>
+                <li>Co-working Space</li>
+                <li>Sculpture</li>
+                <li>Developed Terrace</li>
+                <li>Sr. Citizen Sitout</li>
+                <li>Poolside Loungers</li>
+                <li>fit</li>
+                <li>Toddler Play Area</li>
+                <li>Multi-Sport Court</li>
+                <li>Temple</li>
+                <li>High Speed Elevator</li>
+                <li>Separate Servant Washroom</li>
+                <li>Indoor Games</li>
+                <li>Kids Play Area</li>
+                <li>Box Cricket</li>
+                <li>Bus Drop off Zone</li>
+                <li>24/7 Water Supply</li>
+                <li>Splash Pool</li>
+                <li>Active</li>
+            </ul>
+        </div>
+    </div>
+
     <section class="section_1 relative">
         <div class="sofitel_bg">
             <img src="assets/images/sofitel_detail_page/sec1_bg.png" alt="sofitelImage">
@@ -559,7 +595,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="btn_more btn general_sans">
+                <div class="btn_more btn general_sans" (click)="togglePopup($event)">
                     <p class="font-16">View More</p>
                 </div>
             </div>
