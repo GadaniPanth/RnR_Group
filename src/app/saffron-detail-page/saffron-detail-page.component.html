@@ -140,7 +140,7 @@
                     </div>
                     <div class="relative">
                         <div class="image-wrapper">
-                            <img [src]="images[selectedIndex].src" alt="Tab Image" />
+                            <img [src]="images[selectedIndex].src" alt="Tab Image" (click)="showFancyTabs(images)" />
                             <div class="tab-panel-1">
                                 <div class="tab" *ngFor="let img of images; let i = index"
                                     [class.active]="i === selectedIndex" (click)="selectIn(i)">
@@ -165,22 +165,22 @@
                     </h1>
                 </div>
                 <div class="sticky-img relative wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
-                    <a href="#">
+                    <a (click)="showFancyTabs(beautyImgs)">
                         <img src="assets/images/home-saffron_sec-wrap/stickyimg01.png" alt="beautyImage">
                     </a>
                 </div>
                 <div class="sticky-img relative wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
-                    <a href="#">
+                    <a (click)="showFancyTabs(beautyImgs)">
                         <img src="assets/images/home-saffron_sec-wrap/stickyimg02.png" alt="beautyImage">
                     </a>
                 </div>
                 <div class="sticky-img relative wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
-                    <a href="#">
+                    <a (click)="showFancyTabs(beautyImgs)">
                         <img src="assets/images/home-saffron_sec-wrap/stickyimg03.png" alt="beautyImage">
                     </a>
                 </div>
                 <div class="sticky-img relative wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
-                    <a href="#">
+                    <a (click)="showFancyTabs(beautyImgs)">
                         <img src="assets/images/home-saffron_sec-wrap/stickyimg01.png" alt="beautyImage">
                     </a>
                 </div>
@@ -267,8 +267,8 @@
                         </div>
                     </div>
                     <div class="image-area wow zoomIn" data-wow-delay=".5s" data-wow-duration="1.3s">
-                        <a href="#">
-                            <img [src]="tabs[selectedTabIndex].image" alt="Selected Image" />
+                        <a (click)="showFancyTabs(tabs)">
+                            <img [src]="tabs[selectedTabIndex].src" alt="Selected Image" />
                         </a>
                     </div>
                 </div>

@@ -99,7 +99,56 @@ export class SofitelDetailPageComponent implements AfterViewInit {
       },
     });
 
-    Fancybox.bind("[data-fancybox='gallery-a']", {});
+    Fancybox.bind("[data-fancybox='gallery-a']", {
+      Toolbar: {
+        display: {
+          right: ['slideshow', 'fullscreen', 'close']
+        }
+      },
+      Carousel: {
+        transition: "fade",
+      },
+      // Thumbs: false,
+      transitionEffect: "tube",
+      animationEffect: "zoom",
+      fit: 'contain'
+    });
+  }
+
+  showFancyPlans() {
+    Fancybox.show(
+      [
+        {
+          src: 'assets/images/sofitel_detail_page/4BHK-TYPE-01-fancy.png',
+          type: 'image',
+          caption: 'Type 1',
+        },
+        {
+          src: 'assets/images/sofitel_detail_page/4BHK-TYPE-02-fancy.png',
+          type: 'image',
+          caption: 'Type 2',
+        },
+        {
+          src: 'assets/images/sofitel_detail_page/4BHK-TYPE-03-fancy.png',
+          type: 'image',
+          caption: 'Type 3',
+        },
+      ],
+      {
+        Toolbar: {
+          display: {
+            right: ['slideshow', 'fullscreen', 'close']
+          }
+        },
+        Carousel: {
+          transition: "fade",
+        },
+        // Thumbs: false,
+        transitionEffect: "tube",
+        animationEffect: "zoom",
+        fit: 'contain'
+      }
+    );
   }
 
   ngAfterViewChecked(): void {

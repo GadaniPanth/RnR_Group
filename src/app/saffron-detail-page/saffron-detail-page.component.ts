@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppComponent } from '../app.component';
 
+declare const Fancybox: any;
+
 @Component({
   selector: 'app-saffron-detail-page',
   templateUrl: './saffron-detail-page.component.html',
@@ -53,12 +55,12 @@ export class SaffronDetailPageComponent implements AfterViewInit {
   }
 
   tabs = [
-    { title: "Ground Floor", image: "assets/images/home-saffron_sec-wrap/groundFloor.png" },
-    { title: "First Floor", image: "assets/images/home-saffron_sec-wrap/fristfloor.png" },
-    { title: "Second Floor", image: "assets/images/home-saffron_sec-wrap/secondfloor (1).png" },
-    { title: "2 BHK", image: "assets/images/home-saffron_sec-wrap/2bhk-type-01.png" },
-    { title: "3 BHK", image: "assets/images/home-saffron_sec-wrap/2bhk-type-03.png" },
-    { title: "Typical Floor Plan", image: "assets/images/home-saffron_sec-wrap/typicalfloor.png" },
+    { title: "Ground Floor", src: "assets/images/home-saffron_sec-wrap/groundFloor.png" },
+    { title: "First Floor", src: "assets/images/home-saffron_sec-wrap/fristfloor.png" },
+    { title: "Second Floor", src: "assets/images/home-saffron_sec-wrap/secondfloor (1).png" },
+    { title: "2 BHK", src: "assets/images/home-saffron_sec-wrap/2bhk-type-01.png" },
+    { title: "3 BHK", src: "assets/images/home-saffron_sec-wrap/2bhk-type-03.png" },
+    { title: "Typical Floor Plan", src: "assets/images/home-saffron_sec-wrap/typicalfloor.png" },
   ];
 
   sections = [
@@ -132,7 +134,40 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     }
   ];
 
+  beautyImgs = [
+    { src: 'assets/images/home-saffron_sec-wrap/stickyimg01.png' },
+    { src: 'assets/images/home-saffron_sec-wrap/stickyimg02.png' },
+    { src: 'assets/images/home-saffron_sec-wrap/stickyimg03.png' }
+  ];
+
   ngAfterViewInit() { }
+
+  showFancyTabs(list) {
+    if (!list) {
+      console.error('error with parsing list');
+      return '';
+    }
+    const images = list.map(image => ({
+      src: image.src,
+      thumb: image.src,
+      type: "image"
+    }));
+
+    Fancybox.show(images, {
+      Toolbar: {
+        display: {
+          right: ['slideshow', 'fullscreen', 'close']
+        }
+      },
+      Carousel: {
+        transition: "fade",
+      },
+      Thumbs: false,
+      transitionEffect: "tube",
+      animationEffect: "zoom",
+      fit: "contain"
+    });
+  }
 
   selectedTabIndex = 0;
   selectedIndex = 0;

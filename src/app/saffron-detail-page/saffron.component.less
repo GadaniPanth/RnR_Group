@@ -630,8 +630,23 @@ a p:hover {
   transform: translateY(-50%);
 }
 
-//   Responsive
+::ng-deep .fancybox__container {
+  z-index: 9999 !important;
+}
 
+::ng-deep .fancybox__spinner {
+  display: block !important;
+  z-index: 9999 !important;
+  border: 4px solid @bg-orange;
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+//   Responsive
 @media only screen and (max-width: 1680px) {
 }
 
