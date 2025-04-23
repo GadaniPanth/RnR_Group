@@ -53,7 +53,13 @@ export class SofitelDetailPageComponent implements AfterViewInit {
   formSubmitted = false;
   // sideFormSubmitted = false;
 
-  ngOnInit() { }
+  ngOnInit() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLocaleLowerCase() == 'escape') {
+        this.isPopupOpen = false;
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     Swiper.use([Navigation]);

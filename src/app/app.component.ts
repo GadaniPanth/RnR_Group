@@ -70,6 +70,7 @@ export class AppComponent {
     document.addEventListener('keydown', (e) => {
       if (e.key.toLocaleLowerCase() == 'escape') {
         this.isMenuOpen = false;
+        this.isInquiryOpen = false;
       }
     });
   }
