@@ -17,6 +17,10 @@
   margin: 0 auto;
 }
 
+img {
+  object-fit: cover;
+}
+
 .sofitel_wrapper {
   .font-160 {
     font-size: 160px;
@@ -1504,10 +1508,6 @@
         font-size: 15px;
       }
     }
-
-    .section_2_img {
-      max-width: 435px;
-    }
   }
 
   .section_3 {
@@ -1585,7 +1585,7 @@
     .section_8_grid {
       .right_div {
         .font-16 {
-          font-size: 10px;
+          font-size: 16px;
         }
 
         .font_18 {
@@ -2003,7 +2003,7 @@
 
     .font_20 {
       font-family: manrope_thin;
-      font-size: 10px;
+      font-size: 14px;
     }
 
     .input_wrapper input:focus + label,
@@ -2070,6 +2070,16 @@
     .font_360 {
       font-size: 360px;
     }
+
+    .section_3_img,
+    .section_2_img,
+    .section_4_img,
+    .section_6_img,
+    .section_8_img,
+    .section_9_img {
+      display: grid;
+      place-items: center;
+    }
   }
 
   .sofitel_bg {
@@ -2081,6 +2091,8 @@
     img {
       object-fit: cover;
       object-position: center;
+      max-width: unset;
+      // height: 100%;
     }
   }
 
@@ -2125,7 +2137,7 @@
 
     .sofitel_logo img {
       max-width: 300px;
-      width: 300px;
+      width: 248px;
     }
 
     .text.font_48 {
@@ -2165,6 +2177,12 @@
 
   .features_div {
     --swiper-pagination-color: #9a6c3a;
+  }
+
+  .feature {
+    .font-120 {
+      font-size: 65px;
+    }
   }
 
   .section_2_content {
@@ -2209,7 +2227,9 @@
     }
 
     .section_2_img {
-      max-width: 700px;
+      // max-width: 700px;
+      width: 100%;
+      margin: 0;
       justify-self: center;
     }
 
@@ -2230,9 +2250,9 @@
     }
 
     .section_3_img img {
-      max-width: 700px;
-      width: 94%;
-      margin: 0 3%;
+      // max-width: 700px;
+      width: 100%;
+      margin: 0 0%;
     }
 
     .section_3_content {
@@ -2252,7 +2272,7 @@
   .section_4 {
     .section_4_content.grid_95 {
       padding: 50px 0;
-
+      place-items: center;
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
 
@@ -2264,9 +2284,9 @@
 
       .left_div {
         .section_4_img img {
-          max-width: 700px;
-          width: 94%;
-          margin: 0 3%;
+          // max-width: 700px;
+          width: 90%;
+          margin: 0 0%;
         }
       }
     }
@@ -2294,7 +2314,7 @@
     }
 
     .swiper-slide {
-      width: 97% !important;
+      width: 91% !important;
       border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 1.5625;
@@ -2346,9 +2366,9 @@
     }
 
     .section_6_img img {
-      max-width: 700px;
-      width: 94%;
-      margin: 0 3%;
+      // max-width: 700px;
+      width: 100%;
+      margin: 0 0%;
     }
   }
 
@@ -2381,9 +2401,9 @@
 
       .left_div {
         .section_8_img img {
-          max-width: 700px;
-          width: 94%;
-          margin: 0 3%;
+          // max-width: 700px;
+          width: 100%;
+          margin: 0 0%;
         }
       }
     }
@@ -2428,7 +2448,7 @@
 
       .right_div {
         .section_9_img img {
-          max-width: 700px;
+          // max-width: 700px;
           width: 80%;
           margin: 0 10%;
           margin-top: 80px;
@@ -2480,10 +2500,6 @@
 
     .font_64 {
       font-size: 34px;
-    }
-
-    .font_20 {
-      font-size: 8px;
     }
 
     .input_wrapper input:focus + label,
@@ -2574,6 +2590,12 @@
     padding-right: 24%;
   }
 
+  .feature {
+    .font-120 {
+      font-size: 65px;
+    }
+  }
+
   .sofitel_wrapper {
     .section_9_grid {
       .right_div {
@@ -2628,6 +2650,12 @@
     top: 31%;
   }
 
+  .feature {
+    .font-120 {
+      font-size: 65px;
+    }
+  }
+
   .section_2_content {
     .font-120 {
       padding-right: 22%;
@@ -2650,12 +2678,13 @@
 
   .section_3 .section_3_head {
     .font_200 {
-      font-size: 40px;
+      font-size: 48px;
+      padding-left: 5px;
     }
 
     h1:last-of-type {
       text-align: left;
-      text-indent: 8%;
+      text-indent: 0;
     }
   }
 
@@ -2822,12 +2851,12 @@
     }
 
     .text.font_48 {
-      font-size: 20px;
+      font-size: 30px;
     }
 
     .svg_text {
       .svg {
-        width: 25px;
+        width: 30px;
       }
     }
   }
@@ -2837,11 +2866,11 @@
 
     .feature {
       h1.font-120 {
-        font-size: 30px;
+        font-size: 53px;
       }
 
       h1.font_24 {
-        font-size: 10px;
+        font-size: 15px;
       }
     }
   }
@@ -2855,6 +2884,28 @@
       .btn_div {
         width: 98%;
         margin: 25px 1%;
+      }
+    }
+  }
+
+  .section_3 .section_3_head {
+    .font_200 {
+      font-size: 40px;
+      padding-left: 5px;
+    }
+
+    h1:last-of-type {
+      text-indent: 0;
+    }
+  }
+
+  .section_4 {
+    .section_4_content.grid_95 {
+      .left_div {
+        .section_4_img img {
+          // max-width: 700px;
+          width: 100%;
+        }
       }
     }
   }
@@ -2915,7 +2966,7 @@
       .inquire_card {
         padding: 20px 0;
         min-width: unset;
-        width: 98%;
+        width: 100%;
       }
 
       .back_marque {
