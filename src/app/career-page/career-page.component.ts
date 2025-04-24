@@ -10,6 +10,11 @@ export class CareerPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLocaleLowerCase() == 'escape') {
+        this.isJobOpen = false;
+      }
+    });
   }
 
   private _isJobOpen = false;
