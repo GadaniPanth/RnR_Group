@@ -339,7 +339,7 @@ export class SofitelDetailPageComponent implements AfterViewInit {
               count = +counterEl.innerText;
               if (count < target) {
                 counterEl.innerText = `${Math.ceil(count + increment)}`;
-                setTimeout(updateCount, 500 / (count * 5 || 1));
+                setTimeout(updateCount, 500 / (count * 3 || 1));
               } else {
                 counterEl.innerText = `${target}`;
               }
