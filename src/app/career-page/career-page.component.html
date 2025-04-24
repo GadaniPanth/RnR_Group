@@ -1,4 +1,99 @@
 <div class="career">
+
+    <div class="sidepanel-overlay" [ngClass]="isJobOpen ? 'show' : '' " (click)="onJobClick($event)">
+    </div>
+    <div class="sidepanel sidepanel_inquiry" [ngClass]="isJobOpen ? 'active' : ''">
+        <div class="sidepanel_close">
+            <p class="font_30"><i class="ri-close-large-line" (click)="onJobClick($event)"></i></p>
+        </div>
+        <div class="inquire_card">
+            <div class="card_head">
+                <h1 class="font_64 bigilla">Job Application</h1>
+                <h6 class="font_20">(Accountant)</h6>
+            </div>
+            <form class="inquire_form" [formGroup]="sideJobForm" (ngSubmit)="onSideSubmit()">
+                <div class="form_group" [ngClass]="{
+  'has-error': sideFormSubmitted && sideJobForm.get('fullName')?.invalid
+  }">
+                    <div class="input_wrapper">
+                        <input type="text" formControlName="fullName" class="manrope font_20" required />
+                        <label class="manrope font_20">Name</label>
+                    </div>
+                </div>
+
+                <div class="flex_div">
+                    <div class="form_group" [ngClass]="{
+  'has-error': sideFormSubmitted && sideJobForm.get('email')?.invalid
+  }">
+                        <div class="input_wrapper">
+                            <input type="email" formControlName="email" class="manrope font_20" required />
+                            <label class="manrope font_20">Email address</label>
+                        </div>
+                    </div>
+                    <div class="form_group" [ngClass]="{
+  'has-error': sideFormSubmitted && sideJobForm.get('phone')?.invalid
+  }">
+                        <div class="input_wrapper phone_input">
+                            <div class="flag">
+                                <div class="svg">
+                                    <img src="assets/images/sofitel_detail_page/flag.svg" alt="flagImage" />
+                                </div>
+                                <span>
+                                    <p>(+91)</p>
+                                </span>
+                            </div>
+                            <div class="phone_field">
+                                <input type="tel" (keypress)="restrictNonNumeric($event)" formControlName="phone"
+                                    pattern="^[0-9]{10}$" maxlength="10" class="manrope font_20" required />
+                                <label class="manrope font_20">Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_group" [ngClass]="{
+            'has-error': sideFormSubmitted && sideJobForm.get('currentCompany')?.invalid
+            }">
+                    <div class="input_wrapper">
+                        <input type="text" formControlName="currentCompany" class="manrope font_20" required />
+                        <label class="manrope font_20">Current Company</label>
+                    </div>
+                </div>
+
+                <div class="form_group" [ngClass]="{
+                        'has-error': sideFormSubmitted && sideJobForm.get('currentDesignation')?.invalid
+                        }">
+                    <div class="input_wrapper">
+                        <input type="text" formControlName="currentDesignation" class="manrope font_20" required />
+                        <label class="manrope font_20">Current Designation</label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form_group relative">
+                        <div class="input_wrapper">
+                            <input type="file" formControlName="resume" accept=".pdf,.doc,.docx" class="manrope font_20"
+                                required (change)="resumeFile($event)" />
+                            <label class="manrope font_20"> {{fileLabel}} </label>
+                        </div>
+                    </div>
+                    <p *ngIf="sideJobForm.get('resume')?.errors?.invalidType" class="font_15">
+                        Allow only PDF, DOC, or DOCX files.
+                    </p>
+                </div>
+
+                <!-- <div class="form_group">
+                    <div class="input_wrapper msg">
+                        <textarea rows="1" formControlName="message" class="manrope font_20" required></textarea>
+                        <label class="manrope font_20">Message</label>
+                    </div>
+                </div> -->
+
+                <button type="submit" class="submit_btn manrope font-16">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <section class="career relative">
         <div class="career-img">
             <img src="assets\images\index.jpeg" alt="careerImage">
@@ -29,7 +124,8 @@
                         <h2> Accountant </h2>
                         <p>Minimum 2 - 3 Year Experience</p>
                     </div>
-                    <button type="submit" class="submit_btn manrope font_16">Apply Now</button>
+                    <button type="submit" class="submit_btn manrope font_16" (click)="onJobClick($event)">Apply
+                        Now</button>
                 </div>
             </div>
         </div>

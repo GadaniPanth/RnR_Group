@@ -1,158 +1,563 @@
 @sec-bg-gray: #f5f4f4;
 @sec-bg-black: #24262b;
+@sec-bg-pink: #fbf4ea;
+@text-browen: #9a6c3a;
 @bg-orange: #ec614a;
+@bg-brown: #9a6c3a;
 @bg-transparent: #00000052;
 @text-white: #ffffff;
 @text-orange: #ec614a;
 
 .main-container {
-    width: 91%;
-    margin: 0 auto;
+  width: 91%;
+  margin: 0 auto;
 }
 
 .career-img {
-    img {
-        height: 100svh;
-        object-fit: cover;
-    }
+  img {
+    height: 100svh;
+    object-fit: cover;
+  }
 }
 
 .banner_overly {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.96) 100%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }
 
 .career-abs {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    color: white;
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  color: white;
+  text-align: center;
 }
 
 .career-paragraph {
-    h3 {
-        font-size: 48px;
-    }
+  h3 {
+    font-size: 48px;
+  }
 }
 
 .banner-title {
-    h1 {
-        font-size: 140px;
-    }
+  h1 {
+    font-size: 140px;
+  }
 }
 
 .career-paragraph {
-    h3 {
-        font-size: 64px;
-    }
+  h3 {
+    font-size: 64px;
+  }
 }
 
 .section-paragraph {
-    p {
-        font-size: 24px;
-    }
+  p {
+    font-size: 24px;
+  }
 }
 
 .flex-row {
-    display: flex;
+  display: flex;
 }
 
 .j-c-sb {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .al-start {
-    align-items: start;
+  align-items: start;
 }
 
 .submit_btn {
-    background-color: @sec-bg-black;
-    color: @text-white;
-    border: none;
-    padding: 16px 60px;
-    border: solid 1px @sec-bg-black;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.8s ease;
+  background-color: @sec-bg-black;
+  color: @text-white;
+  border: none;
+  padding: 16px 60px;
+  border: solid 1px @sec-bg-black;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
 }
 
 .submit_btn:hover {
-    background-color: @bg-orange;
-    color: white;
-    border: @bg-orange;
+  background-color: @bg-orange;
+  color: white;
+  border: @bg-orange;
 }
 
+.sidepanel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+  transform-origin: left;
 
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
 
-@media only screen and (max-width: 1680px) {}
+.sidepanel {
+  position: fixed;
+  background-color: #24262b;
+  height: 100dvh;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  overflow-y: scroll;
+  transition: all 0.8s ease-in-out;
+  padding: 0;
+  min-width: 435px;
+  width: 0;
+  right: -100%;
+  transition-delay: 0.3s;
+  color: @text-white;
 
-@media only screen and (max-width: 1440px) {}
+  .font-16 {
+    font-size: 16px;
+  }
 
-@media only screen and (max-width: 1366px) {}
+  .font_30 {
+    font-size: 30px;
+  }
 
-@media only screen and (max-width: 1280px) {}
+  .font_15 {
+    font-size: 15px;
+    text-align: right;
+    // position: absolute;
+    bottom: 0;
+  }
 
-@media only screen and (max-width: 1152px) {}
+  .sidepanel_close {
+    cursor: pointer;
+    color: #ffffff;
+    text-align: right;
+  }
+
+  &.active {
+    width: 30%;
+    right: 0;
+  }
+
+  .inquire_card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card_head {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .font_20 {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  .card_head h1 {
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .inquire_form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a4a4a4;
+    border-radius: 12px;
+  }
+
+  .form_group label {
+    color: #fff;
+    // font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    // font-size: 14px;
+    background-color: transparent;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #fff;
+    opacity: 0.7;
+  }
+
+  .flex_div {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+
+    .form_group {
+      width: 100%;
+    }
+  }
+
+  .phone_input {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .phone_input .flag {
+    display: flex;
+    align-items: bottom;
+    gap: 10px;
+    // font-size: 14px;
+    color: #fff;
+  }
+
+  .phone_input .svg img {
+    width: 24px;
+  }
+
+  .phone_field {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .phone_field input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    // font-size: 14px;
+  }
+
+  .phone_field label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .phone_field input:focus + label,
+  .phone_field input:valid + label {
+    top: 4px;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+
+  // textarea {
+  //   resize: none;
+  //   // height: 80px;
+  // }
+
+  .submit_btn {
+    background-color: @bg-orange;
+    color: @text-white;
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    border: solid 1px @text-orange;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+
+    .font_16 {
+      font-size: 16px;
+    }
+  }
+
+  .submit_btn:hover {
+    background-color: transparent;
+    color: @text-orange;
+  }
+
+  .input_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .input_wrapper input,
+  .input_wrapper textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .input_wrapper input[type="file"] {
+    opacity: 0;
+  }
+
+  .input_wrapper label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    // font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .input_wrapper input:focus:not([type="file"]) + label,
+  .input_wrapper input:valid:not([type="file"]) + label,
+  .input_wrapper textarea:focus + label,
+  .input_wrapper textarea:valid + label {
+    top: 4px;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  // .form_group:has(input.ng-invalid.ng-touched),
+  // .form_group:has(textarea.ng-invalid.ng-touched) {
+  //   border-color: red !important;
+  // }
+
+  // .input_wrapper input.ng-invalid.ng-touched + label,
+  // .input_wrapper textarea.ng-invalid.ng-touched + label {
+  //   color: red;
+  // }
+
+  .form_group.has-error {
+    border-color: red;
+
+    // label {
+    //   color: red;
+    // }
+
+    input {
+      border-color: red;
+    }
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1366px) {
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 1152px) {
+}
 
 @media only screen and (max-width: 1024px) {
+  .banner-title h1 {
+    font-size: 100px;
+  }
 
-    .banner-title h1 {
-        font-size: 100px;
-    }
+  .career-paragraph h3 {
+    font-size: 48px;
+  }
 
-    .career-paragraph h3 {
-        font-size: 48px;
-    }
-
-    .section-paragraph p {
-        font-size: 21px;
-    }
+  .section-paragraph p {
+    font-size: 21px;
+  }
 }
 
-@media only screen and (max-width: 991px) {}
+@media only screen and (max-width: 1000px) {
+  .submit_btn {
+    padding: 13px 50px;
+
+    &.font_16 {
+      font-size: 14px;
+    }
+  }
+
+  .sidepanel {
+    .inquire_card {
+      // aspect-ratio: 5/1.5;
+      // border-radius: 8px;
+      // padding: 40px 30px;
+      // max-width: 1051px;
+      // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      // width: 60%;
+    }
+
+    .font_20 {
+      font-family: manrope_thin, manrope;
+      font-size: 16px;
+    }
+
+    .input_wrapper input:focus:not([type="file"]) + label,
+    .input_wrapper input:valid:not([type="file"]) + label,
+    .input_wrapper textarea:focus + label,
+    .input_wrapper textarea:valid + label {
+      top: 4px;
+      font-size: 8px;
+      opacity: 0.9;
+    }
+
+    .submit_btn {
+      padding: 5px 36px;
+    }
+
+    .input_wrapper {
+      textarea {
+        height: calc(1.5rem * 2);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+}
 
 @media only screen and (max-width: 767px) {
+  .career-img img {
+    height: 90svh;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
 
-    .career-img img {
-        height: 90svh;
-        -o-object-fit: cover;
-        object-fit: cover;
+  .career-paragraph h3 {
+    font-size: 40px;
+  }
+
+  .sidepanel {
+    &.active {
+      width: 100%;
+      right: 0;
     }
 
-    .career-paragraph h3 {
-        font-size: 40px;
-    }
+    // .inquire_card {
+    //   min-width: 395px;
+    // }
+
+    // .font_64 {
+    //   font-size: 34px;
+    // }
+
+    // .font_20 {
+    //   font-size: 8px;
+    // }
+
+    // .input_wrapper input:focus + label,
+    // .input_wrapper input:valid + label,
+    // .input_wrapper textarea:focus + label,
+    // .input_wrapper textarea:valid + label {
+    //   font-size: 7px;
+    // }
+
+    // .flex_div {
+    //   flex-direction: column;
+    // }
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .hidden-xs {
-        display: none;
-    }
+  .hidden-xs {
+    display: none;
+  }
 
-    .flex-row {
-        flex-direction: column;
-        gap: 35px;
-    }
+  .flex-row {
+    flex-direction: column;
+    gap: 35px;
+  }
 
-    .section-padding {
-        padding: 55px 0;
-    }
+  .section-padding {
+    padding: 55px 0;
+  }
 }
 
+@media only screen and (max-width: 486px) {
+  .sidepanel {
+    min-width: unset;
+
+    &.active {
+      width: 100%;
+      right: 0;
+    }
+
+    .inquire_card {
+      min-width: none;
+    }
+
+    // .inquire_card {
+    //   min-width: 395px;
+    // }
+
+    // .font_64 {
+    //   font-size: 34px;
+    // }
+
+    // .font_20 {
+    //   font-size: 8px;
+    // }
+
+    // .input_wrapper input:focus + label,
+    // .input_wrapper input:valid + label,
+    // .input_wrapper textarea:focus + label,
+    // .input_wrapper textarea:valid + label {
+    //   font-size: 7px;
+    // }
+
+    // .flex_div {
+    //   flex-direction: column;
+    // }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .sidepanel {
+    .font_64 {
+      font-size: 48px;
+    }
+
+    .card_head {
+      .font_20 {
+        font-size: 16px;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 320px) {
+  .banner-title h1 {
+    font-size: 70px;
+  }
 
-    .banner-title h1 {
-        font-size: 70px;
-    }
-
-    .career-paragraph h3 {
-        font-size: 33px;
-    }
+  .career-paragraph h3 {
+    font-size: 33px;
+  }
 }
