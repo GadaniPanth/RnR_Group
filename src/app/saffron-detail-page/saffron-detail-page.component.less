@@ -205,14 +205,10 @@
     }
 
     .section_3_bg {
-      width: 50%;
+      width: 100%;
       // min-width: 960px;
       margin: 0 auto;
       overflow: hidden;
-
-      img {
-        aspect-ratio: 1 / 1;
-      }
     }
 
     .section_3_content {
@@ -228,7 +224,7 @@
       position: absolute;
       width: fit-content;
       margin: 0 auto;
-      top: 50%;
+      top: 57%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -627,7 +623,7 @@
 
     .section_3 {
       .saffron_logo {
-        width: 8%;
+        width: 100px;
       }
     }
 
@@ -760,6 +756,10 @@
     }
 
     .section_3 {
+      .saffron_logo {
+        top: 51%;
+      }
+
       .bg_container {
         // aspect-ratio: 1.24;
         overflow: visible;
@@ -773,9 +773,7 @@
           margin: 0;
           aspect-ratio: 1 / 1;
 
-          img {
-            min-width: unset;
-            width: 100%;
+          video {
             aspect-ratio: 1 / 1;
           }
         }
@@ -853,6 +851,12 @@
 
 @media only screen and (max-width: 540px) {
   .saffron_wrapper:not(.section_wrapper) {
+    .section_3 {
+      .saffron_logo {
+        width: 64px;
+      }
+    }
+
     .section_8 {
       .section_8_text {
         padding-right: 10%;
@@ -933,6 +937,12 @@
             }
           }
         }
+      }
+    }
+
+    .section_3 {
+      .saffron_logo {
+        width: 57px;
       }
     }
 

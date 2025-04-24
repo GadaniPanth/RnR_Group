@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
@@ -101,6 +101,13 @@ export class AppComponent {
       }
       if (e instanceof NavigationEnd) {
         this.isSaffron = e.urlAfterRedirects.endsWith('/saffron');
+      }
+      if (e instanceof NavigationStart ||
+        e instanceof NavigationEnd ||
+        e instanceof NavigationCancel ||
+        e instanceof NavigationError) {
+        this.isInquiryOpen = false;
+        this.isMenuOpen = false;
       }
     });
 

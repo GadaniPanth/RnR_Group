@@ -180,23 +180,32 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     if (targetEl && fadeEl) {
       const targetTop = targetEl.getBoundingClientRect().top - 74;
       const windowHeight = window.innerHeight;
+      const video = document.getElementById('saffronVideo') as HTMLVideoElement;
+      const videoRect = video.getBoundingClientRect().bottom;
 
-      const triggerPoint = windowHeight * 0.3; // 50% from top
+      const triggerPoint = windowHeight * .2; // from top
 
       // console.log(targetTop)
 
       if (targetTop <= 0) {
         targetEl.style.clipPath = 'circle(100% at 50% 50%)';
         fadeEl.style.opacity = '0';
+        if (videoRect <= windowHeight - 200) {
+          video.pause();
+        } else {
+          video.play();
+        }
       } else if (targetTop <= triggerPoint) {
         const progress = Math.abs(1 - (targetTop / triggerPoint));
         const radius = 10 + progress * 90;
         targetEl.style.clipPath = `circle(${radius}% at 50% 50%)`;
 
         fadeEl.style.opacity = `${Math.abs(.8 - progress) > 0 ? Math.abs(.8 - progress) : 0}`;
+        video.play();
       } else {
         targetEl.style.clipPath = 'circle(10% at 50% 50%)';
         fadeEl.style.opacity = '1';
+        video.pause();
       }
     }
   }
