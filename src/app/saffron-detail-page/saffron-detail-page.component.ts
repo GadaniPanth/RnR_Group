@@ -224,7 +224,13 @@ export class SaffronDetailPageComponent implements AfterViewInit {
   }
 
   toggleSection(index: number): void {
-    this.sections[index].isOpen = !this.sections[index].isOpen;
+    this.sections.map((item, i) => {
+      if (i != index) {
+        item.isOpen = false;
+      } else {
+        item.isOpen = !item.isOpen;
+      }
+    });
   }
 
   // toggleSection(index: number): void {
