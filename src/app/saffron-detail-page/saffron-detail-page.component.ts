@@ -261,7 +261,7 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     if (this.inquireForm.invalid) {
       return;
     } else {
-      console.log(this.inquireForm)
+      console.log(this.inquireForm.value)
     }
   }
 

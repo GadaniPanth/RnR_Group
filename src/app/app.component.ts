@@ -146,5 +146,7 @@ export class AppComponent {
     if (this.sideInquireForm.invalid) {
       return;
     }
+
+    console.log(this.sideInquireForm.value)
   }
 }

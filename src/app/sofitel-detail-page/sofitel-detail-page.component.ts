@@ -396,6 +396,8 @@ export class SofitelDetailPageComponent implements AfterViewInit {
     if (this.inquireForm.invalid) {
       return;
     }
+
+    console.log(this.inquireForm.value)
   }
 
   // onSideSubmit() {
