@@ -183,9 +183,7 @@ export class SaffronDetailPageComponent implements AfterViewInit {
       const video = document.getElementById('saffronVideo') as HTMLVideoElement;
       const videoRect = video.getBoundingClientRect().bottom;
 
-      const triggerPoint = windowHeight * .2; // from top
-
-      // console.log(targetTop)
+      const triggerPoint = windowHeight * .2;
 
       if (targetTop <= 0) {
         targetEl.style.clipPath = 'circle(100% at 50% 50%)';
@@ -225,11 +223,12 @@ export class SaffronDetailPageComponent implements AfterViewInit {
 
   toggleSection(index: number): void {
     this.sections.map((item, i) => {
-      if (i != index) {
-        item.isOpen = false;
-      } else {
-        item.isOpen = !item.isOpen;
-      }
+      // if (i != index) {
+      //   item.isOpen = false;
+      // } else {
+      //   item.isOpen = !item.isOpen;
+      // }
+      item.isOpen = i === index ? !item.isOpen : false;
     });
   }
 
@@ -261,6 +260,8 @@ export class SaffronDetailPageComponent implements AfterViewInit {
     this.formSubmitted = true;
     if (this.inquireForm.invalid) {
       return;
+    } else {
+      console.log(this.inquireForm)
     }
   }
 

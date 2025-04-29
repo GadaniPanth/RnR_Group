@@ -268,11 +268,12 @@ export class SofitelDetailPageComponent implements AfterViewInit {
 
   toggleGlamourSection(index: number): void {
     this.glamourSections.map((item, i) => {
-      if (i != index) {
-        item.isOpen = false;
-      } else {
-        item.isOpen = !item.isOpen;
-      }
+      // if (i != index) {
+      //   item.isOpen = false;
+      // } else {
+      //   item.isOpen = !item.isOpen;
+      // }
+      item.isOpen = i === index ? !item.isOpen : false;
     });
   }
 
@@ -329,11 +330,13 @@ export class SofitelDetailPageComponent implements AfterViewInit {
 
   togglePulseSection(index: number): void {
     this.pulseSections.map((item, i) => {
-      if (i != index) {
-        item.isOpen = false;
-      } else {
-        item.isOpen = !item.isOpen;
-      }
+      // if (i != index) {
+      //   item.isOpen = false;
+      // } else {
+      //   item.isOpen = !item.isOpen;
+      // }
+      item.isOpen = i === index ? !item.isOpen : false;
+
     });
   }
 
